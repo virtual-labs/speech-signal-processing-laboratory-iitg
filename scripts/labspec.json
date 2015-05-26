@@ -4,8 +4,8 @@
             "platform": {
                 "arch": "i386", 
                 "build_steps": {
-                    "build": ["make -C ../src"],
-                    "configure": [],
+                    "build": ["make -C ../src"], 
+                    "configure": [], 
                     "post_build": [], 
                     "pre_build": [], 
                     "status": []
@@ -21,44 +21,106 @@
                 {
                     "contact": {
                         "alternate_email": "", 
-                        "email": "prasanna@iitg.ernet.in", 
+                        "email": "jawahar@iiit.ac.in", 
                         "mobile_number": "", 
                         "office_number": ""
                     }, 
-                    "department": "eee", 
-                    "institute": "", 
-                    "name": "Dr. S. R. Mahadeva Prasanna", 
-                    "organization": "IIT Guwahati", 
-                    "role": "Principal Investigator", 
+                    "department": "", 
+                    "institute": "IIIT Hyderabad", 
+                    "name": "Jawahar C.V", 
+                    "organization": "", 
+                    "role": "Lab Developer", 
+                    "title": "", 
+                    "web": ""
+                }, 
+                {
+                    "contact": {
+                        "alternate_email": "", 
+                        "email": "phani@iiit.ac.in", 
+                        "mobile_number": "", 
+                        "office_number": ""
+                    }, 
+                    "department": "", 
+                    "institute": "IIIT Hyderabad", 
+                    "name": "Phani Phani", 
+                    "organization": "", 
+                    "role": "Lab RA", 
+                    "title": "", 
+                    "web": ""
+                }, 
+                {
+                    "contact": {
+                        "alternate_email": "", 
+                        "email": "kumarsrijan@students.iiit.ac.in", 
+                        "mobile_number": "", 
+                        "office_number": ""
+                    }, 
+                    "department": "", 
+                    "institute": "IIIT Hyderabad", 
+                    "name": "Kumar Srijan", 
+                    "organization": "", 
+                    "role": "Lab RA", 
+                    "title": "", 
+                    "web": ""
+                }, 
+                {
+                    "contact": {
+                        "alternate_email": "", 
+                        "email": "jayaguru.pandaug08@students.iiit.ac.in", 
+                        "mobile_number": "", 
+                        "office_number": ""
+                    }, 
+                    "department": "", 
+                    "institute": "IIIT Hyderabad", 
+                    "name": "Jay Panda", 
+                    "organization": "", 
+                    "role": "Lab RA", 
+                    "title": "", 
+                    "web": ""
+                }, 
+                {
+                    "contact": {
+                        "alternate_email": "", 
+                        "email": "shashank.sharmaug08@students.iiit.ac.in", 
+                        "mobile_number": "", 
+                        "office_number": ""
+                    }, 
+                    "department": "", 
+                    "institute": "IIIT Hyderabad", 
+                    "name": "Shashank Sharma", 
+                    "organization": "", 
+                    "role": "Lab RA", 
                     "title": "", 
                     "web": ""
                 }
             ], 
             "discipline": [
-                "Department of Electronics and Electrical Engineering"
+                "Computer Science & Engineering"
             ], 
-            "id": "eee02", 
+            "id": "cse02", 
             "integration_level": 5, 
-            "name": "Speech Signal Processing Laboratory", 
+            "name": "Computer Programming", 
             "server-side": true, 
             "status": "Released", 
             "type": ""
-        },  
+        }, 
         "runtime_requirements": {
             "platform": {
                 "arch": "i386", 
                 "hosting": "dedicated", 
-                "installer": ["sudo apt-get update","sudo apt-get install -y apache2"], 
+                "installer": ["sudo apt-get update",
+                "sudo apt-get install -y php5 apache2"], 
                 "lab_actions": {
                     "backup": [], 
                     "clean": [], 
-                    "init": ["mv /var/www/index.html index.html.default","cp -r ../build/* /var/www/","chmod 775 /var/www/ -R"], 
+                    "init": ["cp -r ../build/* /var/www/","mv /var/www/index.html index.html.default"
+                        ], 
                     "pause": [], 
                     "publish": [], 
                     "restore": [], 
                     "resume": [], 
                     "shutdown": ["service apache2 stop"], 
-                    "start": ["service apache2 start"], 
+                    "start": ["service apache2 start"],  
                     "stats": [], 
                     "stop": []
                 }, 
