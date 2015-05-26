@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Shakshat Virtual Lab</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>Shakshat Virtual Lab <img src="images/iitg-logo1.jpg" style="width:125px;height:100px" align="right"/></h1> 
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+       <ul id="menu">
+           <li class="current"><a href="index.html">Home</a></li>
+        <li><a href="ourwork.html">About</a></li>
+        <li><a href="projects.html">People</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div><!--close menubar-->	
+	<br />
+	<br />
+	<div id="menu_sub">Estimation Of Pitch From Speech Signals</div>
+	<br />
+	<div id="menubar1">
+      <ul id="menu">
+        <li ><a href="aim_estimation_of_pitch.html">Aim</a></li>
+          <li><a href="Theory_estimation_of_pitch.html">Theory</a></li>
+          <li class="current"><a href="procedure_estimation_of_pitch.html">Procedure</a></li>
+	  <li><a href="simulation_estimation_of_pitch.html">Simulation</a></li>
+          <li><a href="Quiz_estimation_of_pitch.html">Quiz</a></li>
+	  <li><a href="reference_estimation_of_pitch.html">Reference</a></li>
+          <li><a href="assignment_estimation_of_pitch.html">Assignment</a></li>
+
+		
+		      </ul>
+	  </br>
+	  <div id="content_handaxe">
+	  </br>
+	  <br>
+	    
+            
+            <h1>Procedure</h1>
+           <h1>Pitch estimation by autocorrelation method </h1>
+	<br>
+	<br>
+		<p>Speech signal can be classified into voiced, unvoiced and silence regions. The near periodic vibration of vocal folds is excitation for the production of voiced speech. The random ...like excitation is present for unvoiced speech. There is noexcitation during silence region. Majority of speech regions are voiced in nature that includevowels,....., semivowels and other voiced components. The voiced regions looks like a near periodic signal in the time domain representation. In a short term .., we may treat the voiced speech segments to be periodic for all practical analysis and processing. The periodicity associated with such segmentsis defined is 'pitch period To' in the time domain and 'Pitch frequency or Fundamental Frequency Fo' in the frequency domain. Unless specified, the term 'pitch' refers to the fundamental frequency ' Fo'. Pitch is an important attribute of voiced speech. It contains speaker-specific information. It is also needed for speech coding task. Thus estimation of pitch is one of the important issue in speech processing.
+
+ 
+
+There are a large set of methods that have been developed in the speech processing area for the estimation of pitch. Among them the three mostly used methods include, autocorrelation of speech, cepstrum pitch determination and single inverse .... technique (SIFT) pitch estimation. One success of these methods is due to the involvment of simple steps for theestimation of pitch. Even though autocorrelation method is of theoritical interest, it produce a frame work for SIFT methods.</p>
+
+
+
+           <br>
+	   <br>
+
+		<img src="images/Fig1_voiced_autocorr_procedure.png" style="width:755px;height:500px" align="center"/>
+                 <p align="center">fig.1</p> <br><br>
+
+		<img src="images/Fig2_unvoiced_autocorr_procedure.png" style="width:755px;height:500px" align="center"/>
+                 <p align="center">fig.2</p> <br><br>
+
+		<img src="images/Fig3_procedure.png" style="width:755px;height:500px" align="center"/>
+                 <p align="center">fig.3</p> <br><br>
+
+		<p>//Program to find autocorrelation of a speech segment<br>
+[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/30msec_voiced.wav');//input: speech segment<br>
+max_value=max(abs(y));<br>
+y=y/max_value;<br>
+t=(1/Fs:1/Fs:(length(y)/Fs))*1000;<br>
+subplot(2,1,1);<br>
+plot(t,y);<br>
+xtitle('A 30 millisecond segment of speech','time in milliseconds');<br>
+sum1=0;autocorrelation=0;<br>
+   for l=0:(length(y)-1)<br>
+    sum1=0;<br>
+    for u=1:(length(y)-l)<br>
+      s=y(u)*y(u+l);<br>
+      sum1=sum1+s;<br>
+    end<br>
+    autocor(l+1)=sum1;<br>
+  end<br>
+kk=(1/Fs:1/Fs:(length(autocor)/Fs))*1000;<br>
+subplot(2,1,2);<br>
+plot(kk,autocor);<br>
+xtitle('Autocorrelation of the 30 millisecond segment of speech','time in milliseconds');<br>
+auto=autocor(21:160);<br>
+  max1=0;<br>
+  for uu=1:140<br>
+    if(auto(uu)>max1)<br>
+      max1=auto(uu);<br>
+      sample_no=uu;<br>
+    end<br>
+  end<br>
+  pitch_period_To=(20+sample_no)*(1/Fs)<br>
+  pitch_freq_Fo=1/pitch_period_To</p><br><br><br><br><br><br><br><br>
+
+
+
+
+		<h1>Cepstrum based pitch estimation</h1><br><br>
+		<p>The objective of this experiment is to estimate the pitch by cepstral analysis.  The given speech signal is divided into  short segments of 15-20ms frame size.  The cepstrum is computed from each of these frames.  Figure 4  shows cepstrum of a speech segment in quefrency domain. Figure 5  illustrates the procedure for computing the pitch period by the high time liftering of the cepstrum of the voiced speech.   Figure 6 shows the cepstrum of an unvoiced speech. </p><br><br>
+
+
+			<img src="images/Fig4_voiced_cepstrum_procedure.png" style="width:755px;height:500px" align="center"/>
+                 <p align="center">fig.4</p> <br><br>
+
+			<img src="images/Fig5_procedure.png" style="width:755px;height:500px" align="center"/>
+                 <p align="center">fig.5</p> <br><br>
+
+		<img src="images/Fig6_unvoiced_cepstrum_procedure.png" style="width:755px;height:500px" align="center"/>
+                 <p align="center">fig.6</p> <br><br>
+
+		<p>The scilab codes to generate the Figures 4,  5 and 6  are given below.  </p><br><br>
+
+		<p>//Program to plot speech segment, Log magnitude spectrum and real cepstrum<br>
+[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/30msec_voiced.wav');//input: speech segment<br>
+zeros2=zeros(1:(512-length(y)));<br>
+zeros3=zeros(1:(1512-length(y)));<br>
+max_value=max(abs(y));<br>
+y=y/max_value;<br>
+t=(1/Fs:1/Fs:(length(y)/Fs))*1000;<br>
+subplot(3,1,1);plot(t,y);<br>
+xtitle('A 30 millisecond segment of unvoiced speech','time in msec');<br>
+y=[y zeros2];<br>
+yy=[y zeros3];<br>
+dfty=abs(fft(y));<br>
+dftyy=abs(fft(yy));<br>
+dfty1=dfty(1:length(dfty)/2);<br>
+dftyy1=dftyy(1:length(dftyy)/2);<br>
+tt=linspace(1/Fs,Fs/2,length(dftyy1));<br>
+dftylog=log10(dfty);<br>
+dftyylog=log10(dftyy);<br>
+dftylog1=dftylog(1:length(dftylog)/2);<br>
+dftyylog1=dftyylog(1:length(dftyylog)/2);<br>
+yy=10*dftylog1;<br>
+yyy=10*dftyylog1;<br>
+subplot(3,1,2);<br>
+plot(tt,yyy);<br>
+xtitle('Log Magnitude Spectrum','frequency in Hz');<br>
+real_ceps=abs(ifft(dftylog));<br>
+real_ceps=real_ceps(1:length(real_ceps)/2);<br>
+t=(1/Fs:1/Fs:(length(y)/Fs))*1000;<br>
+t=(t(1:length(t)/2));<br>
+subplot(3,1,3);<br>
+plot(t,real_ceps);<br>
+xtitle('Real Cepstrum','Quefrency nT(msec)');<br><br>
+
+real_ceps_pitch=real_ceps(16:length(real_ceps));<br>
+max1=max(real_ceps_pitch);<br>
+for uu=1:length(real_ceps_pitch)<br>
+  real_ceps_pitch(uu);<br>
+    if(real_ceps_pitch(uu)==max1)<br>
+      sample_no=uu;<br>
+    end<br>
+  end<br>
+  pitch_period_To=(16+sample_no)*(1/Fs)<br>
+  pitch_freq_FO=1/pitch_period_To</p><br><br>
+
+
+		<h1>Pitch estimation by SIFT</h1><br><br>
+		<p>The objective of this experiment is to  estimate the pitch by Simple Inverse Filtering Technique (SIFT) .  The first step is to compute the Linear Prediction (LP) residual by LP analysis.  The auto correlation is performed on the LP residual signal. Figure 9 shows scilab code to generate LP residual of a segment of speech and to find autocorrelation of the LP residual. Figure 7 shows the LP residual of a 30 ms voiced speech segment and its auto correlation sequence.  Similarly, Figure 8 shows the LP residual and its auto correlation sequenced of a 30 ms unvoiced speech segment. Figure 9 illustrates the estimation of pitch period from the autocorrelation sequenced of the LP residual.  </p><br><br>
+
+			<img src="images/Fig7_voiced_lpresidual_procedure.png" style="width:755px;height:500px" align="center"/>
+                 <p align="center">fig.7</p> <br><br>
+
+			<img src="images/Fig8_unvoiced_lpresidual_procedure.png" style="width:755px;height:500px" align="center"/>
+                 <p align="center">fig.8</p> <br><br>
+
+			<img src="images/Fig9_procedure.png" style="width:755px;height:500px" align="center"/>
+                 <p align="center">fig.9</p> <br><br>
+
+		<p>The general scilab code to generate the Figures 7, 8 and 9, and compute the pitch is given below.  </p><br><br>
+		<p>//[y,fs,bt]=wavread('wavfile/voiced_frame.wav');<br>
+[y,fs,bt]=wavread('/media/A03036C33036A068/scilab/female.wav');//female speech<br>
+//[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/30msec_unvoiced.wav');<br>
+y=y((Fs*.38):(Fs*.42));//female voiced<br>
+//y=y((Fs*.12):(Fs*.16));//female unvoiced<br>
+y=y(1:240);<br>
+y=y/(1.01*abs(max(y)));<br>
+t=(1/Fs:1/Fs:(length(y)/Fs))*1000;<br>
+//y=y(241:400);<br>
+N=240;<br>
+w=window('re',N);<br>
+y=y.*w;<br>
+P=10;<br>
+ycorr=corr(y,240);<br>
+ycorr=ycorr./(abs(max(ycorr)));<br>
+A=ycorr(1:P);<br>
+r=ycorr(2:(P+1));<br>
+A=toeplitz(A);<br>
+r_t=mtlb_t(r);<br>
+A=-inv(A);<br>
+L=A*r_t;<br>
+L=mtlb_t(L);<br>
+LPCoeffs(1,1:length([1,L])) = [1,L];<br>
+y5=mtlb_conv(y,LPCoeffs);<br>
+y5=y5(round(P/2):length(y5)-round(P/2)-1);<br>
+subplot(3,1,1);plot(t, y);<br>
+xtitle('30 millisecond voiced speech segment','time in millisecond','amplitude');<br>
+subplot(3,1,2);plot(t, y5);<br>
+xtitle('LP Residual','time in millisecond','amplitude');<br>
+<br>
+sum1=0;autocorrelation=0;<br>
+<br>
+y=y5;<br>
+//for i=1:window_length<br>
+   for l=0:(length(y)-1)<br>
+    sum1=0;<br>
+    for u=1:(length(y)-l)<br>
+      s=y(u)*y(u+l);<br>
+      sum1=sum1+s;<br>
+    end<br>
+    autocor(l+1)=sum1;<br>
+  end<br>
+//end<br>
+<br>
+<br>
+//tt=1/Fs:1/Fs:(length(y)/Fs);<br>
+kk=(1/Fs:1/Fs:(length(autocor)/Fs))*1000;<br>
+<br>
+subplot(3,1,3);<br>
+plot(kk,autocor);<br>
+xtitle('Autocorrelation of LP Residual','time in milliseconds');<br><br>
+
+auto=autocor(21:240);<br>
+  max1=0;<br>
+  for uu=1:220<br>
+    if(auto(uu)>max1)<br>
+      max1=auto(uu);<br>
+      sample_no=uu;<br>
+    end<br>
+  end<br>
+  pitch_freq_to=(20+sample_no)*(1/Fs)<br>
+  pitch_freq_fo=1/pitch_freq_to</p><br><br><br><br><br>
+
+
+		<h1>Comparison of pitch estimation methods</h1><br><br>
+		<p>Figure 10 shows the  input speech signal and the pitch contours  estimated using autocorrelation,  cepstrum and SIFT based pitch estimation methods. The procedure used for  generating the pitch contours using all these methods are given below. </p><br><br>
+
+
+
+			<img src="images/Fig11_pitch_all3_procedure.png" style="width:755px;height:500px" align="center"/>
+                 <p align="center">fig.10</p> <br><br>
+
+			<p>The general scilab code to generate the Figures 10, and compute the pitch is given below.  </p><br><br>
+
+			<p>//Code to generate the pitch contour of a speech signal using autocorrelation method<br>
+
+[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/SA2.wav');<br>
+data=y;<br>
+Frame_size = 30;//Input: Frame-size in millisecond<br>
+Frame_shift = 10;//Input: Frame-shift in millisecond<br>
+max_value=max(abs(y));<br>
+y=y/max_value;<br>
+window_period=Frame_size/1000;<br>
+shift_period=Frame_shift/1000;<br>
+pitch_freq=0;<br>
+t=1/Fs:1/Fs:(length(y)/Fs);<br>
+subplot(4,1,1);<br>
+plot(t,y);<br>
+xtitle('Speech signal waveform');<br>
+window_length = window_period*Fs<br>
+sample_shift = shift_period*Fs<br>
+sum1=0;energy=0;autocorrelation=0;<br>
+for i=1:(floor((length(y))/sample_shift)-ceil(window_length/sample_shift))<br>
+  k=1;yy=0;<br>
+  for j=(((i-1)*sample_shift)+1):(((i-1)*sample_shift)+window_length)<br>
+    yy(k)=y(j);<br>
+    k=k+1;<br>
+  end<br>
+  for l=0:(length(yy)-1)<br>
+    sum1=0;<br>
+    for u=1:(length(yy)-l)<br>
+      s=yy(u)*yy(u+l);<br>
+      sum1=sum1+s;<br>
+    end<br>
+    autocor(l+1)=sum1;<br>
+    autocorrelation(l+1)(i)= autocor(l+1);<br>
+  end<br>
+  auto=autocor(21:240);<br>
+  max1=0;<br>
+  for uu=1:220<br>
+    if(auto(uu)>max1)<br>
+      max1=auto(uu);<br>
+      sample_no=uu;<br>
+    end<br>
+  end<br>
+  pitch_freq(i)=1/((20+sample_no)*(1/Fs));<br>
+end<br>
+[rows,cols]=size( autocorrelation);<br>
+kkk=1/Fs:shift_period:(cols*shift_period);<br>
+subplot(4,1,2);plot(kkk,pitch_freq,'.');xtitle('Pitch Contour obtained by autocorrelation of speech signal ');</p><br><br><br><br>
+
+
+<p>/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /</p><br><br>
+<p>//Code to generate the pitch contour of a speech signal using Cepstrum pitch estimation method<br><br>
+y=0;y=data;<br>
+pitch_freq1=0;o=1;<br>
+Frame_size=30;pitch_freq = 0;<br>
+Frame_shift=10;<br>
+max_value=max(abs(y));<br>
+y=y/max_value;<br>
+window_period=Frame_size/1000;<br>
+shift_period=Frame_shift/1000;<br>
+t=1/Fs:1/Fs:(length(y)/Fs);<br>
+//subplot(2,1,1);plot(t,y);xtitle('Speech signal waveform');<br>
+window_length = window_period*Fs<br>
+sample_shift = shift_period*Fs<br>
+sum1=0;energy=0;autocorrelation=0;<br>
+for i=1:(floor((length(y))/sample_shift)-ceil(window_length/sample_shift))<br>
+  k=1;yy=0;<br>
+  for j=(((i-1)*sample_shift)+1):(((i-1)*sample_shift)+window_length)<br>
+    yy(k)=y(j);<br>
+    k=k+1;<br>
+  end<br><br>
+     
+     t=1/Fs:1/Fs:(length(yy)/Fs);<br>
+    t=(t(1:length(t)/2))*1000;<br>
+    dfty=abs(fft(yy));<br>
+dfty1=dfty(1:length(dfty)/2);<br>
+tt=linspace(1/Fs,Fs,length(dfty1));<br>
+for i=1:length(dfty)<br>
+  if (dfty(i)==0)<br>
+    dfty(i)=1D-16;<br>
+  end<br>
+end<br>
+dftylog=log10(dfty);<br>
+dftylog1=dftylog(1:length(dftylog)/2);<br>
+yy=10*dftylog1;<br><br>
+
+//xtitle('Log Magnitude Spectrum','frequency in Hz');<br>
+real_ceps=abs(ifft(dftylog));<br>
+real_ceps=real_ceps(1:length(real_ceps)/2);<br>
+//real_ceps=[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 5 4 3 2 1];<br>
+real_ceps_pitch=real_ceps(16:length(real_ceps));<br>
+max1=max(real_ceps_pitch);<br>
+//max1=0;<br>
+for uu=1:length(real_ceps_pitch)<br>
+  uu;<br>
+  real_ceps_pitch(uu);<br>
+  max1;<br>
+    if(real_ceps_pitch(uu)==max1)<br>
+      //max1=real_ceps_pitch(uu);<br>
+      sample_no=uu;<br>
+    end<br>
+  end<br>
+  pitch_freq1=1/((16+sample_no)*(1/Fs));<br>
+  pitch_freq(o)= pitch_freq1;<br>
+  o=o+1;<br>
+  //pitch_freq(i)=1/(16+sample_no);<br>
+end<br>
+kk=1/Fs:shift_period:(length(pitch_freq)*shift_period);<br>
+subplot(4,1,3);plot(kk,pitch_freq,'.');xtitle('Pitch Contour obtained by cepstrum pitch estimation method');</p><br><br>
+
+<p>/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /</p><br><br>
+
+		<p>//Code to generate the pitch contour of a speech signal using SIFT method<br>
+y=0;y=data;<br>
+[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/SA2.wav');<br>
+Frame_size = 30;//Input: Frame-size in millisecond<br>
+Frame_shift = 10;//Input: Frame-shift in millisecond<br>
+max_value=max(abs(y));<br>
+//y=y/max_value;<br>
+window_period=Frame_size/1000;<br>
+shift_period=Frame_shift/1000;<br>
+pitch_freq=0;<br>
+t=1/Fs:1/Fs:(length(y)/Fs);<br>
+//subplot(2,1,1);<br>
+//plot(t,y);<br>
+//xtitle('Speech signal waveform');<br>
+window_length = window_period*Fs<br>
+sample_shift = shift_period*Fs<br>
+sum1=0;energy=0;autocorrelation=0;<br>
+for i=1:(floor((length(y))/sample_shift)-ceil(window_length/sample_shift))<br>
+  k=1;yy=0;<br>
+  for j=(((i-1)*sample_shift)+1):(((i-1)*sample_shift)+window_length)<br>
+    yy(k)=y(j);<br>
+    k=k+1;<br>
+  end<br><br>
+ 
+  yy=yy/(1.01*abs(max(yy)));<br>
+t=(1/Fs:1/Fs:(length(yy)/Fs))*1000;<br>
+P=10;<br>
+ycorr=corr(yy,240);<br>
+ycorr=ycorr./(abs(max(ycorr)));<br>
+A=ycorr(1:P);<br>
+r=ycorr(2:(P+1));<br>
+A=toeplitz(A);<br>
+r_t=mtlb_t(r);<br>
+A=-inv(A);<br>
+L=A*r_t;<br>
+L=mtlb_t(L);<br>
+LPCoeffs(1,1:length([1,L])) = [1,L];<br>
+y5=mtlb_conv(yy,LPCoeffs);<br>
+y5=y5(round(P/2):length(y5)-round(P/2)-1);<br>
+for l=0:(length(y5)-1)<br>
+    sum1=0;<br>
+    for u=1:(length(y5)-l)<br>
+      s=y5(u)*y5(u+l);<br>
+      sum1=sum1+s;<br>
+    end<br>
+    autocor(l+1)=sum1;<br>
+    autocorrelation(l+1)(i)= autocor(l+1);<br>
+  end<br>
+  auto=autocor(21:240);<br>
+  max1=0;<br>
+  for uu=1:220<br>
+    if(auto(uu)>max1)<br>
+      max1=auto(uu);<br>
+      sample_no=uu;<br>
+    end<br>
+  end<br>
+  pitch_freq(i)=1/((20+sample_no)*(1/Fs));<br>
+end<br>
+[rows,cols]=size( autocorrelation);<br>
+kkk=1/Fs:shift_period:(cols*shift_period);<br>
+subplot(4,1,4);plot(kkk,pitch_freq,'.');xtitle('Pitch Contour obtained by SIFT pitch estimation method ');</p><br><br>
+
+
+
+
+
+            <br>
+	    <br>
+            <br>
+	    <br>
+            <br><br>
+            
+
+	  
+	  </div>
+    </div><!--close menubar-->	
+	 <div id="footer">
+	  <a href="http://www.iitg.ernet.in">Copyright IIT GUWAHATI</a> | Developed At IIT Guwahati
+  </div><!--close footer-->  
+</body>
+</html>

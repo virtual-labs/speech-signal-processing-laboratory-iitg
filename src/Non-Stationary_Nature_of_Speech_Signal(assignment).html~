@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Virtual lab</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>Shakshat Virtual Lab <img src="images/iitg-logo1.jpg" style="width:125px;height:100px" align="right"/></h1> 
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ourwork.html">About</a></li>
+        <li><a href="projects.html">People</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div><!--close menubar-->	
+	<br />
+	<br />
+	<div id="menu_sub">Non-Stationary Nature of Speech Signal</div>
+	<br />
+	<div id="menubar1">
+      <ul id="menu">
+	  	<li><a href="Non-Stationary_Nature_of_Speech_Signal.html">Aim</a></li>
+        <li><a href="Non-Stationary_Nature_of_Speech_Signal(theory).html">Theory</a></li>
+        <li><a href="Non-Stationary_Nature_of_Speech_Signal(procedure).html">Procedure</a></li>
+        <li><a href="Non-Stationary_Nature_of_Speech_Signal(quiz).html">Pre Quiz</a></li>
+		<li><a href="Non-Stationary_Nature_of_Speech_Signal(simulation).html">Simulation</a></li>
+        <li><a href="#">Post Quiz</a></li>
+		<li class="current"><a href="Non-Stationary_Nature_of_Speech_Signal(assignment).html">Assignment</a></li>
+		<li><a href="Non-Stationary_Nature_of_Speech_Signal(reference).html">Reference</a></li>
+		<li><a href="Non-Stationary_Nature_of_Speech_Signal(video).html">Video</a></li>
+		
+	  </ul>
+	  </br>
+	  <div id="content_handaxe">
+	  </br>
+	  <br>
+	 
+	  <p style="font-size:16px">1)  Write a Scilab program to generate a single tone sine wave of 100 Hz sampled using a sampling frequency of 1000 Hz and for a duration of 1 sec. Compare this with the 10 Hz sine wave given in the theory section. What difference you observe?</p>
+	  <p style="font-size:16px">2) Write a Scilab program to generate a single tone sine wave of 500 Hz sampled using a sampling frequency of 1000 Hz and for a duration of 1 sec. Can you observe the sine wave shape in the generated signal? Justify the nature of the plot.</p>
+	  <p style="font-size:16px">3)   Write a Scilab program to generate a single tone sine wave of 500 Hz sampled using a sampling frequency of 1000 Hz and for a duration of 1 sec. Can you observe the sine wave shape in the generated signal? Justify the nature of the plot.</p>
+	  <p style="font-size:16px">4)    Write a Scilab program to generate the spectrum of stationary signal. Compute the spectrum of square generated above and write down your observation about the frequency components present in the square wave. From this spectrum, can you comment whether square wave is stationary or non-stationary?</p>
+	  <p style="font-size:16px">5)   Write a Scilab program to generate waveform and magnitude spectrum of a multitone sine wave made of 10 Hz, 50 Hz and 100 Hz with 1, 0.75 and 0.5 as maximum normalized amplitude, respectively. What difference you observe in the generated signal compared to the earlier case of having all components with 1 as maximum normalized amplitude. Whether the generated signal still qualifies stationarity? Justify your answer.</p>
+	  <p style="font-size:16px">6)  Write a Scilab program to generate waveform and magnitude spectrum of a multitone sine wave made of 10 Hz, 50 Hz and 100 Hz with 45, 90 and 135 degrees phase shift, respectively, all with 1 as maximum normalized amplitude. What difference you observe in the generated signal compared to the earlier case of having all components with 1 as maximum normalized amplitude. Whether the generated signal still qualifies stationarity? Justify your answer.</p>
+	  <p style="font-size:16px">7)   Write a Scilab program to generate waveform and magnitude spectrum of a multitone sine wave made of 10 Hz sine wave, 50 Hz triangular wave and 100 Hz square wave all with 1 as maximum normalized amplitude. Can you comment on the stationarity of the resulting multitone signal?</p>
+	  <p style="font-size:16px">8)   Write a Scilab program to generate waveform and magnitude spectrum of a non-stationary multitone sine wave made of different combinations of 10, 50, 100 and 200 Hz sine waves. Can you comment on the non-stationarity of the resulting multitone signal?</p>
+	  <p style="font-size:16px">9)  Write a Scilab program to generate waveform and magnitude spectrum of a single tone narrowband frequency modulated (FM) signal. Can you comment on the non-stationarity of the resulting multitone signal?</p>
+	  <p style="font-size:16px">10) Write a Scilab program that loads speech signal stored in a file with microsoft wav extension format and plots magnitude spectra of different portions of speech signal by considering it in 30 msec non-overlapping blocks. Can you comment on the non-stationarity of the speech signal by observing sequence of spectra plotted?</p>
+	   <p style="font-size:16px">11) Write a Scilab program to synthesize stationary and non-stationary signals?</p>
+	    <p style="font-size:16px">12)  Record a speech signal as mono channel data in the microsoft wav file format using sampling frequency of 16 kHz at 16 bit resolution. Read the wav file recorded in Scilab and plot the waveform. List out the differences observed between synthesized stationary, non-stationary and recorded speech signal.</p>
+	   <p style="font-size:16px">13)Plot the Fourier transform of the signals synthesized in (11) and speech recorded in (12) using Scilab. List all the drawbacks observed from the Fourier transform plots.</p>	
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  
+	  </div>
+    </div><!--close menubar-->	
+	 <div id="footer">
+	  <a href="http://www.iitg.ernet.in">Copyright IIT GUWAHATI</a> | Developed By CSE DEPARTMENT 
+  </div><!--close footer-->  
+</body>
+</html>

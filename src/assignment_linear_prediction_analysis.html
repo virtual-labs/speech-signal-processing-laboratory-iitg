@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Shakshat Virtual Lab</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>Shakshat Virtual Lab <img src="images/iitg-logo1.jpg" style="width:125px;height:100px" align="right"/></h1> 
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+       <ul id="menu">
+           <li class="current"><a href="index.html">Home</a></li>
+        <li><a href="ourwork.html">About</a></li>
+        <li><a href="projects.html">People</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div><!--close menubar-->	
+	<br />
+	<br />
+	<div id="menu_sub">Estimation Of Pitch From Speech Signals</div>
+	<br />
+	<div id="menubar1">
+      <ul id="menu">
+        <li ><a href="aim_linear_prediction_analysis.html">Aim</a></li>
+          <li><a href="Theory_linear_prediction_analysis.html">Theory</a></li>
+          <li><a href="procedure_linear_prediction_analysis.html">Procedure</a></li>
+          <li><a href="Quiz_linear_prediction_analysis.html">Quiz</a></li>
+	  <li><a href="reference_linear_prediction_analysis.html">Reference</a></li>
+          <li class="current"><a href="assignment_linear_prediction_analysis.html">Assignment</a></li>
+
+		
+		      </ul>
+	  </br>
+	  <div id="content_handaxe">
+	  </br>
+	  <br>
+	    
+            <h1>Basics of LP analysis</h1><br><br>
+            <ul>
+		<li>
+
+Write a Scilab program for computing the Linear Prediction Coefficients (LPCs) by autocorrelation method using direct matrix solving approach. The inputs should be the windowed segment of speech and order of prediction, and the output will be the computed LPCs.</li><br>
+		<li>Take a 20 ms segment of voiced speech sampled at 8 kHz. Hamming window the speech segment. Compute the LPCs using direct matrix solving for 10th order prediction. Plot the poles of all-pole transfer function obtained using the LPCs of each case and comment on the stability of the resulting LP filters.</li><br>
+		<li>Write a scilab program to estimate pitch by SIFT method using segnment size as 50 msec and shift 10 ms.</li><br>
+		<li>
+
+Write a Scilab program for computing the LP residual. The input to the program should be the windowed segment of speech and its LPCs. Take a 20ms segment of voiced speech, hamming window it, compute its LPCsusing 10th order prediction. Pass the speech segment and its LPCs to the LP residual computation program and obtain the LP residual. Comment on the nature of LP residual plot obtained. Plot the speech segment, its residual, LP magnitude spectrum, inverse filter magnitude spectrum and STFT magnitude spectrum. Comment on the various speech parameters observed in each of the case.
+</li><br>
+		<li>
+
+Write a scilab program to show the effect of a range of values of P, the LP order, on the lpc log magnitude spectrum. Select a voiced speech frame of 40 ms sampled at 8 kHz and then perform LP analysis for a range of P={4, 8, 12, 16, 20, 24, 30}. Plot the log magnitude spectrum (in dB) for the original speech frame, along with the LP log magnitude spectrums for different values of P. What happens to the spectrum as P increases?
+</li><br><br><br><br>
+
+
+
+  <h1>Formants and Pitch Estimation</h1><br><br>
+            <ul>
+		<li>
+
+Write a Scilab program for estimating the formants from a given segment of speech using LP analysis. The input to the program will be a windowed segment of speech and the order of prediction. The LPCs are first estimated. The transfer function H(z) is constructed using the LPCs. The frequency response of the LP filter is obtained by using z=ejw in H(z) and the magnitude response is plotted to get what is known is LP spectrum. A peak picking algorithm may be used to pick 4 largest peaks, which are assumed as estimated formant values. Obtain the formant bandwidths, which is the range of frequencies 3dB down from the formant frequency peak.</li><br>
+		<li>Verify the formant frequency and bandwidth estimated from the LP spectrum with that obtained from LP-pole representation of the all-pole model where formant frequency is the angle that a conjugate pair of pole makes with the positive real axis and bandwidth is computed from the magnitude of the respective complex conjugate pole.</li><br>
+		<li>Write a Scilab program for estimating the pitch from a given voiced segment of speech using LP analysis. The input to the program will be a windowed voiced segment of speech and the order of prediction. The LPCs are the first estimated and LP residual is then obtained using the inverse filter. The LP residual is subjected to autocorrelation analysis to estimate the pitch. The location of the first largest peak from the center peak gives the estimate of pitch period.</li><br>
+		
+
+
+
+
+
+
+
+            <br>
+	    <br>
+            <br>
+	    <br>
+            <br><br>
+<br><br>
+<br><br>
+            
+
+	  
+	  </div>
+    </div><!--close menubar-->	
+	 <div id="footer">
+	  <a href="http://www.iitg.ernet.in">Copyright IIT GUWAHATI</a> | Developed At IIT Guwahati
+  </div><!--close footer-->  
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Shakshat Virtual Lab</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>Shakshat Virtual Lab <img src="images/iitg-logo1.jpg" style="width:125px;height:100px" align="right"/></h1> 
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+       <ul id="menu">
+           <li class="current"><a href="index.html">Home</a></li>
+        <li><a href="ourwork.html">About</a></li>
+        <li><a href="projects.html">People</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div><!--close menubar-->	
+	<br />
+	<br />
+	<div id="menu_sub">Estimation Of Pitch From Speech Signals</div>
+	<br />
+	<div id="menubar1">
+      <ul id="menu">
+        <li ><a href="aim_linear_prediction_analysis.html">Aim</a></li>
+          <li><a href="Theory_linear_prediction_analysis.html">Theory</a></li>
+          <li class="current"><a href="procedure_linear_prediction_analysis.html">Procedure</a></li>
+          <li><a href="Quiz_linear_prediction_analysis.html">Quiz</a></li>
+	  <li><a href="reference_linear_prediction_analysis.html">Reference</a></li>
+          <li><a href="assignment_linear_prediction_analysis.html">Assignment</a></li>
+
+		
+		      </ul>
+	  </br>
+	  <div id="content_handaxe">
+	  </br>
+	  <br>
+	    
+            
+            <h1>Estimating Linear Prediction (LP) coefficients from the speech</h1>
+           
+	<br>
+	<br>
+		<p>The objective of this experiments to estimate the LP coefficients of order P by autocorrelation method. The first step is is to perform the autocorrelation analysis of speech frames having length of 15-20ms after multiplying it with a hamming window. The Figure 1 gives the 20 ms segment of a voiced speech sampled at 8 kHz and its autocorrelation sequence.</p>
+
+
+
+           <br>
+	   <br>
+
+		<img src="images/linear_prediction-procedure-fig1a.JPG" style="width:705px;height:300px" align="center"/>
+                 <p align="center">fig.1</p> <br><br>
+
+			<p>After computing the autocorrelation sequence of this voiced frame of speech, the toeplitz auto correlation matrix of size pXp is generated as explained in the equation (11) of theory part. Now the LP coefficients are computed by direct matrix multiplication method as given in equation (14). The following procedure gives the estimated LP coefficients for the given voiced frame of speech.</p><br><br>
+
+		<img src="images/linear_prediction-procedure-fig1b.JPG" style="width:755px;height:400px" align="center"/>
+                 <p align="center">fig.2</p> <br><br>
+
+		<img src="images/linear_prediction-procedure-fig1c.JPG" style="width:755px;height:400px" align="center"/>
+                 <p align="center">fig.3</p> <br><br>
+
+
+			<h1>Computing LP residual</h1><br><br>
+			<p>As explained in the theory part, the LP residual can be computed by inverse filtering. This can be done by convolving the correspnding speech frame with the LP coefficients computed. Figure 2 shows a voiced frame of speech and corresponding LP residual.</p><br><br>
+			<img src="images/linear_prediction-procedure-fig2.JPG" style="width:755px;height:400px" align="center"/>
+                 <h1>Pitch estimation from LP residual</h1><br><br>
+			<p>From the Figure 2, it can be observed that the LP residual is characterized periodic nature of strong impulses (higher prediction error) at every pitch mark. The pitch can be computed from the auto correlation of the residual. Figure 3 indicate the LP residual of a voiced frame and its autocorrelation sequence. The pitch can be computed as the time lag of the second peak from the central peak of the auto correlation sequence. The procedure for computing pitch for a given frame LP residual is given below.</p><br><br>
+			
+			<img src="images/linear_prediction-procedure-fig3.JPG" style="width:755px;height:500px" align="center"/>
+
+
+
+			<h1>Formant estimation from LP spectrum</h1><br><br>
+			<p>The LP spectrum provides smooth vocaltract spectral characteristics. This can be computed from the fourier representation of the LP coefficients. Figure 3 shows the LP spectrum obtained from the log magnitude spectrum of the LP coefficients with a frequency resolution of 1 Hz. The formant locations in the LP spectrum can be found by picking the peaks in the LP spectrum. Figure 4 shows the formant valuse obtained from the LP spectrum using a simple peak picking algorithm.</p><br><br>
+			<img src="images/linear_prediction-procedure-fig4.JPG" style="width:755px;height:500px" align="center"/>
+
+			<h1>Normalized Error</h1><br><br>
+			<p>The objective of the following procedure is to plot the normalized error. The following codes computes the normalized error using the equation (23) in the theory part. After getting the normalized error for each of the prediction order, the normalized error curve is plotted against the corresponding the prediction orders. Figure 6 shows the normalized error curve. The prediction order after which the normalized error is not changing can be selected as the optimal prediction order for that segment of speech.</p><br><br>
+			
+				<img src="images/linear_prediction-procedure-fig5.jpg" style="width:755px;height:500px" align="center"/>
+
+
+
+
+	
+
+
+
+
+
+            <br>
+	    <br>
+            <br>
+	    <br>
+            <br><br>
+            
+
+	  
+	  </div>
+    </div><!--close menubar-->	
+	 <div id="footer">
+	  <a href="http://www.iitg.ernet.in">Copyright IIT GUWAHATI</a> | Developed At IIT Guwahati
+  </div><!--close footer-->  
+</body>
+</html>

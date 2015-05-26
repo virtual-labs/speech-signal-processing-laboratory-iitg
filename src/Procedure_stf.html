@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Virtual lab</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>Shakshat Virtual Lab <img src="images/iitg-logo1.jpg" style="width:125px;height:100px" align="right"/></h1> 
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ourwork.html">About</a></li>
+        <li><a href="projects.html">People</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div><!--close menubar-->	
+	<br />
+	<br />
+	<div id="menu_sub">Short-Term Frequency Domain Processing of Speech</div>
+	<br />
+	<div id="menubar1">
+      <ul id="menu">
+	  <li><a href="Aim_stf.html">Aim</a></li>
+        <li><a href="Theory_stf.html">Theory</a></li>
+        <li class="current"><a href="Procedure_stf.html">Procedure</a></li>
+        <li><a href="Prequiz_stf.html">Pre Quiz</a></li>
+	<li><a href="Simulation_stf.html">Simulation</a></li>
+        <li><a href="Postquiz_stf.html">Post Quiz</a></li>
+	<li><a href="Assignment_stf.html">Assignment</a></li>
+	<li><a href="Ref_stf.html">Reference</a></li>	
+	</ul>
+	  </br>
+	  <div id="content_handaxe">
+	  </br>
+	  <br>
+	  <p style="margin-left:20px"><h1 style="color:#990000">Limitation of DTFT for the spectral analysis of speech</h1></p>
+	  <p style="font-size:14px; text-align:justify;"> The procedure to generate the linear and and log magnitude spectrum is given below. We can observe that both the small and large magnitude frequency components are visible in the log magnitude spectrum compared to the linear magnitude spectrum.Figure 1 shows the speech signal, linear magnitude and log magnitude spectra of speech signals</p>
+	  <p></p>
+	<p style="font-size:12px; text-align:justify;">
+		[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/SA2.wav');</br>
+		max_value=max(abs(y));</br>
+		y=y/max_value;</br>
+		t=1/Fs:1/Fs:(length(y)/Fs);</br>
+		subplot(3,1,1);plot(t,y);</br>
+		xtitle('Speech signal waveform','time in seconds');</br>
+		dfty=abs(fft(y));</br>
+		leny=length(y)</br>
+		len=length(dfty)</br>
+		tt=linspace(1/Fs,Fs,length(dfty));</br>
+		subplot(3,1,2);plot(tt,dfty);</br>
+		xtitle('Linear Magnitude Spectrum','frequency in Hz');</br>
+		dftylog=10*log10(dfty);</br>
+		subplot(3,1,3);plot(tt,dftylog);</br>
+		xtitle('Log Magnitude Spectrum','frequency in Hz');</p>
+		</br>
+		</br>
+	 <p><img src="images/img1_stf.png" width="850px;" /></p>
+	  <p style="font-size:12px; margin-left:250px;">Fig.1: Speech signal and log magnitude DTFT spectra</p>
+	 <p></p>
+	 <p style="margin-left:20px"><h1 style="color:#990000">Need for Short Time  Fourier Transform:</h1></p>
+	  <p style="font-size:14px; text-align:justify;">Figure 2 shows the log magnitude spectrum of a segment of voiced speech, unvoiced speech and silence region. The procedure for generating the plots 	is given below. It has to be observed that the log magnitude spectrum for voiced, unvoiced and silence regions is different.</p>
+	<p></p>
+	<p></p>
+	<p style="font-size:12px; text-align:justify;">
+	clear;clc;clf;</br>
+	[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/30msec_voiced2.wav');//input: voiced speech segment</br>
+	max_value=max(abs(y));</br>
+	y=y/max_value;</br>
+	y=y(1:(Fs*.035));</p>
+	
+	 	<p style="font-size:12px; text-align:justify;">
+		t=1/Fs:1/Fs:(length(y)/Fs);</br>
+		subplot(3,3,1);plot(t,y);</br>
+		xtitle('Voiced Speech waveform','time in seconds');
+		</p>
+
+	<p style="font-size:12px; text-align:justify;">
+		dfty=abs(fft(y));</br>
+		dfty=dfty(1:(length(dfty)/2));</br>
+		tt=linspace(1/Fs,Fs/2,length(dfty));</br>
+		subplot(3,3,4);plot(tt,dfty);</br>
+		xtitle('Linear Magnitude Spectrum','frequency in Hz');
+	</p>
+		<p style="font-size:12px; text-align:justify;">
+		dftylog=10*log10(dfty);</br>
+		subplot(3,3,7);plot(tt,dftylog);</br>
+		xtitle('Log Magnitude Spectrum','frequency in Hz');</br>
+		</p>
+	<p style="font-size:12px; text-align:justify;">
+	[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/30msec_unvoiced.wav');//input: unvoiced speech segment</br>
+	max_value=max(abs(y));</br>
+	y=y/max_value;</br>
+	y=y(1:(Fs*.035));
+	</p>
+
+		<p style="font-size:12px; text-align:justify;">
+		t=1/Fs:1/Fs:(length(y)/Fs);</br>
+		subplot(3,3,2);plot(t,y);</br>
+		xtitle('Unvoiced Speech waveform','time in seconds');
+		</p>
+
+	<p style="font-size:12px; text-align:justify;">
+		
+	dfty=abs(fft(y));</br>
+	dfty=dfty(1:(length(dfty)/2));</br>
+	tt=linspace(1/Fs,Fs/2,length(dfty));</br>
+	subplot(3,3,5);plot(tt,dfty);</br>
+	xtitle('Linear Magnitude Spectrum','frequency in Hz');</br>
+	dftylog=10*log10(dfty);</br>
+	subplot(3,3,8);plot(tt,dftylog);</br>
+	xtitle('Log Magnitude Spectrum','frequency in Hz');
+	</p>
+
+		<p style="font-size:12px; text-align:justify;">
+		[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/silence.wav');//input: silence segment</br>
+		max_value=max(abs(y));</br>
+		y=y/max_value;</br>
+		y=y(1:(Fs*.035));
+		</p>
+
+	<p style="font-size:12px; text-align:justify;">
+	t=1/Fs:1/Fs:(length(y)/Fs);</br>
+	subplot(3,3,3);plot(t,y);</br>
+	xtitle('Silence waveform','time in seconds');
+	</p>
+
+		<p style="font-size:12px; text-align:justify;">
+		dfty=abs(fft(y));</br>
+		dfty=dfty(1:(length(dfty)/2));</br>
+		tt=linspace(1/Fs,Fs/2,length(dfty));</br>
+		subplot(3,3,6);plot(tt,dfty);</br>
+		xtitle('Linear Magnitude Spectrum','frequency in Hz');</br>
+		dftylog=10*log10(dfty);</br>
+		subplot(3,3,9);plot(tt,dftylog);</br>
+		xtitle('Log Magnitude Spectrum','frequency in Hz');
+		</p>
+	<p></p>
+	<p></p>
+	   <p><img src="images/img2_stf.PNG" width="850px;" /></p>
+	   <p style="font-size:12px; margin-left:180px;">Fig.2 : Segments of Voiced ,Unvoiced and Silence regions of speech and their linear and </p>
+		<p></p>
+		<p></p>
+		<p></p>
+	<p style="margin-left:20px"><h1 style="color:#990000">STFT of speech:</h1></p>
+	 <p style="font-size:14px; text-align:justify;">For the short term spectral analysis, the given speech signal is divided into blocks of 10-30 ms with a shift of 5-10 ms. The log magnitude spectra is the  procedure for computing the STFT from the speech signal is shown below, computed for each of the blocks. Figure 3 shows a 3D plot showing the log magnitude spectra of each of the frames  of size 20 ms with a shift of 10 ms.</p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p style="font-size:12px; text-align:justify;">//function to compute short term fourier transform</br>
+	function [c] = stft(Speech_signal, Fs, Frame_size, Frame_shift, window_type)</br>
+	y=Speech_signal;</br>
+	Frame_size=Frame_size/1000;</br>
+	Frame_shift=Frame_shift/1000;</br>  
+	max_value=max(abs(y));</br>
+	y=y/max_value;</br>
+	t=1/Fs:1/Fs:(length(y)/Fs);</br>
+	subplot(2,1,1);</br>
+	plot(t,y);</br>
+	xtitle('Speech signal waveform','time in seconds');</br>
+	Frame_length = Frame_size*Fs</br>
+	sample_shift = Frame_shift*Fs</br>
+	sum1=0;energy=0;autocorrelation=0;w=window(window_type,Frame_length);jj=1;</br>
+	for i=1:(floor((length(y))/sample_shift)-ceil(Frame_length/sample_shift))</br>
+	&nbsp;&nbsp;&nbsp;k=1;yy=0;</br>
+  &nbsp;&nbsp;&nbsp;for j=(((i-1)*sample_shift)+1):(((i-1)*sample_shift)+Frame_length)</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yy(k)=y(j)*w(jj);</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jj=jj+1;k=k+1;</br>
+  &nbsp;&nbsp;&nbsp;end</br>
+  &nbsp;&nbsp;&nbsp;jj=1;</br>
+  &nbsp;&nbsp;&nbsp;dfty=abs(fft(yy));</br>
+  &nbsp;&nbsp;&nbsp;dfty3d(:,i)=dfty(1:(length(dfty)/2));</br>  
+end</br>
+c=dfty3d;</br>
+return(c);</br>
+endfunction
+</p>
+	<p></p>
+	<p style="font-size:12px; text-align:justify;">
+	[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/SA2.wav');//input: Speech signal</br>
+	Frame_size=20;      //Input: Frame size in millisecond</br>
+	Frame_shift=10;    //Input: Frame shift in millisecond</br>
+	window_type = 'hn';    //Input: window type-> 'hm' for hamming window, 'hn' for hanning window and 're' for rectangular window</br>
+	dfty3d=stft(y, Fs, Frame_size, Frame_shift, window_type);</br>
+	[rows,cols]=size(dfty3d);</br>
+	tt=1/Fs:1/Fs:(length(y)/Fs);</br>
+	kk=linspace(1/Fs,Fs/2000,rows);</br>
+	kkk=1/Fs:(Frame_shift/1000):(cols*(Frame_shift/1000));</br>
+	subplot(2,1,2);</br>
+	plot3d(kk,kkk,dfty3d);</br>
+	xtitle('3D Representation of Short Term Linear Magnitude Spectrum ','Frequency in KHz','time-shift in seconds');	
+	</p>
+	<p></p>
+	<p><img src="images/img3_stf.png" width="850px;" /></p>
+	   <p style="font-size:12px; margin-left:250px;">Fig.3 : Speech signal and its short term fourier transform plot </p>
+	<p></p>
+	<p style="margin-left:20px"><h1 style="color:#990000">Concept of true and convolved spectra</h1></p>
+	<p style="font-size:14px; text-align:justify;">Figure 4 illustrates the concepts of true and convolved spectrum of a sine wave.  In the figure the true spectrum of the given 200 Hz sine wave is computed by taking DTFT of the whole sinusoidal signal. The convolved spectrum is represented by taking STFT of the 20-30 ms of short term segment of the sine wave. In the figure we can observe that the true spectra is represented by an impulse function at 200 Hz and the convolved spectrum is represented by the sinc function centered around 200 Hz . The procedure for illustrating the true and convolved spectrum is given below,</p>
+	<p></p>
+	<p style="font-size:12px; text-align:justify;">
+	clear;clc;clf;</br>
+	Fs=4000; //sampling frequency</br>
+	f=200;  //frequency of the sine wave</br>
+	zero=zeros(1:1000);</br>
+	t=1/Fs:1/Fs:.03;</br>
+	y1=sin(2*3.1416*f*t);</br>
+	subplot(3,2,1);</br>
+	t=t*1000;</br>
+	plot(t,y1);</br>
+	xtitle('200 Hz Synthetic sine wave of 30 ms duration','time in ms');</br>
+	y1 = [zero y1 zero];</br>
+	dfty=abs(fft(y1));</br>
+	dfty=dfty(1:(length(dfty)/2));</br>
+	dftylog=10*log(dfty);</br>
+	ff=linspace(1/Fs,Fs/2000,length(dfty));  </br>
+	subplot(3,2,3);</br>
+	plot(ff,dfty);</br>
+	xtitle('Linear Magnitude Spectrum','frequency in KHz');</br>
+	subplot(3,2,5);</br>
+	plot(ff,dftylog);</br>
+	xtitle('Log Magnitude Spectrum','frequency in KHz');
+	</p>
+	<p style="font-size:12px; text-align:justify;">
+	t=1/Fs:1/Fs:.25;</br>
+	y2=sin(2*3.1416*f*t);</br>
+	t=t*1000;</br>
+	subplot(3,2,2);</br>
+	plot(t,y2);</br>
+	xtitle('200 Hz Synthetic sine wave of 250 ms duration','time in ms');</br>
+	dfty=abs(fft(y2));</br>
+	dfty=dfty(1:(length(dfty)/2));</br>
+	dftylog=10*log(dfty);</br>
+	ff=linspace(1/Fs,Fs/2000,length(dfty)); </br>
+	subplot(3,2,4);</br>
+	plot(ff,dfty);</br>
+	xtitle('Linear Magnitude Spectrum','frequency in KHz');</br>
+	subplot(3,2,6);</br>
+	plot(ff,dftylog);</br>
+	xtitle('Log Magnitude Spectrum','frequency in KHz');	
+	</p>
+	<p></p>
+	<p></p>
+	<p><img src="images/img4_stf.png" width="850px;" /></p>
+	   <p style="font-size:12px; margin-left:200px;">Fig4 : Sine wave and  its window region, and then linear & log magnitude spectra </p>
+	<p></p>
+	<p></p>
+	<p style="margin-left:20px"><h1 style="color:#990000">Effect of windowing function on short term spectral analysis</h1></p>
+	<p style="font-size:14px; text-align:justify;">Figure 5 shows various window functions like rectangular, hamming and hanning in the time and frequency domains. The procedure for generating the time and frequency domain representation of these window functions is given below.</p>
+	<p></p>
+	<p style="font-size:12px; text-align:justify;">
+	clear; clc; clf;</br>
+	function [c] = dft_window(window_type, i)</br>
+	Fs=8000;j=i+3;k=i+6;ii=i;</br>
+	y=window(window_type, 240);</br>
+	zero=zeros(1:1000);</br>
+	y1=[y zero];</br>
+	dfty=abs(fft(y1));</br>
+	dfty=dfty(1:(length(dfty)/2));</br>
+	for i=1:length(dfty)</br>
+ 	 &nbsp;&nbsp;&nbsp;&nbsp;if(dfty(i) == 0)</br>
+    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dfty(i)=0.001;</br>
+ 	 &nbsp;&nbsp;&nbsp;&nbsp;end</br>
+	end</br>
+	dftylog=10*log(dfty);</br>
+	c=dftylog;</br>
+	t=((1/(1000*Fs):1/Fs:(length(y)/Fs)))*1000;</br>
+	subplot(3,3,ii);plot(t,y);</br>
+	xtitle(window_type);</br>
+	f=linspace(1/Fs,Fs/2000,length(dfty));</br>  
+	subplot(3,3,j);plot(f,dfty);</br>
+	xtitle('Linear magnitude spectrum');</br>
+	subplot(3,3,k);plot(f,dftylog);</br>
+	xtitle('Log magnitude spectrum');</br>
+	return(c);</br>
+	endfunction</br>
+	Fs=8000;</br>
+	window_type='re';i=1;</br>
+	dfty=dft_window(window_type, i);
+	</p>
+	</br>
+	<p style="font-size:12px; text-align:justify;">
+	window_type='hm';i=2;</br>
+	dfty=dft_window(window_type, i);	
+	</p>
+	</br>
+	<p style="font-size:12px; text-align:justify;">
+	window_type='hn';i=3;</br>
+	dfty=dft_window(window_type, i);
+	</p>
+	<p></p>
+	<p><img src="images/img5_stf.png" width="850px;" /></p>
+	   <p style="font-size:12px; margin-left:120px;">Fig.5 : Rectangular, Hamming and hanning window functions and their linear & log magnitude spectra </p>
+	<p></p>
+	<p style="margin-left:20px"><h1 style="color:#990000">Spectral Analysis of speech using window functions</h1></p> 
+	<p style="font-size:14px; text-align:justify;">Figure 6 short term magnitude spectra of a 30 ms voiced speech segment  using a rectangular, hamming and hanning window functions. The procedure to computer the short term spectra of these voiced segment is given below. It has to be observed that,  the STFT using the rectangular spectra is found to be more noisy compared to STFT spectra due to other window functions.  This is due to the higher spectral leakage in rectangular window compared to other window functions.</p>
+<p></p>
+	<p></p>
+	<p style="font-size:12px; text-align:justify;">
+	clear; clc; clf;</br>
+	//function to compute log magnitude spectrum of a speech segment for a particular window type</br>
+	function [c] = stft(Speech_signal, Fs, window_type)</br>
+	y=Speech_signal; y2=0;</br>
+	zero=zeros(1:10000);</br>
+	w=window(window_type,length(y));</br>
+	for i=1:length(y)</br>
+  	&nbsp;&nbsp;&nbsp;&nbsp; y(i)=y(i)*w(i);</br>
+	end</br>
+	y2 = [zero y zero];	
+	</p>
+	<p style="font-size:12px; text-align:justify;">
+	dfty=abs(fft(y2));</br>
+	dfty=dfty(1:(length(dfty)/2));</br>
+	dfty=10*log(dfty);</br>
+	c=dfty;</br>
+	return(c);</br>
+	endfunction
+	</p>
+	<p></p>
+	<p style="font-size:12px; text-align:justify;">
+	[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/30msec_voiced2.wav');//INPUT: speech segment</br>
+	max_value=max(abs(y));</br>
+	y=y(1:240);</br>
+	y=y/max_value;</br>
+	t=(1/(1000*Fs):1/Fs:(length(y)/Fs));</br>
+	subplot(4,1,1);plot(t,y);</br>
+	xtitle('Voiced segment of speech');
+	</p>
+	<p style="font-size:12px; text-align:justify;">
+window_type='re';</br>
+dfty=stft(y, Fs, window_type);</br>
+f=linspace(1/Fs,Fs/2000,length(dfty));  </br>
+subplot(4,1,2);plot(f,dfty);</br>
+xtitle('Log magnitude spectrum using rectangular window');
+
+	</p>	
+	<p style="font-size:12px; text-align:justify;">
+window_type='hm';</br>
+dfty=stft(y, Fs, window_type);</br>
+f=linspace(1/Fs,Fs/2000,length(dfty));  </br>
+subplot(4,1,3);plot(f,dfty);</br>
+xtitle('Log magnitude spectrum using hamming window');
+	</p>
+	<p style="font-size:12px; text-align:justify;">
+window_type='hn';</br>
+dfty=stft(y, Fs, window_type);</br>
+f=linspace(1/Fs,Fs/2000,length(dfty)); </br> 
+subplot(4,1,4);plot(f,dfty);</br>
+xtitle('Log magnitude spectrum using hanning window','Frequency in KHz');
+	</p>
+	<p></p>
+	<p><img src="images/img6_stf.png" width="850px;" /></p>
+	   <p style="font-size:12px; margin-left:80px;"> Fig.6 : Segment of voiced speech & its log magnitude spectra using rectangular,hamming and hanning window functions. </p>
+	<p></p>
+	<p style="font-size:14px; text-align:justify;">Figure 7 shows the STFT log magnitude spectra of an unvoiced speech segment using rectangular, hamming and hanning window functions.
+The procedure for computing same is given below</p>
+<p></p>
+		<p></p>
+		<p style="font-size:12px; text-align:justify;">
+			 clear; clc; clf;</br>
+			//function to compute log magnitude spectrum of a speech segment for a particular window type</br>
+			function [c] = stft(Speech_signal, Fs, window_type)</br>
+			y=Speech_signal; y2=0;</br>
+			zero=zeros(1:10000);</br>
+			w=window(window_type,length(y));</br>
+			for i=1:length(y)</br>
+ 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y(i)=y(i)*w(i);</br>
+			end</br>
+			y2 = [zero y zero];		
+		</p>
+			<p style="font-size:12px; text-align:justify;">
+			dfty=abs(fft(y2));</br>
+			dfty=dfty(1:(length(dfty)/2));</br>
+			dfty=10*log(dfty);</br>
+			c=dfty;</br>
+			return(c);</br>
+			endfunction			
+			</p>
+			<p></p>
+			<p style="font-size:12px; text-align:justify;">
+			[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/30msec_voiced2.wav');//INPUT: speech segment</br>
+			max_value=max(abs(y));</br>
+			y=y(1:240);</br>
+			y=y/max_value;</br>
+			t=(1/(1000*Fs):1/Fs:(length(y)/Fs));</br>
+			subplot(4,1,1);plot(t,y);</br>
+			xtitle('Voiced segment of speech');
+			</p>
+			<p style="font-size:12px; text-align:justify;">window_type='re';</br>
+			dfty=stft(y, Fs, window_type);</br>
+			f=linspace(1/Fs,Fs/2000,length(dfty));  </br>
+			subplot(4,1,2);plot(f,dfty);</br>
+			xtitle('Log magnitude spectrum using rectangular window');</p>
+			
+			<p style="font-size:12px; text-align:justify;">window_type='hm';</br>
+			dfty=stft(y, Fs, window_type);</br>
+			f=linspace(1/Fs,Fs/2000,length(dfty));  </br>
+			subplot(4,1,3);plot(f,dfty);</br>
+			xtitle('Log magnitude spectrum using hamming window');
+			</p>
+
+			<p style="font-size:12px; text-align:justify;">window_type='hn';</br>
+			dfty=stft(y, Fs, window_type);</br>
+			f=linspace(1/Fs,Fs/2000,length(dfty));  </br>
+			subplot(4,1,4);plot(f,dfty);</br>
+			xtitle('Log magnitude spectrum using hanning window','Frequency in KHz');
+			</p>
+			<p></p><p></p><p></p>
+	<p><img src="images/img7_stf.png" width="850px;" /></p>
+	   <p style="font-size:12px; margin-left:80px;"> Fig.7 : Segment of voiced speech and its magnitude spectra using hamming,  hanning and rectangular window function.  </p>
+	<p></p>
+	<p></p>
+	<p style="margin-left:20px"><h1 style="color:#990000">Effect of window size on short term spectral analysis of speech</h1></p> 
+	<p style="font-size:14px; text-align:justify;"> Figure 8 shows a short term log magnitude spectra of voiced segment using a frame size of 3 ms, 30 ms and 300 ms. Here we can observe that the poor spectral resolution due to smaller window size in case of 3 ms window.Also poor time resolution can be observed in case of 300 ms window.The log magnitude spectrum of the 30 ms windowed speech segment shows vocal tract spectral envelope and excitation information in terms of pitch and its harmonics. The procedure to generate the log magnitude spectrum of different window sizes is given below,</p>
+	<p></p><p></p><p></p><p></p> 
+	<p style="font-size:12px; text-align:justify;">
+	clear; clc; clf;</br>
+	//function to compute log magnitude spectrum of a speech segment for a particular window type</br>
+	function [c] = stft(Speech_signal, Fs, window_type)</br>
+	y=Speech_signal; y2=0;</br>
+	zero=zeros(1:10000);</br>
+	w=window(window_type,length(y));</br>
+	for i=1:length(y)</br>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y(i)=y(i)*w(i);</br>
+	end</br>
+	y2 = [zero y zero];</br>
+	</p>
+		<p style="font-size:12px; text-align:justify;">
+			dfty=abs(fft(y2));</br>
+			dfty=dfty(1:(length(dfty)/2));</br>
+			dfty=10*log(dfty);</br>
+			c=dfty;</br>
+			return(c);</br>
+			endfunction
+		</p>
+		<p></p><p></p><p>
+		<p style="font-size:12px; text-align:justify;">
+		
+		[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/SA2.wav');//input: speech signal of atleast 300 ms duration</br>
+		max_value=max(abs(y));</br>
+		y=y(1:.30*Fs);</br>
+		y1=y(1:.003*Fs);</br>
+		no_zeros=length(y)-length(y1);</br>
+		zero=zeros(1:no_zeros);</br>
+		y=[y1 zero];</br>
+		y=y/max_value;</br>
+		t=((1/(1000*Fs):1/Fs:(length(y)/Fs)))*1000;</br>
+		subplot(3,2,1);plot(t,y);</br>
+		xtitle('Unvoiced segment of speech 3ms duration');
+		</p>
+		<p style="font-size:12px; text-align:justify;">
+		window_type='hm';</br>
+		dfty=stft(y, Fs, window_type);</br>
+		f=linspace(1/Fs,Fs/2000,length(dfty));</br>  
+		subplot(3,2,2);plot(f,dfty);</br>
+		xtitle('Log magnitude spectrum');
+		</p>
+		<p style="font-size:12px; text-align:justify;">
+		y=yy(1:.30*Fs);</br>
+		y1=y(1:.03*Fs);</br>
+		no_zeros=length(y)-length(y1);</br>
+		zero=zeros(1:no_zeros);</br>
+		y=[y1 zero];</br>
+		y=y/max_value;</br>
+		t=((1/(1000*Fs):1/Fs:(length(y)/Fs)))*1000;</br>
+		subplot(3,2,3);plot(t,y);</br>
+		xtitle('Unvoiced segment of speech 30ms duration');
+		</p>
+		<p style="font-size:12px; text-align:justify;">
+		window_type='hm';</br>
+		dfty=stft(y, Fs, window_type);</br>
+		f=linspace(1/Fs,Fs/2000,length(dfty));</br>  
+		subplot(3,2,4);plot(f,dfty);</br>
+		xtitle('Log magnitude spectrum');
+		</p>
+		<p></p><p></p><p>
+		<p style="font-size:12px; text-align:justify;">
+		y=yy(1:.30*Fs);</br>
+		y1=y(1:.3*Fs);</br>
+		no_zeros=length(y)-length(y1);</br>
+		zero=zeros(1:no_zeros);</br>
+		y=[y1 zero];</br>
+		y=y/max_value;</br>
+		t=((1/(1000*Fs):1/Fs:(length(y)/Fs)))*1000;</br>
+		subplot(3,2,5);plot(t,y);</br>
+		xtitle('Unvoiced segment of speech 300ms duration');		
+		</p>
+		<p style="font-size:12px; text-align:justify;">
+		window_type='hm';</br>
+		dfty=stft(y, Fs, window_type);</br>
+		f=linspace(1/Fs,Fs/2000,length(dfty)); </br> 
+		subplot(3,2,6);plot(f,dfty);</br>
+		xtitle('Log magnitude spectrum');
+		</p>
+		<p></p><p></p><p></p>
+	<p><img src="images/img8_stf.png" width="850px;" /></p>
+	   <p style="font-size:12px; margin-left:190px;"> Fig.8 : Segments of 3,30 &300 msec of voiced speech and their log magnitude spectra.  </p>
+	<p></p>
+	</div>
+    </div><!--close menubar-->	
+	 <div id="footer">
+	  <a href="http://www.iitg.ernet.in">Copyright IIT GUWAHATI</a> | Developed By CSE DEPARTMENT 
+  </div><!--close footer-->  
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Virtual lab</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>Shakshat Virtual Lab <img src="images/iitg-logo1.jpg" style="width:125px;height:100px" align="right"/></h1> 
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ourwork.html">About</a></li>
+        <li><a href="projects.html">People</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div><!--close menubar-->	
+	<br />
+	<br />
+	<div id="menu_sub">Cepstral Analysis of Speech</div>
+	<br />
+	<div id="menubar1">
+      <ul id="menu">
+	  <li><a href="Aim_cep.html">Aim</a></li>
+        <li><a href="Theory_cep.html">Theory</a></li>
+        <li class="current"><a href="Procedure_cep.html">Procedure</a></li>
+        <li><a href="Prequiz_cep.html">Pre Quiz</a></li>
+	<li><a href="Simulation_cep.html">Simulation</a></li>
+        <li><a href="Postquiz_cep.html">Post Quiz</a></li>
+	<li><a href="Assignment_cep.html">Assignment</a></li>
+	<li><a href="Ref_cep.html">Reference</a></li>	
+	</ul>
+	  </br>
+	  <div id="content_handaxe">
+	  </br>
+	  <br>
+	  <p style="margin-left:20px"><h1 style="color:#990000">Fundamentals of cepstral analysis of speech</h1></p>
+	  <p style="font-size:14px; text-align:justify;">The objective of this experiment is to separate the excitation and vocaltract components of a given speech signal by cepstral analysis. The first step is to convert the speech into short-term segments of size 15-20 ms. Here the frame size is fixed to 20 ms. Then each frame is multiplied by a hamming window. Then cepstral representation of short-term speech is computed by finding the IDFT of the log magnitude spectrum. The Figure 2 given below shows a 20 ms voiced frame and its cepstrum in the quefrency domain. From the Figure this can be observed that vocaltract components are concentrated in the low quefrency region and excitation components are in the high quefrency region. The procedure given below computes the cepstrum from the given frame of speech.</p>
+	  <p><img src="images/img15.jpg"/></p>
+		</br>
+		</br>
+	 <p><img src="images/img16.png" width="800px;" /></p>
+	</br>
+	  <p style="font-size:12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COMPUTING CEPSTRUM(VOICED SPEECH SEGMENT)</p>
+	</br></br>
+	 <p><img src="images/img17.png" width="800px;" /></p>
+	  <p style="font-size:12px; text-align:justify;">The following codes computes the cepstrum from an unvoiced segment of speech. This plots the output of various stages during the cepstrum computation from an unvoiced frame as given in Figure 3</p>
+	</br></br>
+	<p><img src="images/img18.jpg" width="800px;" /></p>
+	</br></br></br>
+	<p><img src="images/img19.png" width="800px;" /></p>
+	</br>
+	  <p style="font-size:12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COMPUTING CEPSTRUM (UNVOICED SPEECH SEGMENT)</p>
+	<p><img src="images/img20.png" width="800px;" /></p>
+	<p></p>
+	<p style="margin-left:20px"><h1 style="color:#990000">Liftering</h1></p>
+	 <p style="font-size:14px; text-align:justify;">Inorder to extract the deconvolved vocal tract component and excitation component from the cepstrum liftering has to be done. For extraction the vocaltract component low-time liftering is done and for excitation component high-time liftering is done. Figure 4.2 shows the vocaltract component extracted using low-time liftering. Here the liftering window is designed according to equation (6). The procedure for the low-time liftering is given below.</p>
+	<p></p>
+	<p><img src="images/img21.jpg" width="800px;" /></p>
+	<p></p>
+	<p><img src="images/img22.png" width="800px;" /></p>
+	<p style="font-size:14px; text-align:justify;">Similarly,Figure 6.2 indicates the excitation component extracted from the cepstrum by high-time liftering. The liftering window is designed according to equation (9) and the liftering cutoff quefrency is selected as 15 quefrency samples. The procedure for the high-time liftering is given below.</p>
+	<p></p>
+	<p><img src="images/img23.jpg" width="800px;" /></p>
+	<p></p>
+	<p><img src="images/img24.png" width="800px;" /></p>
+	<p></p>
+	<p style="margin-left:20px"><h1 style="color:#990000">Pitch estimation by cepstral analysis</h1></p>
+	<p style="font-size:14px; text-align:justify;">Pitch can be estimated as the quefrency location of the highest peak in the high-time liftered cepstrum. This strong peak of the high-time lifterd cepstrum can be observed from Figure 6.2. The procedure for pitch estimation is given below,</p>
+	<p></p>
+	<p><img src="images/img25.jpg" width="800px;" /></p>	
+	<p></p>
+	<p style="margin-left:20px"><h1 style="color:#990000">Formant estimation by cepstral analysis</h1></p> 
+	<p style="font-size:14px; text-align:justify;">Formant locations can be estimated from vocaltract spectral characteristics. This can be computed from spectral representation of the low-time liftered cepstral coefficients. As the DFT of the low-time lifterd cepstral coeffcients gives the corresponding smooth log magnitude spectrum, the formants can be located using a simple peak picking algorithm. Figure 5 represents the cepstrally smooth log magnitude spectrum of vocaltract components and the formant locations corresponds to the peaks in the spectrum. The procedure for computing the vocaltract spectrum and finding the formant locations are given below.</p>
+<p></p>
+	<p><img src="images/img26.jpg" width="800px;" /></p>
+	<p></p>
+	<p><img src="images/img27.png" width="800px;" /></p>
+	</div>
+    </div><!--close menubar-->	
+	 <div id="footer">
+	  <a href="http://www.iitg.ernet.in">Copyright IIT GUWAHATI</a> | Developed By CSE DEPARTMENT 
+  </div><!--close footer-->  
+</body>
+</html>

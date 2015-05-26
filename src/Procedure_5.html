@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Virtual lab</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>Shakshat Virtual Lab <img src="images/iitg-logo1.jpg" style="width:125px;height:100px" align="right"/></h1> 
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ourwork.html">About</a></li>
+        <li><a href="projects.html">People</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div><!--close menubar-->	
+	<br />
+	<br />
+	<div id="menu_sub">Short Term Time Domain Processing of Speech</div>
+	<br />
+	<div id="menubar1">
+      <ul id="menu">
+	  <li><a href="Aim_5.html">Aim</a></li>
+        <li><a href="Theory_5.html">Theory</a></li>
+        <li class="current"><a href="Procedure_5.html">Procedure</a></li>
+		<li><a href="Prequiz_5.html">Pre Quiz</a></li>
+	    <li><a href="Simulation_5.html">Simulation</a></li>
+        <li><a href="Postquiz_5.html">Post Quiz</a></li>
+	    <li><a href="Assignment_5.html">Assignment</a></li>
+	    <li><a href="Ref_5.html">Reference</a></li>	
+	</ul>
+	  </br>
+	  <div id="content_handaxe">
+	  </br>
+	  <br>
+	 <div class="divContent"><p><span style="background-color: rgb(255, 255, 255);">&nbsp;</span></p>
+<h1><span style="color: rgb(51, 102, 255);"><span style="background-color: rgb(255, 255, 255);">Short Term Energy Computation</span></span></h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="content" align="justify">The  speech signal and its sampling frequency along with the frame size and  frame shift are the inputs needed for computing the short term energy. Using the sampling frequency value, the number of samples for the given  frame size and frame shift are computed. For instance, if the sampling  frequency is 8 KHz and frame size and frame shift are 20 msec and 10  msec, respectively then the number of samples in a frame will be 160 and  number of samples for frame shift will be 80 samples.</p>
+<p>&nbsp;</p>
+<p class="content" align="justify">To  compute short term energy, the input speech signal is considered in frames of 160 samples with a shift of 80 samples and the energy is  computed for each frame. The short term energy values are then plotted  as a function of time index.</p>
+<p>&nbsp;</p>
+<p align="justify">The  scilab code for computing the short term energy is given in Figure_1.  The short term energy computed using this code is given in Figure_2. The  STE contour follows the general shape of signal amplitude distribution  of speech signal. The STE associated with unvoiced regions is relatively  smaller compared to voiced regions. Thus STE can be therefore  used for  voiced/unvoiced class of speech.</p>
+<p>&nbsp;</p>
+<p style="text-align: center; ">&nbsp;<img alt="" src="images/Figure001.png"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<center>Figure_1: SCI LAB Code for Computing Short Term Energy of Speech<br>
+</center>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center><img alt="" src="images/Figure002.png"></center>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center>Figure_2:Short Term energy contour of speech signal<br>
+</center>
+<p>&nbsp;</p>
+<p class="content" align="justify">&nbsp;The next issue to be understood is the effect of frame size. The scilab code for computing STE for different window length, namely 30,50 and 100 msec samples are shown in Figure_3. The corresponding STE contours are given in Figure_4.</p>
+<p class="content">&nbsp;</p>
+<p class="content" align="justify">As the frame size increases, the smoothness of the energy contour&nbsp; also increases. As a result the distinction between voiced and unvoiced regions decreases. Hence in case of speech processing, frame size for STE is about 10-30 msec is preferred.</p>
+<p style="text-align: center; ">&nbsp;</p>
+<p>&nbsp;</p>
+<center><img alt="" src="images/Figure003.png"><br>
+</center>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center; ">&nbsp;</p>
+<center>Figure_3:SCI LAB code for the&nbsp; computation of STE using different length, namely 30,50 and 100 msec</center>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<center><img alt="" src="images/Figure004.png"></center>
+<p>&nbsp;&nbsp;</p>
+<center>Figure_4: Short Term Energy contour for different window length namely 30,50 and 100 msec<br>
+</center>
+<p class="content">&nbsp;</p>
+<p class="content" align="justify">The last issue to be understood in  case of STE computation is the effect of window shape. In case of  rectangular window all samples will contribute equally to the STE  values. Alternatively, in hamming and hanning window cases, the center of the window samples contribute more. Accordingly, the changes in the  nature of STE contour. Figure_5 and Figure_6 show the scilab code and  the corresponding STE computed for different window functions. The  Hamming and Hanning window function provide relatively less energy on the STE contour.</p>
+<p>&nbsp;&nbsp;</p>
+<center><img alt="" src="images/Figure005.png"></center>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<center>Figure_5: SCI LAB code for the computation of STE using different window functions namely rectangular,hamming and hanning windows.<br>
+</center>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center><img alt="" src="images/Figure006.png"></center>
+<p>&nbsp;&nbsp;</p>
+<center>Figure_6: Short term energy contour using rectangular,hamming,hanning window machines.<br>
+</center>
+<p>&nbsp;</p>
+<p>&nbsp;<span style="color: rgb(51, 102, 255);"><span style="background-color: rgb(255, 255, 255);"><br>
+</span></span></p>
+<h2><span style="color: rgb(51, 102, 255);"><span style="background-color: rgb(255, 255, 255);">Short Term Zero Crossing Rate (ZCR)</span></span></h2>
+<p><span style="color: rgb(51, 102, 255);">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p class="content" align="justify">The input speech signal can be viewed in blocks of 10-30 msec&nbsp; for computing ZCR. For each block of the speech signal, the ZCR is computed using the short term ZCR relation. A scilab code for computing short term is shown in Figure_7. The corresponding output of&nbsp; this program is given in Figure_8. The ZCR value is highest in unvoiced region and lowest in voiced region . In case of silence region the value lies in between of voiced and unvoiced cases.</p>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center><img alt="" src="images/Figure01.png"></center>
+<p>&nbsp;</p>
+<center>Figure_7: SCI&nbsp;LAB&nbsp;code for the computation of short term zero crossing rate of a speech signal</center>
+<p>&nbsp;&nbsp;</p>
+<center><img alt="" src="images/Figure02.png"></center>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center>Figure_8: Short Term zero cross rate for the speech signal.<br>
+</center>
+<p>&nbsp;</p>
+<p class="content" align="justify">The effect of window size can also be studied in ZCR computation. Figure_9 gives the scilab code for computing ZCR for different frame sizes. Figure_10 shows its ZCR plots for different frame sizes. As the frame size increases, the smoothening and spreading of ZCR plot takes place. As a result we may miss small transient region having high ZCR values.</p>
+<p>&nbsp;&nbsp;</p>
+<center><img alt="" src="images/Figure03.png"></center>
+<p>&nbsp;</p>
+<center>Figure_9:SCI&nbsp;LAB&nbsp;code for the computation of ST ZCR using different frame sizes&nbsp;</center>
+<p class="contentEquation" align="center">&nbsp;</p>
+<p class="contentEquation" style="text-align: center; ">&nbsp; &nbsp; &nbsp;<img width="700" height="700" align="middle" alt="" src="images/ST ZCR for diff frame size JPEG.jpg">&nbsp;<img width="0" height="0" alt="" src="images/ST ZCR for diff frame size.png"></p>
+<p class="contentEquation" style="text-align: left; ">&nbsp;</p>
+<p class="contentEquation" style="text-align: center; ">Figure_10:Short term Zero Cross Rate using different frame sizes namely 30,50,100 msecs</p>
+<p class="contentEquation" style="text-align: center; ">&nbsp;</p>
+<p class="contentEquation" style="text-align: left; " align="justify">The ZCR value is independent of the window shape. Figure_11 gives the scilab code for computing ZCR using different window function and computed output are given in Figure_12.&nbsp;</p>
+<p class="contentEquation" style="text-align: left; ">&nbsp;</p>
+<center><img alt="" src="images/Figure04.png"></center>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center>Figure_11:SCI&nbsp;LAB&nbsp;code for the computation of Short Term &nbsp;Zero Cross Rate using different window functions</center>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center><img alt="" src="images/Figure05.png"></center>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center>Figure_12:Short term Zero Cross Rate computed using different window functons <br>
+</center>
+<p>&nbsp;</p>
+<h2>&nbsp;<span style="color: rgb(51, 102, 255);"><span style="background-color: rgb(255, 255, 255);">Computation Of Short Term Autocorrelation</span></span></h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="content" align="justify">The scilab code for computing the short term autocorrelation is given in Figure_13. This program takes a given frame of speech and computes its short term autocorrelation. Figure_14 shows&nbsp; the term autocorrelation computed for a voiced segment of speech. Figure_15 shows the short term autocorrelation computed for an unvoiced segment of speech. Both the plots are computed using the scilab code given in Figure_13.</p>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center><img alt="" src="images/figure0001.png"></center>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center>Figure_13:SCI&nbsp;LAB&nbsp;code for the computation of Short term autocorrelation</center>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center><br>
+</center>
+<p style="text-align: center;">&nbsp;<img alt="" src="data:image/png;base64,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"></p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center>Figure_14: Short term autocorrelation computed for a voiced segment of speech</center>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center><img alt="" src="data:image/png;base64,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"></center>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center>Figure_15: Short term autocorrelation computed for a unvoiced segment of speech</center>
+<p>&nbsp;</p>
+<p class="content" align="justify">The short term autocorrelation for the entire speech signal can be computed considering speech in &nbsp;frames. Figure_16 gives scilab code for computing the short term autocorrelation sequences for the entire speech signal. The corresponding autocorrelation sequence plot is given in figure_17. As it can be observed the short term autocorrelation for the entire speech signal is a 3-D plot.</p>
+<p>&nbsp;&nbsp;</p>
+<center><img alt="" src="images/figure0004.png"></center>
+<p>&nbsp;&nbsp;</p>
+<center>Figure_16:SCI&nbsp;LAB&nbsp;code for the  computation of short term autocorrelation sequence for an entire speech signal<br>
+</center>
+<p>&nbsp;&nbsp;</p>
+<center><img alt="" src="images/figure0005.png"></center>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center>Figure_17:Short term&nbsp; Autocorrelation sequence for the entire speech signal<br>
+</center>
+<p>&nbsp;</p>
+<p class="content" align="justify">In the 3-D plot , picking the largest peak and plotting the same will give information about pitch during voiced speech regions. The scilab code for estimating the pitch information is given in Figure_18. The corresponding output plot is given in Figure_19.</p>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center><img alt="" src="images/figure0006.png"></center>
+<p>&nbsp;</p>
+<p class="contentEquation" style="text-align: center; ">Figure_18:SCI&nbsp;LAB&nbsp;code&nbsp; for&nbsp; Estimation of pitch information of a speech signal</p>
+<p>&nbsp;</p>
+<p class="contentEquation" style="text-align: center; ">&nbsp;<img alt="" src="images/figure0007.png"></p>
+<p>&nbsp;</p>
+<p class="contentEquation" align="center">&nbsp;</p>
+<center>Figure_19: Pitch Contour estimated from the autocorrelation segments<br>
+</center>
+<p>&nbsp;</p></div></div></td>
+	  </div>
+    </div><!--close menubar-->	
+	 <div id="footer">
+	  <a href="http://www.iitg.ernet.in">Copyright IIT GUWAHATI</a> | Developed By CSE DEPARTMENT 
+  </div><!--close footer-->  
+</body>
+</html>

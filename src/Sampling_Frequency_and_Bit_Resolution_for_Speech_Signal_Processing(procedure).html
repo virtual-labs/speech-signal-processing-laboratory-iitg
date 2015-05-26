@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Virtual lab</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>Shakshat Virtual Lab <img src="images/iitg-logo1.jpg" style="width:125px;height:100px" align="right"/></h1> 
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ourwork.html">About</a></li>
+        <li><a href="projects.html">People</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div><!--close menubar-->	
+	<br />
+	<br />
+	<div id="menu_sub"> Sampling Frequency and Bit Resolution for Speech Signal Processing </div>
+	<br />
+	<div id="menubar1">
+      <ul id="menu">
+	  	<li><a href="Sampling_Frequency_and_Bit_Resolution_for_Speech_Signal_Processing.html">Aim</a></li>
+        <li><a href="Sampling_Frequency_and_Bit_Resolution_for_Speech_Signal_Processing(theory).html">Theory</a></li>
+        <li  class="current"><a href="Sampling_Frequency_and_Bit_Resolution_for_Speech_Signal_Processing(procedure).html">Procedure</a></li>
+        <li><a href="Sampling_Frequency_and_Bit_Resolution_for_Speech_Signal_Processing(quiz).html">Pre Quiz</a></li>
+		<li><a href="Sampling_Frequency_and_Bit_Resolution_for_Speech_Signal_Processing(simulation).html">Simulation</a></li>
+        <li><a href="#">Post Quiz</a></li>
+		<li><a href="Sampling_Frequency_and_Bit_Resolution_for_Speech_Signal_Processing(assignment).html">Assignment</a></li>
+		<li><a href="Sampling_Frequency_and_Bit_Resolution_for_Speech_Signal_Processing(reference).html">Reference</a></li>
+		
+	  </ul>
+	  </br>
+	  <div id="content_handaxe">
+	  </br>
+	  <br>
+	  <p style="margin-left:20px"><h1 style="color:#990000">Plotting Speech and its Spectra</h1></p>
+	  <p style="font-size:16px">The first step in studying the significance of sampling frequency and bit resolution is to record a speech signal at highest possible sampling frequency and bit resolution. For audio frequency, the standard sampling frequency is 44.1 kHz and bit resolution is 16 bits/sample. The waveform and its spectra are used as reference for the entire experiment. The waveform and spectra of selected portions can be plotted using the Scilab code given below.</p>
+	  <p><img src="images/experiment2-procedure-fig1.jpg" /></p>
+	  <p><h2>Study of Sampling Frequency</h2></p>
+	  <p style="font-size:16px">To study the significance of sampling frequency, the sampling frequency of the given speech signal can be reduced at different levels and the waveform and spectra can be studied at each level. The Scilab code given below takes input speech signal sampled at 44.1 kHz and resamples it to a sampling frequency of 16 kHz and plots spectra of selected segments. It should be noted that the sample numbers given in the code are based on the input waveform chosen by us. It should be changed according to input speech signal under consideration.</p>
+	  <p><img src="images/experiment2-procedure-fig2.jpg" /></p>
+	  <p>On the similar lines we can further reduce the sampling frequency to 8 kHz to obtain telephone bandwidth or narrowband speech. The Scilab code for resampling the input signal at 44.1 kHz to 8 kHz and plotting spectra of selected segments is given below.</p>
+	  
+	  <p><img src="images/experiment2-procedure-fig3.jpg" /></p>
+	  
+	  <p style="font-size:16px">As illustrated the procedure is explained for converting the sampling frequency from 44.1 kHz to 16 kHz and 8 kHz. The choice of these two sampling frequencies is because of they are being the standard values for wideband and narrowband speech. However, the same code can be used for studying the effect of sampling frequency at any other value with minor modification to the code. In case of sampling frequency conversion, by keeping the bit resolution same, the waveforms may not show much distinction for visual perception. The change can only be observed in terms of the frequency contents as illustrated in different spectra.</p>
+	  
+	  <p><h2>Study of Bit Resolution</h2></p>
+	  <p style="font-size:16px">For studying the significance of bit resolution, the sampling frequency is kept constant at the optimal value of 16 kHz as discovered from the earlier study. The starting bit resolution used in case of speech is 16 bits/sample. A Scilab code to quantize speech data given at 16 bit resolution into data at 8 bit resolution and also plot its waveforms and spectra is as follows:</p>
+	  <p><img src="images/experiment2-procedure-fig4.jpg" width="850"/></p>
+	  <p style="font-size:16px"> Not that the above code uses a user defined function for quantization which is given below.</p>
+	  <p><img src="images/experiment2-procedure-fig6.JPG" /></p>
+	  <p style="font-size:16px">On the similar lines we can further reduce the bit resolution to 4 bits and 1 bit using the above code with minor modification. Only in the quantizer function, the number bits to be changed, otherwise everything else remains same.</p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  
+	  </div>
+    </div><!--close menubar-->	
+	 <div id="footer">
+	  <a href="http://www.iitg.ernet.in">Copyright IIT GUWAHATI</a> | Developed By CSE DEPARTMENT 
+  </div><!--close footer-->  
+</body>
+</html>

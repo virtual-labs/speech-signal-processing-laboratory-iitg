@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Virtual lab</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>Shakshat Virtual Lab <img src="images/iitg-logo1.jpg" style="width:125px;height:100px" align="right"/></h1> 
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ourwork.html">About</a></li>
+        <li><a href="projects.html">People</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div><!--close menubar-->	
+	<br />
+	<br />
+	<div id="menu_sub">Cepstral Analysis of Speech</div>
+	<br />
+	<div id="menubar1">
+      <ul id="menu">
+	  <li><a href="Aim_cep.html">Aim</a></li>
+        <li class="current"><a href="Theory_cep.html">Theory</a></li>
+        <li><a href="Procedure_cep.html">Procedure</a></li>
+        <li><a href="Prequiz_cep.html">Pre Quiz</a></li>
+	<li><a href="Simulation_cep.html">Simulation</a></li>
+        <li><a href="Postquiz_cep.html">Post Quiz</a></li>
+	<li><a href="Assignment_cep.html">Assignment</a></li>
+	<li><a href="Ref_cep.html">Reference</a></li>	
+	</ul>
+	  </br>
+	  <div id="content_handaxe">
+	  </br>
+	  <br>
+	  <p style="margin-left:20px"><h1 style="color:#990000">Motivation</h1></p>
+	  <p style="font-size:14px; text-align:justify" >A signal comming out from a system is due to the input excitation and also the response of the system. From the signal processing point of view, the output of a system can be treated as the convolution of the input excitation with the system response. At times, we need each of the components separately for study and/or processing. The process of separating the two components is termed as deconvolution.</p>
+Figure 6: Formant locations from vocal tract spectrum
+	  <p style="font-size:14px; text-align:justify">In the first case, if we knew the input excitation, then the system component can be separated/ constructed by exciting the system with the inputs and collecting its responses. This is what is done in same channel  estimation problems. In the second case, if we knew the system response, then the input excitation can be recovered using the inverse filter theory concept. For instance, Linear Prediction(LP) analysis of speech to recover excitation. There is yet another type of deconvolution, where the assumption is both input excitations as well as system responses are unknown. The present study of cepstral analysis of speech comes under this category.</p>
+	 
+	  <p style="font-size:14px; text-align:justify">Speech is composed of excitation source and vocal tract system components. In order to analyze and model the excitation and system components of the speech independently and also use that in various speech processing applications, these two components have to be separated from the speech. The objective of <em>cepstral analysis</em> is to separate the speech into its source and system components without any a priori knowledge about source and / or system.</p>
+	  <p style="font-size:14px; text-align:justify">According to the source filter theory of speech production, voiced sounds are produced by exciting the time varying system characteristics with periodic impulse sequence and unvoiced sounds are produced by exciting the time varying system with a random noise sequence. The resulting speech can be considered as the convolution of respective excitation sequence and vocal tract filter characteristics. If e(n) is the excitation sequence and h(n) is the vocal tract filter sequence, then the speech sequence s(n) can be expressed as follows:</p>
+	  <p style="font-size:16px"><em>s(n)&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;e(n)&nbsp;&nbsp;*&nbsp;&nbsp;h(n)&nbsp;&nbsp;</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)</p>
+	  <p style="font-size:14px; text-align:justify">This can be represented in frequency domain as,</p>
+	  <p style="font-size:16px"><em>S(&omega;)&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;E(&omega;)&nbsp;.&nbsp;H(&omega;)&nbsp;&nbsp;</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp(2)</p>
+	  <p style="font-size:14px; text-align:justify">The Eqn. (2) indicates that the multiplication of excitation and system components in the frequency domain for the convolved sequence of the same in the time domain. The speech sequence has to be deconvolved into the excitation and vocal tract components in the time domain. For this, multiplication of the two components in the frequency domain has to be converted to a linear combination of the two components. For this purpose cepstral analysis is used for transforming the multiplied source and system components in the frequency domain to linear combination of the two components in the cepstral domain. </p>
+	  <p style="font-size:16px"><h1 style="color:#990000">Basic principles of Cepstral Analysis</h1></p>
+	  <p style="font-size:14px">From the Eqn. (2) the magnitude spectrum of given speech sequence can be represented as, </p>
+	  <p style="font-size:16px">|S(&omega;)|&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;|E(&omega;)|&nbsp;.&nbsp;|H(&omega;)|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)</p>
+	<p style="font-size:14px; text-align:justify">To linearly combine the E(ω) and H(ω) in the frequency domain, logarithmic representation is used. So the logarithmic representation of Eqn. (3) will be</p>
+<p style="font-size:16px"><em>log</em>|<em>S(&omega;)</em>|&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;<em>log</em>|<em>E(&omega;)</em>|&nbsp;+&nbsp;<em>log</em>|<em>H(&omega;)</em>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)</p>
+	<p style="font-size:14px; text-align:justify">As indicated in Eqn. (4), the log operation transforms the magnitude speech spectrum where the excitation component and vocal tract component are multiplied, to a linear combination (summation) of these components i.e. log operation converted the "*" operation into "+" operation in the frequency domain. <i><b>The separation can be done by taking the inverse discrete fourier transform (IDFT) of the linearly combined log spectra of excitation and vocal tract system components.</b></i> It should be noted that IDFT of linear spectra transforms back to the time domain but the IDFT of log spectra transforms to quefrency domain or the cepstral domain which is similar to time domain. This is mathematically explained in Eqn. (5). In the quefrency domain the vocal tract components are represented by the slowly varying components concentrated near the lower quefrency region and excitation components are represented by the fast varying components at the higher quefrency region.</p>
+	
+	<p style="font-size:16px">c(n)&nbsp;&nbsp;=&nbsp;&nbsp;<em>IDFT(log</em>|<em>S(&omega;)</em>|)&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;<em>IDFT(log</em>|<em>E(&omega;)</em>|&nbsp;+&nbsp;<em>log</em>|<em>H(&omega;)</em>|)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)</p>
+	<p style="font-size:14px; text-align:justify">Figure 1 details the various steps involved in converting the given short term speech signal to its cepstral domain representation. The output obtained at different stages of cepstrum computation as described in Figure 1, is given in Figure2. In Figure 2, s(n) is the voiced frame considered and x(n) is the windowed frame. Here s(n) multiplied by a hamming window to get x(n). |x(ω)| in Figure 2 represent the spectrum of the windowed sequence x(n). As the spectrum of the given frame is symmetric, only one half of the spectral components is plotted. The log|x(ω)| represents the log magnitude spectrum obtained by taking logarithm of the |x(ω)|. c(n) of Figure 2 shows the computed spectrum for the voiced frame s(n). The obtained cepstrum contains vocal tract components which are linearly combined according Eqn.(5). As the cepstrum is derived from the log magnitude of the linear spectrum, it is also symmetrical in the quefrency domain. Here also only one symmetric part of the cepstrum is used for plotting. </p>
+	<p><img src="images/img1p.jpg"/></p>
+	<p style="font-size:12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 1: Block diagram representing computation of cepstrum</p>
+	<p style="font-size:14px; text-align:justify">Figure 3 plots various stages in the cepstrum computation for an unvoiced frame. It can be observed that the variations in the lower quefrency region (near 0 axis) is due to vocal tract characteristics and the fast varying nature of the cepstrum towards the upper quefrency region represents the excitation characteristics of the short term speech segment. Methods have  to be devised to extract to these vocal tract and excitation characteristics independently. For this purpose a <i><b>liftering</b></i> operation is performed in the quefrency domain. Following section describes about the liftering operation performed to extract the vocal tract and excitation features independently from the quefrency domain.</p>
+	<p><img src="images/img2p.jpg"/></p>
+	<p style="font-size:12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 2: 20 ms voiced speech segment and its cepstrum</p>
+	<p><img src="images/img3p.jpg"/></p>
+	<p style="font-size:12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 3: 20 ms unvoiced speech segment and its cepstrum</p>
+	<pstyle="margin-left:20px"><h1 style="color:#990000">Liftering</h1></p>	
+	<p style="font-size:14px; text-align:justify"><i><b>Liftering</b></i> operation is similar to filtering operation in the frequency domain where a desired quefrency region for analysis is selected by multiplying the whole cepstrum by a rectangular window at the desired position. There are two types of liftering performed, low-time liftering and high-time liftering. Low-time liftering operation is performed to extract the vocal tract characteristics in the quefrency domain and high-time liftering is performed to get the excitation characteristics of the analysis speech frame.</p>
+	<p style="margin-left:20px"><h1 style="color:#990000">Low-time liftering for Formant estimation</h1></p>	
+	<p style="font-size:14px; text-align:justify">Low-time liftering is used for estimating slow varying vocal tract characteristics from the computed cepstrum of the given speech sequence. The low-time liftering window used for extracting vocal tract characteristics can be represented as follows,</p>
+	<p><img src="images/img4p.png"/></p>
+	<p style="font-size:14px; text-align:justify">where L<sub>c</sub> is the cut off length of the liftering window and N/2 is half the total length of the cepstrum. Usually L<sub>c</sub> is used as 15 or 20. The vocal tract characteristics can be obtained by multiplying the cepstrum c(n) with the low-time liftering window as indicated in Eqn. (7).</p>
+	<p style="font-size:16px; text-align:justify"><i>c<sub>e</sub></i>(n)&nbsp;=&nbsp;<i>w<sub>e</sub></i>[n].c(n)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(7)</p>
+	<p style="font-size:14px; text-align:justify">The extraction of vocal tract characteristics is illustrated in Figure 8.</br></br>
+Applying DFT on the low-time liftered sequence takes to its log magnitude spectrum which is the vocal tract spectrum of the given short term speech as given in Eqn. (8).</p>
+	<p style="font-size:16px; text-align:justify">Log[|H(w)|]&nbsp;=&nbsp;DFT[<i>c<sub>e</sub></i>(<i>n</i>)]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(8)</p>
+	<p style="font-size:14px; text-align:justify">The important vocal tract parameters like formant location and bandwidth can be computed from the vocal-tract spectrum. The formant locations can be estimated by picking the peaks from the smooth vocal tract spectrum. The block diagram given in Figure 4 shows the process of formant estimation using low-time liftering. Figure 5 shows the computation of low time liftering. Figure 6 shows the formants locations obtained from the peaks in the vocal tract spectrum.</p>
+	<p><img src="images/img5p.jpg"/></p>
+	<p style="font-size:12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 4: Block diagram representing low-time liftering</p>
+	</br>
+	</br>
+	<p><img src="images/img6p.jpg"/></p>
+	<p style="font-size:12px">Figure 5: Low-time liftering: Cepstrum of a voiced segment and low-time liftering window (in red color) and vocal tract characteristics of the cepstrum obtained through the low-time liftering</p>
+	</br>
+	</br>
+	<p><img src="images/img7p.jpg"/></p>
+	<p style="font-size:12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 6: Formant locations from vocal tract spectrum</p>
+	</br></br>
+	<p style="margin-left:20px"><h1 style="color:#990000">High-time liftering for pitch estimation</h1></p>
+	<p style="font-size:14px; text-align:justify">As the cepstrum computed from the analysis speech sequence is symmetric, half the length of the cepstrum is considered for the liftering. The excitation characteristic are obtained through a high time liftering operation using the following window,</p>
+	</br>
+	<p><img src="images/img8.png"/></p>
+	</br></br>
+	<p style="font-size:14px; text-align:justify">where <b><i>L<sub>c</sub></i></b> is the cut off length of the liftering window and <b><i>N/2</i></b> is the half the total length of the cepstrum. Usually <b><i>L<sub>c</sub></i></b> is used as 15 or 20. The excitation characteristics are obtained by multiplying high time liftering window with the cepstrum obtained as given in Eqn. (7).</p>
+	</br>
+	<p><img src="images/img9.png"/></p>
+	</br>
+	<p style="font-size:14px; text-align:justify">The block diagram given in Figure 7 indicates the high-time liftering process for pitch estimation. The computation of high-time liftered cepstrum from the cepstrum using high-time liftering window is given in Figure 8. Pitch can be estimated as the instant corresponds to the highest peak in the high-time liftered cepstrum. In the Figure 8, pitch period is the  time instant corresponding to the largest peak in the high-time liftered cepstrum. The reciprocal of the pitch interval multiplied by the sampling frequency gives the pitch frequency of the analysis speech frame.</p>
+	</br></br>
+	<p><img src="images/img10.jpg"/></p>
+	<p style="font-size:12px; text-align:justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 7: Block diagram representing high-time liftering</p>
+	</br></br>
+	<p><img src="images/img11.jpg"/></p>
+	<p style="font-size:12px; text-align:justify">Figure 8: High-time liftering: Cepstrum of a voiced segment and liftering window (in red color) and vocal tract part of the cepstrum obtained through the high time liftering</p>
+	</br></br>
+	<p style="margin-left:20px"><h1 style="color:#990000">Complex Cepstrum</h1></p>
+	<p style="font-size:14px; text-align:justify">The cepstrum computation discussed so far is known as the <i>real cepstrum</i>. As the real cepstrum is computed from the log magnitude spectrum, the phase part is ignored. This will not enable the reconstruction of the sequence from the cepstrum. However the reconstruction can be done by preserving the fourier phase and use it for reconstruction from the real cepstrum. For the reconstruction of the sequence from the cepstrum, <i>complex cepstrum</i> is used. Instead of taking inverse fourier transform of the log magnitude spectrum for the real cepstrum, <i>the inverse fourier transform of the logarithm of complex spectrum</i> is used for computing complex cepstrum. As the logarithm of all the spectral values are used, the phase is preserved in the complex cepstral sequence which can be used for reconstructing back the sequence. The methods for computing pitch and formant parameters from the complex cepstrum remain same as that of the real cepstrum as these parameters are obtained from the magnitude of the complex cepstral coefficients. Figure 9 shows the block diagram for complex cepstrum computation.</p>
+	</br></br>	
+	<p><img src="images/img13.jpg"/></p>
+	<p style="font-size:12px; text-align:justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 9: Block diagram representing complex cepstrum</p>
+</br></br>
+	<p style="font-size:14px; text-align:justify">The mathematical relation for computing complex cepstrum are as follow:</p>
+	</br>
+	<p><img src="images/img14.png" style="margin-left:250px;"/></p>	
+	</br>
+	<p style="font-size:14px; text-align:justify;">The basic definition of cepstrum using the log magnitude forms real part of the complex cepstrum derived above. Hence the name real cepstrum.</p>
+	<p></p>
+	</div>
+    	</div><!--close menubar-->	
+	 <div id="footer">
+	  <a href="http://www.iitg.ernet.in">Copyright IIT GUWAHATI</a> | Developed By CSE DEPARTMENT 
+  </div><!--close footer-->  
+</body>
+</html>

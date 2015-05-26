@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<style type="text/css">
+
+#page {
+	width: 962px;
+	padding: 2px;
+	margin: 22px auto;
+}
+#q {
+	border: 4px solid #6299C5;
+	padding: 0 8px;
+	
+}
+div.quizQ {
+	border-bottom: 1px solid #bcbcbc;
+	
+	padding: 12px;
+	margin: 0;
+}
+
+div.quizQ h3 {
+	margin-bottom: 8px;
+}
+
+#score {
+	background-color: #6299C5;
+    border: 1px solid #cdcdcd;
+	padding: 8px 10px;
+    color: #FFFFFF;
+	cursor: pointer;
+	font-weight: bold;
+}
+#cancel{
+	background-color: #6299C5;
+    border: 1px solid #cdcdcd;
+	padding: 8px 10px;
+    color: #FFFFFF;
+	cursor: pointer;
+	font-weight: bold;
+}
+#h {
+	background-color: #6299C5;
+    border: 3px solid #cdcdcd;
+	padding: 8px 10px;
+    color: #FFFFFF;
+	font-weight: bold;	
+}
+#c {
+	width: 777px; 
+	border:1px solid #bebebe; 
+	padding:6px;margin:0; 
+	color:#dfdfdf; 
+	font-family: "Courier New", Courier, monospace;
+	font-weight:bold; 
+	font-style: italic;
+}
+</style>
+<script type="text/javascript">
+/* <![CDATA[ *///Pre-Quiz	
+	 
+	function addEvent(elm, evType, fn) {
+		if (elm.addEventListener) {
+			elm.addEventListener(evType, fn, false);
+		} else if (elm.attachEvent) {
+			elm.attachEvent('on' + evType, fn);
+		} else {
+			elm['on' + evType] = fn;
+		}
+	}
+	function getTarget(e){
+		var target = window.event ? window.event.srcElement : e ? e.target : null;
+		if (!target){return false;}
+			while(target.nodeType!=1 && target.nodeName.toLowerCase()!='body'){
+				target=target.parentNode;
+			}
+		return target;
+	}
+	
+	//The Quiz
+	var Quiz = {
+		answers: [],
+		correctAnswers: ["a", "c", "b" ,  "d" , "d" , "d" , "a" , "c" , "a" , "d" , "c" , "b"], 
+		
+                  
+
+		initQuiz: function () {
+			var arrInp = document.getElementsByTagName('input');
+			for (var i=0; i<arrInp.length; i++) {
+				if (arrInp[i].type.toLowerCase() == "radio") {
+					addEvent( arrInp[i], 'click', Quiz.getAnswer);
+				}
+			}
+		},
+		getAnswer: function (e) {
+			var thisRadio = getTarget(e);
+			var which = thisRadio.getAttribute("rel");
+			var val = thisRadio.getAttribute("value");
+			var group = thisRadio.getAttribute("name");
+			Quiz.recordAnswer( which, val, group )
+		},
+		recordAnswer: function (question, userAnswer, groupName) {
+			Quiz.answers[question] = userAnswer;
+			var formName = document.myForm;
+			  for (var i=0; i<formName.elements.length; i++) {//here we disable what's already checked
+					if (formName.elements[i].name == groupName) {
+					  formName.elements[i].disabled = false;
+					}
+			  }
+		},
+		scoreQuiz: function () {
+			var totalCorrect = 0;
+                        
+			for (var i = 0; i<Quiz.correctAnswers.length; ++i) {
+				if (Quiz.answers[i] == Quiz.correctAnswers[i]) {
+					++totalCorrect;
+				}
+			}
+		alert( "You have scored " + totalCorrect + " out of " + Quiz.correctAnswers.length );
+		                
+                if(totalCorrect < 5 ) {
+                
+                      alert(" You have scored less then 40 % of total marks, you are advised to read ' THEORY and PROCEDURE '  again before proceeding for 'SIMULATION' ");
+				}
+			   else
+			   
+			       alert(" You have scored more,proceed for 'SIMULATION' ");
+			     
+
+            }
+
+              
+                                      		
+	};
+	
+	function loadEvnts() {
+		Quiz.initQuiz();
+		var scoreIt = document.getElementById('score');
+                
+		addEvent( scoreIt, 'click',  Quiz.scoreQuiz);
+	}
+
+	addEvent( window, 'load',  loadEvnts);
+
+/* ]]> */
+</script>
+</head>
+<body>
+
+<form name="myForm">
+<div id="page">
+	<h3 id="h">Pre Quiz</h3>
+	
+	<div id="q">
+		<div class="quizQ">
+		<h4>1.The expression for computing DTFT is </h4> 
+			a)<input   type="radio" rel="0" value="a" name="grp0" />&nbsp;<img width="130" height="50" align="absMiddle" alt="" src="1a.png" /><br/><!--Correct Answer: A--><br/>
+			b)<input   type="radio" rel="0" value="b" name="grp0" />&nbsp;<img width="130" height="50" align="absMiddle" alt="" src="1b.png" /><br/><br/>
+			c)<input   type="radio" rel="0" value="c" name="grp0" />&nbsp;<img width="130" height="50" align="absMiddle" alt="" src="1c.png" /><br/><br/>
+            d)<input   type="radio" rel="0" value="d" name="grp0" />&nbsp;<img width="130" height="50" align="absMiddle" alt="" src="1d.png" /><br/><br/>
+
+		</div>
+<hr id="horizontalLine" />
+
+		<div class="quizQ">
+		<h4>2.The linear and log magnitude spectra of the speech signal computed using DTFT is not useful because</h4>  
+			a)<input type="radio" rel="1" value="a" name="grp1"/>Computation validates stationary assumption<br/><br/>
+			b)<input  type="radio"   rel="1" value="b" name="grp1" />Timing information is lost <br /> <br/>
+			c)<input   type="radio"  rel="1" value="c" name="grp1"/>Both first and second choices<!--Correct Answer: C--><br/><br/>
+            d)<input  type="radio"  rel="1" value="d" name="grp1" />Spectrum is noisy<br/><br/>
+		</div>
+<hr id="horizontalLine" />
+
+		<div class="quizQ">
+		<h4>3.The log magnitude spectrum is preferred over linear magnitude spectrum because</h4>  
+			    a)<input type="radio" rel="2" value="a" name="grp2" />Easy to compute<br/><br/> 
+                            b)<input  type="radio" rel="2" value="b" name="grp2" />Reduces dynamic range so that low amplitude components can also be seen better<!--Correct Answer: B--> <br/><br/>                                             
+                            c)<input  type="radio" rel="2" value="b" name="grp2" />Increase dynamic range so that low amplitude can also be seen<br/><br/>
+                            d)<input   type="radio" rel="2" value="d" name="grp2" />good for human viewing<br/><br/>
+		</div>
+<hr id="horizontalLine" />
+
+		<div class="quizQ">
+		<h4>4.The spectrum of voiced speech segment seem to be</h4>
+                            a)<input  type="radio" rel="3" value="a" name="grp3" />Concentrated more in the low sequence regions<br/><br/>
+                            b)<input type="radio" rel="3" value="b" name="grp3" />Downward trend from low to high frequency<br/><br/>
+                            c)<input  type="radio" rel="3"  value="c" name="grp3"/>Displays pitch and harmonic information <br/><br/>
+                            d)<input  type="radio" rel="3" value="d" name="grp3" />All of the above<!--Correct Answer: D--><br/><br/>
+                 </div>
+<hr id="horizontalLine" />
+
+		<div class="quizQ">
+		<h4>5.The spectrum of unvoiced segment of speech seem to be</h4>
+     
+                             a)<input  type="radio" rel="4" value="a" name="grp4"/>Concentrated more in the high frequency region<br/><br/>                       
+                             b)<input  type="radio" rel="4" value="b" name="grp4" />Upward trend from low to high frequency<br/><br/>                    
+                             c)<input  type="radio" rel="4" value="c" name="grp4" />Absence of pitch and harmonic information<br/><br/>
+                             d)<input  type="radio" rel="4" value="d" name="grp4" />All of the above<!--Correct Answer: D--><br/><br/>
+                      </div>
+<hr id="horizontalLine" />
+
+		<div class="quizQ">
+                    <h4>6.The spectrum of segment of silence region seems to be</h4> 
+                          a)<input   type="radio" rel="5" value="a" name="grp5" />If having any significant spectral amplitude<br/><br/>                           
+                          b)<input  type="radio" rel="5" value="b" name="grp5" />Flat in nature<br/><br/>                        
+                          c)<input  type="radio" rel="5" value="c" name="grp5" />Absence of pitch and harmonic information<br/><br/>                            
+                          d)<input   type="radio" rel="5" value="d" name="grp5" /> All of the above<!--Correct Answer: D--><br/><br/>
+  
+                    </div> 
+
+<hr id="horizontalLine" />  
+    
+  <div class="quizQ">
+
+                 <h4>7.The STFT is a</h4>                        
+                           a)<input  type="radio" rel="6" value="a" name="grp6"/>3D plot of amplitude, frequency and time<!--Correct Answer: A--><br/><br/>                       
+                           b)<input  type="radio" rel="6" value="b" name="grp6" />3D plot of amplitude and spatial coordination<br/><br/>                 
+                           c)<input  type="radio" rel="6" value="c" name="grp6" />2D plot amplitude in frequency<br/> <br/>                 
+                           d)<input  type="radio" rel="6" value="d" name="grp6" />2D plot of frequency in time<br/><br/>
+                        
+             
+         
+       </div>         
+            
+<hr id="horizontalLine" />
+ 
+<div class="quizQ">
+   
+    
+    
+                  <h4>8.The difference between the true and convolved spectra of sine wave is</h4>                      
+                          a)<input  type="radio" rel="7" value="a" name="grp7" />Spectral resolution is poor in convolved spectrum<br/><br/>
+                          b)<input  type="radio" rel="7" value="b" name="grp7" />Spectral leakage is more in convolved spectrum<br/><br/>                 
+                          c)<input  type="radio" rel="7" value="c" name="grp7" />Both first and second choices<!--Correct Answer: C--><br/><br/>
+                          d)<input  type="radio" rel="7" value="d" name="grp7" />Only first choice<br/><br/>
+                        
+       </div>          
+                
+            
+<hr id="horizontalLine" />
+ 
+<div class="quizQ">
+   
+   
+    
+            <h4>9.Compared to rectangular window ,the hamming & hanning window functions have</h4>    
+                     a)<input  type="radio" rel="8" value="a" name="grp8" />Larger main lobe  and higher peak to side lobe ratio<!--Correct Answer: A--><br/> <br/>                      
+                     b)<input  type="radio" rel="8" value="b" name="grp8" />Smaller main lobe and lower peak to side lobe ratio<br/><br/>                        
+                     c)<input  type="radio" rel="8" value="c" name="grp8" />Smaller main lobe and lower peak to side lobe ratio<br/><br/>                       
+                     d)<input  type="radio" rel="8" value="d" name="grp8" />Larger main lobe and lower peak to side lobe ratio<br/><br/>
+                        
+             
+       </div>  
+                
+            
+<hr id="horizontalLine" /> 
+
+<div class="quizQ">
+   
+   
+    
+         <h4>10.For a voiced speech segment,compared to rectangular window, the log magnitude spectrum in case of hamming and hanning window functions is having</h4>                       
+                         a)<input  type="radio" rel="9" value="a" name="grp9" />Poor spectral resolution<br/><br/>
+                         b)<input  type="radio" rel="9" value="b" name="grp9"/>Pitch & harmonics are visible<br/><br/>                       
+                         c)<input   type="radio" rel="9" value="c" name="grp9" />Spectral leakage is less<br/><br/>
+                         d)<input  type="radio" rel="9" value="d" name="grp9"/>All of the above<!--Correct Answer: D--><br/><br/>
+                        
+             
+         
+       </div>         
+            
+ 
+<hr id="horizontalLine" />  
+
+ <div class="quizQ">
+    
+    
+    
+        
+            
+                
+               <h4>11.The difference between log magnitude spectra of voiced and unvoiced segments</h4>           
+                            a)<input   type="radio" rel="10" value="a" name="grp10" />Trend in the spectrum<br/><br/>
+                            b)<input   type="radio" rel="10" value="b" name="grp10" />Presence and absence of pitch and harmonic information<br/><br/>                        
+                            c)<input   type="radio" rel="10" value="c" name="grp10" />Both first and second choices<!--Correct Answer: C--><br/><br/>
+                            d)<input   type="radio" rel="10" value="d" name="grp10" />Only first choice<br/><br/>
+                        
+       </div>      
+         
+                
+<hr id="horizontalLine" />
+
+   <div class="quizQ">         
+ 
+   
+    
+    
+    
+             <h4>12.The optimal window size for STFT computation is around</h4>            
+                         a)<input   type="radio" rel="11" value="a" name="grp11" />3 msec<br/><br/>
+                         b)<input   type="radio" rel="11" value="b" name="grp11"/>30 msec<!--Correct Answer: B--><br/><br/>                       
+                         c)<input type="radio" rel="11" value="c" name="grp11" /> 300 msec<br/><br/>
+                         d)<input  type="radio" rel="11" value="d" name="grp11" />All of the above<br/><br/>
+                        
+             
+         
+       </div>         
+           
+ <div class="quizQ">
+   
+   <hr id="horizontalLine" />		
+		<div style="padding:8px 2px;background:#ededed;">
+			<input type ="submit" id="score" value="Submit" /> <input type="reset" id="cancel" value="&nbsp;Cancel&nbsp;" style="width:8%;" />
+		</div>
+	
+
+</form>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Shakshat Virtual Lab</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>Shakshat Virtual Lab <img src="images/iitg-logo1.jpg" style="width:125px;height:100px" align="right"/></h1> 
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+       <ul id="menu">
+           <li class="current"><a href="index.html">Home</a></li>
+        <li><a href="ourwork.html">About</a></li>
+        <li><a href="projects.html">People</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div><!--close menubar-->	
+	<br />
+	<br />
+	<div id="menu_sub">Estimation Of Pitch From Speech Signals</div>
+	<br />
+	<div id="menubar1">
+      <ul id="menu">
+        <li ><a href="aim_linear_prediction_analysis.html">Aim</a></li>
+          <li class="current"><a href="Theory_linear_prediction_analysis.html">Theory</a></li>
+          <li><a href="procedure_linear_prediction_analysis.html">Procedure</a></li>
+          <li><a href="Quiz_linear_prediction_analysis.html">Quiz</a></li>
+	  <li><a href="reference_linear_prediction_analysis.html">Reference</a></li>
+          <li><a href="assignment_linear_prediction_analysis.html">Assignment</a></li>
+
+		
+		      </ul>
+	  </br>
+	  <div id="content_handaxe">
+	  </br>
+	  <br>
+	    
+            
+            <h1>Why linear prediction analysis is important in speech?</h1>
+	<br>
+	<br>
+		<p>Speech signal is produced by the convolution of excitation source and time varying vocal tract system components. These excitation and vocal tract components are to be separated from the available speech signal to study these components independently . For deconvolving the given speech into excitation and vocal tract system components, methods based on homomorphic analysis like cepstral analysis are developed. As the cepstral analysis does the deconvolution of speech into source and system components by traversing through frequency domain, the deconvolution task becomes computational intensive process. To reduce such type of computational complexity and finding the source and system components from time domain itself, the Linear Prediction analysis is developed.</p>
+
+
+
+           <br>
+	   <br>
+
+	<h1>Basics of LP Analysis</h1><br><br>
+
+		<p>The redundancy in the speech signal is exploited in the LP analysis. The prediction of current sample as a linear combination of past p samples form the basis of linear prediction analysis where p is the order of prediction. The predicted sample s^(n) can be represented as follows,</p><br><br>
+			
+		<img src="images/linear_prediction_theory-equation1.jpg" style="width:650px;height:60px" align="center"/>
+                  <br><br>
+
+<p>where aks are the linear prediction coefficients and s(n) is the windowed speech sequence obtained by multiplying short time speech frame with a hamming or similar type of window which is given by,</p> 
+		<img src="images/linear_prediction-theory-equation2.jpg" style="width:650px;height:30px" align="center"/>
+                 <br><br>
+
+			<p> where ω(n) is the windowing sequence. The prediction error e(n) can be computed by the difference between actual sample s(n)and the predicted sample s^(n) which is given by,</p><br><br>
+
+		<img src="images/linear_prediction-theory-equation3.jpg" style="width:650px;height:70px" align="center"/>
+                  <br><br>
+
+		<img src="images/linear_prediction-theory-equation4.jpg" style="width:650px;height:30px" align="center"/>
+                  <br><br>
+
+		<img src="images/linear_prediction-theory-equation5.jpg" style="width:650px;height:70px" align="center"/>
+                  <br><br>
+
+
+
+
+
+
+		<p>The primary objective of LP analysis is to compute the LP coefficients which minimized the prediction error e(n). The popular method for computing the LP coefficients by least squares auto correlation method. This achieved by minimizing the total prediction error. The total prediction error can be represented as follows</p> <br>
+
+		<img src="images/linear_prediction-theory-equation6.jpg" style="width:650px;height:60px" align="center"/>
+                  <br><br>
+
+
+
+
+		<p>This can be expanded using the equation (5) as follows,</p><br><br>
+
+			<img src="images/linear_prediction-theory-equation7.jpg" style="width:650px;height:60px" align="center"/>
+                  <br><br>
+			<p>The values of aks which minimize the total prediction error E can be computed by finding</p><br><br>
+			<img src="images/linear_prediction_img14.png" style="width:30px;height:60px" align="center"/>
+                  <br><br>
+
+
+
+				<p>and equating to zero for k=0,1,2,...p.</p><br><br>
+
+		<img src="images/linear_prediction_img15.png" style="width:50px;height:60px" align="center"/>
+                  <br><br>
+		<p>for each ak give p linear equations with p unknowns. The solution of which gives the LP coefficients. This can be represented as follows,</p><br><br>
+			<img src="images/linear_prediction-theory-equation8.jpg" style="width:650px;height:60px" align="center"/>
+                  <br><br>
+		<p>The differentiated expression can be written as,</p><br><br>
+			<img src="images/linear_prediction-theory-equation9.jpg" style="width:650px;height:60px" align="center"/>
+                  <br><br>
+		<p>where i=1, 2, 3...p. The equation (9) can be written in terms of autocorrelation sequence R(i) as follows,</p><br><br>
+
+			<img src="images/linear_prediction-theory-equation10.jpg" style="width:650px;height:60px" align="center"/>
+                  <br><br>
+		<p>for i=1,2,3...p. <br>
+
+Where the autocorrelation sequence used in equation (10) can be written as follows, </p><br><br>
+
+			<img src="images/linear_prediction-theory-equation11.jpg" style="width:650px;height:55px" align="center"/>
+                  <br><br>
+			<p> for i= 1,2,3...p and N is the length of the sequence.<br>
+
+This can be represented in the matrix form as follows,</p><br><br>
+			<img src="images/linear_prediction-theory-equation12.jpg" style="width:700px;height:25px" align="center"/>
+                  <br><br>
+		<p>where R is the pXp symmetric matrix of elements R(i, k) = R(|i-k|), (1<=i, k<=p), r is a column vector with elements (R(1),R(2), ...R(P)) and finally A is the column vector of LPC coefficients (a(1), a(2), ....a(p)). It can be shown that R is toeplitz matrix which can be represented as,</p><br><br>
+
+			<img src="images/linear_prediction-theory-equation13.jpg" style="width:650px;height:150px" align="center"/>
+                  <br><br>
+			<p>The LP coefficients can be computed as shown,</p><br><br>
+
+			<img src="images/linear_prediction-theory-equation14.jpg" style="width:350px;height:35px" align="center"/>
+                  <br><br>
+		<p>where R-1 is the inverse of the matrix R</p><br><br>
+
+			<img src="images/linear_prediction_theory_fig1.jpg" style="width:650px;height:150px" align="center"/>
+                  <br><br>		
+			<p align="left">Figure 1: Computing the LP residual by inverse filtering</p><br><br>
+
+
+
+
+
+
+		<h1>Computing LP Residual</h1>
+		<p>TLP residual is the prediction error e(n) obtained as the difference between the predicted speech sample s^(n) and the current sample s(n). This is shown in equation (4).</p><br><br>
+
+
+			<img src="images/linear_prediction-theory-equation15.jpg" style="width:455px;height:40px" align="center"/><br>
+			<img src="images/linear_prediction-theory-equation16.jpg" style="width:455px;height:80px" align="center"/><br>
+
+                        <p>In the frequency domain, the equation (16) can be represented as,</p><br><br>
+
+			<img src="images/linear_prediction-theory-equation17.jpg" style="width:555px;height:50px" align="center"/><br>
+			<p>i.e.</p><br><br>
+			<img src="images/linear_prediction-theory-equation18.jpg" style="width:555px;height:50px" align="center"/><br>
+			<p>So LP residual can be obtained filtering the speech signal with A(z) as indicated in figure 1. Similarly it can be shown that the LP spectrum H(z) as,</p><br><br>
+
+			<img src="images/linear_prediction-theory-equation19.jpg" style="width:555px;height:90px" align="center"/><br>
+			<p>As A(z) is the reciprocal of H(z), LP residual is obtained by the inverse filtering of speech.</p><br><br>
+			<img src="images/linear_prediction_theory_figure3.jpg" style="width:755px;height:450px" align="center"/><br>
+			<p align="center">Figure 2: Computation of LP residual</p><br><br>
+
+				<p>n the similar manner, speech can be reconstructed from the LP residual by filtering using H(z) as shown in figure 3.</p><br><br>
+
+				<img src="images/linear_prediction_theory_fig1(1).jpg" style="width:655px;height:150px" align="center"/><br>
+
+				<p align="center">Figure 3: Reconstruction of the speech signals using residual by LP filtering</p><br><br>
+
+
+
+
+			<h1>Estimating vocaltract parameters by LP analysis</h1>
+			<p>LP analysis separates the given short term sequence of speech into its slowly varying vocal tract component represented by LP filter (H(z)) and fast varying excitation component given by the LP residual (e(n)). The LP filter (H(z)) induces the desired spectral shape for the shape on the flat spectrum (E(z)) of the noise like excitation sequence as given in equation (20). As the LP spectrum provides the vocaltract characteristics, the vocaltract resonances (formants) can be estimated from the LP spectrum. Various formant locations can be obtained by picking the peaks from the magnitude LP spectrum (|H(z)|). The figure 4 shows the first (F1), second (F2) and third formant (F3) frequencies estimated from the peaks in the LP magnitude spectrum.</p><br><br>
+				<img src="images/linear_prediction-theory-equation20.jpg" style="width:355px;height:30px" align="center"/><br>
+				<p>where S(z) is the spectrum of the given short time speech signal.</p><br><br>
+
+				<img src="images/linear_prediction_theory_figure7.jpg" style="width:755px;height:350px" align="center"/><br>
+				<p>Figure 4: Formant locations corresponding to peaks in LP magnitude spectrum</p><br><br>
+
+				<h1>Estimating pitch from LP residual</h1>
+				<p>As the LP residual is an error signal obtained by the LP analysis, it is noisy in nature. Figure 5 shows a 20 msec segment of residual and corresponding speech segments from which it is obtained. As the pitch marks are characterized by the sharp and periodic discontinuity, it cause a large error in the computed LP residual. This large error can be observed in the Figure 5 . So the periodicity of the error gives the pitch period of that segment of speech and this can be computed by the autocorrelation method. It has to be noted that for unvoiced speech signal the residual will be like random noise without any periodicity.</p><br><br>
+				<img src="images/linear_prediction_theory_figure8.jpg" style="width:755px;height:350px" align="center"/><br>
+				<p align="center">Figure 5:The speech and residual of 20 ms voiced speech segments</p><br><br>
+
+
+				<h1>Normalized Error</h1><br><br>
+				<p>The normalized error can be used to find the optimal prediction order required for the LP analysis of the given speech segment. The normalized error can be defined as the ratio of the total minimum error to the total energy of the signal. If Ep is the total minimum error obtained for a prediction order p and R(1) is the total energy of the signal, then the normalized error Vp can be represented as,</p><br><br>
+				<img src="images/linear_prediction-theory-equation21.jpg" style="width:355px;height:50px" align="center"/><br>
+				<p>By combining equations (7) and (9), the expression for total minimum error for the given prediction order p can be given by,</p><br><br>
+				<img src="images/linear_prediction-theory-equation23.jpg" style="width:455px;height:60px" align="center"/><br><br>
+				<p>This can be written in terms of autocorrelation sequence,</p><br><br>
+				<img src="images/linear_prediction-theory-equation24.jpg" style="width:455px;height:60px" align="center"/><br><br>
+
+				<p>igure 6 shows the normalized error curve obtained by plotting the normalized error computed using the equation (21) versus the prediction order. It has to be observed from the figure that there is no significant reduction in the normalized error after certain P. Hence the normalized error curve helps to choose the optimum prediction order for the LP analysis.</p><br><br>
+
+				<img src="images/linear_prediction_theory_figure26.jpg" style="width:755px;height:350px" align="center"/><br>
+				<p align="center"> Figure 6: Normalized error curve of voiced (blue) and unvoiced (red) speech</p><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <br>
+	    <br>
+            <br>
+	    <br>
+            <br><br>
+            
+
+	  
+	  </div>
+    </div><!--close menubar-->	
+	 <div id="footer">
+	  <a href="http://www.iitg.ernet.in">Copyright IIT GUWAHATI</a> | Developed At IIT Guwahati
+  </div><!--close footer-->  
+</body>
+</html>

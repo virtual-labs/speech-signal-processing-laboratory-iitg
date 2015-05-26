@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Virtual lab</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+	  <div id="banner">
+	    <div id="welcome">
+	      <h1>Shakshat Virtual Lab <img src="images/iitg-logo1.jpg" style="width:125px;height:100px" align="right"/></h1> 
+	    </div><!--close welcome-->
+	    <div id="welcome_slogan">
+	      <h1>INDIAN INSTITUTE OF TECHNOLOGY GUWAHATI</h1>
+	    </div><!--close welcome_slogan-->
+	  </div><!--close banner-->
+    </div><!--close header-->
+
+	<div id="menubar">
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ourwork.html">About</a></li>
+        <li><a href="projects.html">People</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div><!--close menubar-->	
+	<br />
+	<br />
+	<div id="menu_sub">Non-Stationary Nature of Speech Signal</div>
+	<br />
+	<div id="menubar1">
+      <ul id="menu">
+	 	<li><a href="Non-Stationary_Nature_of_Speech_Signal.html">Aim</a></li>
+        <li class="current"><a href="Non-Stationary_Nature_of_Speech_Signal(theory).html">Theory</a></li>
+        <li><a href="Non-Stationary_Nature_of_Speech_Signal(procedure).html">Procedure</a></li>
+        <li><a href="Non-Stationary_Nature_of_Speech_Signal(quiz).html">Pre Quiz</a></li>
+		<li><a href="Non-Stationary_Nature_of_Speech_Signal(simulation).html">Simulation</a></li>
+        <li><a href="#">Post Quiz</a></li>
+		<li><a href="Non-Stationary_Nature_of_Speech_Signal(assignment).html">Assignment</a></li>
+		<li><a href="Non-Stationary_Nature_of_Speech_Signal(reference).html">Reference</a></li>
+		<li><a href="Non-Stationary_Nature_of_Speech_Signal(video).html">Video</a></li>
+		      </ul>
+	  </br>
+	  <div id="content_handaxe">
+	  </br>
+	  <br>
+	 
+	  <p><h1 style="color:#990000">Introduction</h1></p>
+	  <p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">&nbsp;&nbsp;&nbsp;Signal is a physical quantity that is measurable. System is a physical entity that exists. Signal is produced from a system. Depending on the nature of signal, it is categorized into several classes based on some criterion. Some of the classifications include continuous v/s discrete, periodic v/s aperiodic, energy v/s power, periodic v/s aperiodic, deterministic v/s random, stationary v/s non-stationary and so on. In a first level course on signals and systems and also digital signal processing, emphasis was not provided on the stationary v/s non-stationary classification of signals. That is, most of the signals, systems and signal processing concepts were taught based on the implied assumption of stationarity of the signal under consideration. Speech signal processing deviates in this aspect. This is because, speech is an example for non-stationary signal where as conventional synthetic signals like sine wave, triangular wave, square wave and so on are stationary in nature. Hence different approaches and tools are needed to process the speech signal. To appreciate the new approaches and also tools developed exclusively for speech processing, we should get a feel about stationary v/s non-stationary classification of signal. Hence the motivation for this experiment. </p>
+	 
+	  <p><h1 style="color:#990000; ">Stationary v/s non-stationary signals</h1></p>
+	  <p style="font-size:16px; font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">A signal is said to be stationary if its frequency or spectral contents are not changing with respect to time. This is a very important point, pause a while and try to understand. This is because when we generate a sine wave using either a function generator or software, we selected the frequency value and kept it constant for ever. Thus the frequency content of the sine wave will not change with time and hence is an example for stationary signal. Suppose if you change the frequency, then it altogether becomes a new sine wave. Further, the definition of stationarity should not be confused with the time varying amplitude in the time domain as in the case of sine wave. Stationarity is linked to the behavior of the frequency contents of the signal with respect to time and nothing else. For instance, consider a sine wave of 10 Hz plotted in Figure 1. The corresponding magnitude spectrum is shown in Figure 2. As it can be observed in Figure 1, the sine wave amplitude varies in the time domain, but its frequency content will have only one frequency component, that is, impulse at 100 Hz as shown in Figure 2. Mathematically, a singletone sine wave can be represented as given in Equation (1).
+	  </p>
+	  <p><img src="images/experiment1-theory-equation1.jpg"  /></p>
+	  <p style="font-size:16px; font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">where A is the amplitude, ω is the angular frequency and φ is phase.</p>
+	  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/experiment1-theory-fig1.jpg"  /></p>
+	  <p>Figure 1: Singletone sine wave of 10 Hz sampled using a sampling frequency of 1000 Hz.</p>
+	  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/experiment1-theory-fig2.jpg"  /></p>
+	  <p>Figure 2: Magnitude spectrum of singletone sine wave shown in Figure 1.</p>
+	  <p style="font-size:16px">Next let us consider a multitone sine wave that contains many frequency components. If all the frequency components do not change with time, then without any consideration to the number of frequency components present, the multitone sine wave is still a stationary signal. For instance, consider a multitone sine wave made of three frequency components namely, 10 Hz, 50 Hz and 100 Hz, shown in Figure 3. Even though this signal looks complicated compared to the singletone sine wave shown in Figure 1, it is still a stationary signal because, the frequency contents do not change with time as shown in Figure 4. Mathematically, a multitone sine wave can be represented as given in Equation (2).</p>
+	   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/experiment1-theory-equation2.jpg" /></p>
+	   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/experiment1-theory-fig3.jpg"  /></p>
+	   <p style="font-size:16px">Figure 3: Multitone sine wave of 10, 50 and 100 Hz sampled using a sampling frequency of 1000 Hz.</p>
+	   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/experiment1-theory-fig4.jpg"  /></p>
+	    <p style="font-size:16px">Figure 4: Magnitude spectrum of multitone sine wave shown in Figure 3.</p>
+
+	  <p style="font-size:16px">From this point onwards we deviate to introduce the concept of non-stationarity. Let us consider a multitone sine wave whose duration is equally divided into four intervals. Let the frequency component of f1 Hz be present in the first interval, then two components of f1 and f2 Hz in the second interval, three components of f1, f2 and f3 Hz for the third interval and finally f1 Hz in the fourth interval. Now if we observe this signal for its entire duration, the frequency components are changing from one interval to the other. Thus such a signal qualifies the definition of non-stationarity and hence is an example for a non-stationary signal. Therefore this signal is more opt to be termed as non-stationary multitone sine wave. For instance, consider a non-stationary multitone sine wave of duration 1 sec which has 10 Hz component for 0-250 msec, 10 and 50 Hz components for 250-500 msec, 10, 50 and 100 Hz components for 500-750 msec and only 10 Hz component for 750-1000 msec as shown in Figure 5. Such a signal qualifies the definition of non-stationarity, since the frequency contents change from one interval to other as shown in Figure 6. A mathematical formulation for the just described signal can be written as given in Equation (3).</p>
+	  <p><img src="images/experiment1-theory-equation3.jpg" style="margin-left:10%"/></p>
+	   <p><img src="images/experiment1-theory-fig5.jpg" width="650px" /></p>
+	   <p>Figure 5: Non-stationary multitone sine wave of 10, 50 and 100 Hz sampled using a sampling frequency of 1000 Hz</p>
+	   <p><img src="images/experiment1-theory-fig6.jpg" width="650px" /></p>
+	   <p>Figure 6: Magnitude spectra of non-stationary multitone sine wave shown in Figure 5.</p>
+	  <p style="font-size:16px"><h2>Non-stationary nature of speech</h2></p>
+	  <p style="font-size:16px">Finally, the speech signal is a much more complicated non-stationary signal compared to the one described above. Speech signal differs in two aspects from the non-stationary multitone sine wave shown in Figure 5. First, there may not be just one, two or three components, but many more in a given interval of time. Second, the interval itself will be very short, as short as about 10-30 msec as against 250 msec considered. To summarize, the frequency contents of the speech signal will have many frequency contents and these components change continuously with time. For example consider a speech signal for the Hindi word SAKSHAAT shown in Figure 7. Compare this figure with Figure 5 and get a feel about non-stationary nature of speech, that indicates that the signal at some places may not be just one or two components, but may be many more. The changing frequency components can also be observed in Figure 8. A mathematical approximation to the speech signal to indicate its non-stationarity can be given as in Equation (4).</p>
+	  <p><img src="images/experiment1-theory-fig7.jpg" style="margin-left:10%"/></p>
+	  <p>Figure 7: Speech signal for the Hindi word sakshaat</p>
+	  <p><img src="images/experiment1-theory-fig8.jpg" style="margin-left:10%"/></p>
+	  <p>Figure 8: Spectra of different segments of speech signal.</p>
+	  <p><h2>Limitation of Fourier Representation</h2></p>
+	  <p style="font-size:16px">The final objective of this experiment is to get a feel about the limitation of the Fourier representation in handling the non-stationary signals. Fourier representation also makes an underlying assumption of stationarity for the signal whose spectrum is to be computed. Therefore, to plot the spectra of non-stationary signals presented above, we played a trick. That is, we cleverly considered each segment of speech signal where it qualifies the definition of stationarity and computed the spectra using discrete time Fourier transform (DTFT) on a digital machine with the help of discrete Fourier transform (DFT). However, without this clever trick, the actual procedure would have been to consider the whole signal in one shot, assuming it to be stationary and compute the spectrum. Suppose if we do the same for non-stationary multitone sine wave shown in Figure 5, then we get a spectrum as shown in Figure 9. Compare this with Figure 6. This computation gives information about the different frequency components present in the signal, but not when those frequency contents existed, that is, timing information is missing. The next question you may ask is, so what? let the timing information be missing, I want only the frequency contents information. If this is the question, then you are on the wrong path. This is because the essential information in the non-stationary signal is stored in the time varying spectrum only. Thus just by taking DTFT on the whole signal will not provide any useful information. Hence the limitation of conventional Fourier representation. The same phenomenon happens in case of speech signal shown in Figure 7. The spectrum obtained by considering the whole speech signal is given in Figure 10. In this case also, the frequency contents are visible, but not their timing information which is crucial for recognizing the time varying message present in speech.</p>
+	  <p><img src="images/experiment1-theory-fig9.jpg" style="margin-left:10%"/></p>
+	  <p>Figure 9: Spectrum of non-stationary multitone sine wave of 10, 50 and 100 Hz sampled using a sampling frequency of 1000 Hz by considering whole signal once</p>
+	  <p><img src="images/experiment1-theory-fig10.jpg" style="margin-left:10%"/></p>
+	  <p>Figure 10: Spectrum of the entire speech signal shown in Figure 7</p>
+	  </div>
+    </div><!--close menubar-->	
+	 <div id="footer">
+	  <a href="http://www.iitg.ernet.in">Copyright IIT GUWAHATI</a> | Developed By CSE DEPARTMENT 
+  </div><!--close footer-->  
+</body>
+</html>
