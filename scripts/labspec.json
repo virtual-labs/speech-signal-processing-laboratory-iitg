@@ -25,18 +25,17 @@
                         "mobile_number": "", 
                         "office_number": ""
                     }, 
-                    "department": "Department of Electronics and Electrical Engineering", 
-                    "institute": "IIT Guwahati", 
-                    "name": "Prof. S. R. Mahadeva Prasanna", 
-                    "organization": "", 
+                    "department": "eee", 
+                    "institute": "", 
+                    "name": "Dr. S. R. Mahadeva Prasanna", 
+                    "organization": "IIT Guwahati", 
                     "role": "Principal Investigator", 
                     "title": "", 
                     "web": ""
-                } 
-                
+                }
             ], 
             "discipline": [
-                " Electronics and Electrical Engineering"
+                "Department of Electronics and Electrical Engineering"
             ], 
             "id": "eee02", 
             "integration_level": 5, 
