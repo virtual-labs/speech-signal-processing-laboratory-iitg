@@ -4,8 +4,8 @@
             "platform": {
                 "arch": "i386", 
                 "build_steps": {
-                    "build": ["make -C ../src"], 
-                    "configure": [], 
+                    "build": ["make -C ../src"],
+                    "configure": [],
                     "post_build": [], 
                     "pre_build": [], 
                     "status": []
@@ -21,106 +21,45 @@
                 {
                     "contact": {
                         "alternate_email": "", 
-                        "email": "jawahar@iiit.ac.in", 
+                        "email": "prasanna@iitg.ernet.in", 
                         "mobile_number": "", 
                         "office_number": ""
                     }, 
-                    "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Jawahar C.V", 
+                    "department": "Department of Electronics and Electrical Engineering", 
+                    "institute": "IIT Guwahati", 
+                    "name": "Prof. S. R. Mahadeva Prasanna", 
                     "organization": "", 
-                    "role": "Lab Developer", 
+                    "role": "Principal Investigator", 
                     "title": "", 
                     "web": ""
-                }, 
-                {
-                    "contact": {
-                        "alternate_email": "", 
-                        "email": "phani@iiit.ac.in", 
-                        "mobile_number": "", 
-                        "office_number": ""
-                    }, 
-                    "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Phani Phani", 
-                    "organization": "", 
-                    "role": "Lab RA", 
-                    "title": "", 
-                    "web": ""
-                }, 
-                {
-                    "contact": {
-                        "alternate_email": "", 
-                        "email": "kumarsrijan@students.iiit.ac.in", 
-                        "mobile_number": "", 
-                        "office_number": ""
-                    }, 
-                    "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Kumar Srijan", 
-                    "organization": "", 
-                    "role": "Lab RA", 
-                    "title": "", 
-                    "web": ""
-                }, 
-                {
-                    "contact": {
-                        "alternate_email": "", 
-                        "email": "jayaguru.pandaug08@students.iiit.ac.in", 
-                        "mobile_number": "", 
-                        "office_number": ""
-                    }, 
-                    "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Jay Panda", 
-                    "organization": "", 
-                    "role": "Lab RA", 
-                    "title": "", 
-                    "web": ""
-                }, 
-                {
-                    "contact": {
-                        "alternate_email": "", 
-                        "email": "shashank.sharmaug08@students.iiit.ac.in", 
-                        "mobile_number": "", 
-                        "office_number": ""
-                    }, 
-                    "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Shashank Sharma", 
-                    "organization": "", 
-                    "role": "Lab RA", 
-                    "title": "", 
-                    "web": ""
-                }
+                } 
+                
             ], 
             "discipline": [
-                "Computer Science & Engineering"
+                " Electronics and Electrical Engineering"
             ], 
-            "id": "cse02", 
+            "id": "eee02", 
             "integration_level": 5, 
-            "name": "Computer Programming", 
+            "name": "Speech Signal Processing Laboratory", 
             "server-side": true, 
             "status": "Released", 
             "type": ""
-        }, 
+        },  
         "runtime_requirements": {
             "platform": {
                 "arch": "i386", 
                 "hosting": "dedicated", 
-                "installer": ["sudo apt-get update",
-                "sudo apt-get install -y php5 apache2"], 
+                "installer": ["sudo apt-get update","sudo apt-get install -y apache2"], 
                 "lab_actions": {
                     "backup": [], 
                     "clean": [], 
-                    "init": ["cp -r ../build/* /var/www/","mv /var/www/index.html index.html.default"
-                        ], 
+                    "init": ["mv /var/www/index.html index.html.default","cp -r ../build/* /var/www/","chmod 775 /var/www/ -R"], 
                     "pause": [], 
                     "publish": [], 
                     "restore": [], 
                     "resume": [], 
                     "shutdown": ["service apache2 stop"], 
-                    "start": ["service apache2 start"],  
+                    "start": ["service apache2 start"], 
                     "stats": [], 
                     "stop": []
                 }, 
