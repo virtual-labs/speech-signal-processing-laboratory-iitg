@@ -1,0 +1,11 @@
+#!/bin/bash
+# Restore Script for IITG_ergonomics Lab
+
+# Restore Script restores the backup of the data used by the lab.
+# Since there is no data being used by IITG_ergonomics Lab
+# the script does nothing. 
+
+# Usage of the script
+
+# To use restore script, run the command
+# ./scripts/restore
