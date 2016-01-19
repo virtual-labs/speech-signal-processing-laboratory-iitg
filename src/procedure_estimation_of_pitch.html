@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Shakshat Virtual Lab</title>
+<title>Virtual Lab</title>
   <meta name="description" content="free website template" />
   <meta name="keywords" content="enter your keywords here" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -38,13 +38,13 @@
 	<br />
 	<div id="menubar1">
       <ul id="menu">
-        <li ><a href="aim_estimation_of_pitch.html">Aim</a></li>
+        <li><a href="aim_estimation_of_pitch.html">Aim</a></li>
           <li><a href="Theory_estimation_of_pitch.html">Theory</a></li>
           <li class="current"><a href="procedure_estimation_of_pitch.html">Procedure</a></li>
-	  <li><a href="simulation_estimation_of_pitch.html">Simulation</a></li>
+          <li><a href="simulation_estimation_of_pitch.html">Simulation</a></li>
           <li><a href="Quiz_estimation_of_pitch.html">Quiz</a></li>
-	  <li><a href="reference_estimation_of_pitch.html">Reference</a></li>
           <li><a href="assignment_estimation_of_pitch.html">Assignment</a></li>
+		  <li><a href="reference_estimation_of_pitch.html">Reference</a></li>
 
 		
 		      </ul>
@@ -54,19 +54,15 @@
 	  <br>
 	    
             
-            <h1>Procedure</h1>
-           <h1>Pitch estimation by autocorrelation method </h1>
+            <h1 style="color:#0099FF">Procedure</h1>
+           <h1 style="color:#0099FF">Pitch estimation by autocorrelation method </h1>
 	<br>
-	<br>
-		<p>Speech signal can be classified into voiced, unvoiced and silence regions. The near periodic vibration of vocal folds is excitation for the production of voiced speech. The random ...like excitation is present for unvoiced speech. There is noexcitation during silence region. Majority of speech regions are voiced in nature that includevowels,....., semivowels and other voiced components. The voiced regions looks like a near periodic signal in the time domain representation. In a short term .., we may treat the voiced speech segments to be periodic for all practical analysis and processing. The periodicity associated with such segmentsis defined is 'pitch period To' in the time domain and 'Pitch frequency or Fundamental Frequency Fo' in the frequency domain. Unless specified, the term 'pitch' refers to the fundamental frequency ' Fo'. Pitch is an important attribute of voiced speech. It contains speaker-specific information. It is also needed for speech coding task. Thus estimation of pitch is one of the important issue in speech processing.
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Speech signal can be classified into voiced, unvoiced and silence regions. The near periodic vibration of vocal folds is excitation for the production of voiced speech. The random ...like excitation is present for unvoiced speech. There is noexcitation during silence region. Majority of speech regions are voiced in nature that includevowels,....., semivowels and other voiced components. The voiced regions looks like a near periodic signal in the time domain representation. In a short term .., we may treat the voiced speech segments to be periodic for all practical analysis and processing. The periodicity associated with such segmentsis defined is 'pitch period To' in the time domain and 'Pitch frequency or Fundamental Frequency Fo' in the frequency domain. Unless specified, the term 'pitch' refers to the fundamental frequency ' Fo'. Pitch is an important attribute of voiced speech. It contains speaker-specific information. It is also needed for speech coding task. Thus estimation of pitch is one of the important issue in speech processing.
 
  
 
 There are a large set of methods that have been developed in the speech processing area for the estimation of pitch. Among them the three mostly used methods include, autocorrelation of speech, cepstrum pitch determination and single inverse .... technique (SIFT) pitch estimation. One success of these methods is due to the involvment of simple steps for theestimation of pitch. Even though autocorrelation method is of theoritical interest, it produce a frame work for SIFT methods.</p>
 
-
-
-           <br>
 	   <br>
 
 		<img src="images/Fig1_voiced_autocorr_procedure.png" style="width:755px;height:500px" align="center"/>
@@ -78,7 +74,7 @@ There are a large set of methods that have been developed in the speech processi
 		<img src="images/Fig3_procedure.png" style="width:755px;height:500px" align="center"/>
                  <p align="center">fig.3</p> <br><br>
 
-		<p>//Program to find autocorrelation of a speech segment<br>
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">//Program to find autocorrelation of a speech segment<br>
 [y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/30msec_voiced.wav');//input: speech segment<br>
 max_value=max(abs(y));<br>
 y=y/max_value;<br>
@@ -113,8 +109,8 @@ auto=autocor(21:160);<br>
 
 
 
-		<h1>Cepstrum based pitch estimation</h1><br><br>
-		<p>The objective of this experiment is to estimate the pitch by cepstral analysis.  The given speech signal is divided into  short segments of 15-20ms frame size.  The cepstrum is computed from each of these frames.  Figure 4  shows cepstrum of a speech segment in quefrency domain. Figure 5  illustrates the procedure for computing the pitch period by the high time liftering of the cepstrum of the voiced speech.   Figure 6 shows the cepstrum of an unvoiced speech. </p><br><br>
+		<h1 style="color:#0099FF">Cepstrum based pitch estimation</h1><br><br>
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The objective of this experiment is to estimate the pitch by cepstral analysis.  The given speech signal is divided into  short segments of 15-20ms frame size.  The cepstrum is computed from each of these frames.  Figure 4  shows cepstrum of a speech segment in quefrency domain. Figure 5  illustrates the procedure for computing the pitch period by the high time liftering of the cepstrum of the voiced speech.   Figure 6 shows the cepstrum of an unvoiced speech. </p><br><br>
 
 
 			<img src="images/Fig4_voiced_cepstrum_procedure.png" style="width:755px;height:500px" align="center"/>
@@ -126,9 +122,9 @@ auto=autocor(21:160);<br>
 		<img src="images/Fig6_unvoiced_cepstrum_procedure.png" style="width:755px;height:500px" align="center"/>
                  <p align="center">fig.6</p> <br><br>
 
-		<p>The scilab codes to generate the Figures 4,  5 and 6  are given below.  </p><br><br>
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The scilab codes to generate the Figures 4,  5 and 6  are given below.  </p><br><br>
 
-		<p>//Program to plot speech segment, Log magnitude spectrum and real cepstrum<br>
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">//Program to plot speech segment, Log magnitude spectrum and real cepstrum<br>
 [y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/30msec_voiced.wav');//input: speech segment<br>
 zeros2=zeros(1:(512-length(y)));<br>
 zeros3=zeros(1:(1512-length(y)));<br>
@@ -173,8 +169,8 @@ for uu=1:length(real_ceps_pitch)<br>
   pitch_freq_FO=1/pitch_period_To</p><br><br>
 
 
-		<h1>Pitch estimation by SIFT</h1><br><br>
-		<p>The objective of this experiment is to  estimate the pitch by Simple Inverse Filtering Technique (SIFT) .  The first step is to compute the Linear Prediction (LP) residual by LP analysis.  The auto correlation is performed on the LP residual signal. Figure 9 shows scilab code to generate LP residual of a segment of speech and to find autocorrelation of the LP residual. Figure 7 shows the LP residual of a 30 ms voiced speech segment and its auto correlation sequence.  Similarly, Figure 8 shows the LP residual and its auto correlation sequenced of a 30 ms unvoiced speech segment. Figure 9 illustrates the estimation of pitch period from the autocorrelation sequenced of the LP residual.  </p><br><br>
+		<h1 style="color:#0099FF">Pitch estimation by SIFT</h1>
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The objective of this experiment is to  estimate the pitch by Simple Inverse Filtering Technique (SIFT) .  The first step is to compute the Linear Prediction (LP) residual by LP analysis.  The auto correlation is performed on the LP residual signal. Figure 9 shows scilab code to generate LP residual of a segment of speech and to find autocorrelation of the LP residual. Figure 7 shows the LP residual of a 30 ms voiced speech segment and its auto correlation sequence.  Similarly, Figure 8 shows the LP residual and its auto correlation sequenced of a 30 ms unvoiced speech segment. Figure 9 illustrates the estimation of pitch period from the autocorrelation sequenced of the LP residual.  </p><br><br>
 
 			<img src="images/Fig7_voiced_lpresidual_procedure.png" style="width:755px;height:500px" align="center"/>
                  <p align="center">fig.7</p> <br><br>
@@ -185,8 +181,8 @@ for uu=1:length(real_ceps_pitch)<br>
 			<img src="images/Fig9_procedure.png" style="width:755px;height:500px" align="center"/>
                  <p align="center">fig.9</p> <br><br>
 
-		<p>The general scilab code to generate the Figures 7, 8 and 9, and compute the pitch is given below.  </p><br><br>
-		<p>//[y,fs,bt]=wavread('wavfile/voiced_frame.wav');<br>
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The general scilab code to generate the Figures 7, 8 and 9, and compute the pitch is given below.  </p><br><br>
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">//[y,fs,bt]=wavread('wavfile/voiced_frame.wav');<br>
 [y,fs,bt]=wavread('/media/A03036C33036A068/scilab/female.wav');//female speech<br>
 //[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/30msec_unvoiced.wav');<br>
 y=y((Fs*.38):(Fs*.42));//female voiced<br>
@@ -250,17 +246,17 @@ auto=autocor(21:240);<br>
   pitch_freq_fo=1/pitch_freq_to</p><br><br><br><br><br>
 
 
-		<h1>Comparison of pitch estimation methods</h1><br><br>
-		<p>Figure 10 shows the  input speech signal and the pitch contours  estimated using autocorrelation,  cepstrum and SIFT based pitch estimation methods. The procedure used for  generating the pitch contours using all these methods are given below. </p><br><br>
+		<h1 style="color:#0099FF">Comparison of pitch estimation methods</h1><br><br>
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Figure 10 shows the  input speech signal and the pitch contours  estimated using autocorrelation,  cepstrum and SIFT based pitch estimation methods. The procedure used for  generating the pitch contours using all these methods are given below. </p><br><br>
 
 
 
 			<img src="images/Fig11_pitch_all3_procedure.png" style="width:755px;height:500px" align="center"/>
-                 <p align="center">fig.10</p> <br><br>
+                 <p style="font-size:16px; align=center;">fig.10</p> <br><br>
 
-			<p>The general scilab code to generate the Figures 10, and compute the pitch is given below.  </p><br><br>
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The general scilab code to generate the Figures 10, and compute the pitch is given below.  </p><br><br>
 
-			<p>//Code to generate the pitch contour of a speech signal using autocorrelation method<br>
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">//Code to generate the pitch contour of a speech signal using autocorrelation method<br>
 
 [y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/SA2.wav');<br>
 data=y;<br>
@@ -309,7 +305,7 @@ subplot(4,1,2);plot(kkk,pitch_freq,'.');xtitle('Pitch Contour obtained by autoco
 
 
 <p>/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /</p><br><br>
-<p>//Code to generate the pitch contour of a speech signal using Cepstrum pitch estimation method<br><br>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">//Code to generate the pitch contour of a speech signal using Cepstrum pitch estimation method<br><br>
 y=0;y=data;<br>
 pitch_freq1=0;o=1;<br>
 Frame_size=30;pitch_freq = 0;<br>
@@ -370,7 +366,7 @@ subplot(4,1,3);plot(kk,pitch_freq,'.');xtitle('Pitch Contour obtained by cepstru
 
 <p>/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /</p><br><br>
 
-		<p>//Code to generate the pitch contour of a speech signal using SIFT method<br>
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">//Code to generate the pitch contour of a speech signal using SIFT method<br>
 y=0;y=data;<br>
 [y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/SA2.wav');<br>
 Frame_size = 30;//Input: Frame-size in millisecond<br>
@@ -431,17 +427,6 @@ end<br>
 [rows,cols]=size( autocorrelation);<br>
 kkk=1/Fs:shift_period:(cols*shift_period);<br>
 subplot(4,1,4);plot(kkk,pitch_freq,'.');xtitle('Pitch Contour obtained by SIFT pitch estimation method ');</p><br><br>
-
-
-
-
-
-            <br>
-	    <br>
-            <br>
-	    <br>
-            <br><br>
-            
 
 	  
 	  </div>

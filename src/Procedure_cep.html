@@ -52,7 +52,7 @@
 	  </br>
 	  <br>
 	  <p style="margin-left:20px"><h1 style="color:#990000">Fundamentals of cepstral analysis of speech</h1></p>
-	  <p style="font-size:14px; text-align:justify;">The objective of this experiment is to separate the excitation and vocaltract components of a given speech signal by cepstral analysis. The first step is to convert the speech into short-term segments of size 15-20 ms. Here the frame size is fixed to 20 ms. Then each frame is multiplied by a hamming window. Then cepstral representation of short-term speech is computed by finding the IDFT of the log magnitude spectrum. The Figure 2 given below shows a 20 ms voiced frame and its cepstrum in the quefrency domain. From the Figure this can be observed that vocaltract components are concentrated in the low quefrency region and excitation components are in the high quefrency region. The procedure given below computes the cepstrum from the given frame of speech.</p>
+	  <p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The objective of this experiment is to separate the excitation and vocaltract components of a given speech signal by cepstral analysis. The first step is to convert the speech into short-term segments of size 15-20 ms. Here the frame size is fixed to 20 ms. Then each frame is multiplied by a hamming window. Then cepstral representation of short-term speech is computed by finding the IDFT of the log magnitude spectrum. The Figure 2 given below shows a 20 ms voiced frame and its cepstrum in the quefrency domain. From the Figure this can be observed that vocaltract components are concentrated in the low quefrency region and excitation components are in the high quefrency region. The procedure given below computes the cepstrum from the given frame of speech.</p>
 	  <p><img src="images/img15.jpg"/></p>
 		</br>
 		</br>
@@ -61,7 +61,7 @@
 	  <p style="font-size:12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COMPUTING CEPSTRUM(VOICED SPEECH SEGMENT)</p>
 	</br></br>
 	 <p><img src="images/img17.png" width="800px;" /></p>
-	  <p style="font-size:12px; text-align:justify;">The following codes computes the cepstrum from an unvoiced segment of speech. This plots the output of various stages during the cepstrum computation from an unvoiced frame as given in Figure 3</p>
+	  <p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The following codes computes the cepstrum from an unvoiced segment of speech. This plots the output of various stages during the cepstrum computation from an unvoiced frame as given in Figure 3</p>
 	</br></br>
 	<p><img src="images/img18.jpg" width="800px;" /></p>
 	</br></br></br>
@@ -71,24 +71,24 @@
 	<p><img src="images/img20.png" width="800px;" /></p>
 	<p></p>
 	<p style="margin-left:20px"><h1 style="color:#990000">Liftering</h1></p>
-	 <p style="font-size:14px; text-align:justify;">Inorder to extract the deconvolved vocal tract component and excitation component from the cepstrum liftering has to be done. For extraction the vocaltract component low-time liftering is done and for excitation component high-time liftering is done. Figure 4.2 shows the vocaltract component extracted using low-time liftering. Here the liftering window is designed according to equation (6). The procedure for the low-time liftering is given below.</p>
+	 <p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Inorder to extract the deconvolved vocal tract component and excitation component from the cepstrum liftering has to be done. For extraction the vocaltract component low-time liftering is done and for excitation component high-time liftering is done. Figure 4.2 shows the vocaltract component extracted using low-time liftering. Here the liftering window is designed according to equation (6). The procedure for the low-time liftering is given below.</p>
 	<p></p>
 	<p><img src="images/img21.jpg" width="800px;" /></p>
 	<p></p>
 	<p><img src="images/img22.png" width="800px;" /></p>
-	<p style="font-size:14px; text-align:justify;">Similarly,Figure 6.2 indicates the excitation component extracted from the cepstrum by high-time liftering. The liftering window is designed according to equation (9) and the liftering cutoff quefrency is selected as 15 quefrency samples. The procedure for the high-time liftering is given below.</p>
+	<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Similarly,Figure 6.2 indicates the excitation component extracted from the cepstrum by high-time liftering. The liftering window is designed according to equation (9) and the liftering cutoff quefrency is selected as 15 quefrency samples. The procedure for the high-time liftering is given below.</p>
 	<p></p>
 	<p><img src="images/img23.jpg" width="800px;" /></p>
 	<p></p>
 	<p><img src="images/img24.png" width="800px;" /></p>
 	<p></p>
 	<p style="margin-left:20px"><h1 style="color:#990000">Pitch estimation by cepstral analysis</h1></p>
-	<p style="font-size:14px; text-align:justify;">Pitch can be estimated as the quefrency location of the highest peak in the high-time liftered cepstrum. This strong peak of the high-time lifterd cepstrum can be observed from Figure 6.2. The procedure for pitch estimation is given below,</p>
+	<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Pitch can be estimated as the quefrency location of the highest peak in the high-time liftered cepstrum. This strong peak of the high-time lifterd cepstrum can be observed from Figure 6.2. The procedure for pitch estimation is given below,</p>
 	<p></p>
 	<p><img src="images/img25.jpg" width="800px;" /></p>	
 	<p></p>
 	<p style="margin-left:20px"><h1 style="color:#990000">Formant estimation by cepstral analysis</h1></p> 
-	<p style="font-size:14px; text-align:justify;">Formant locations can be estimated from vocaltract spectral characteristics. This can be computed from spectral representation of the low-time liftered cepstral coefficients. As the DFT of the low-time lifterd cepstral coeffcients gives the corresponding smooth log magnitude spectrum, the formants can be located using a simple peak picking algorithm. Figure 5 represents the cepstrally smooth log magnitude spectrum of vocaltract components and the formant locations corresponds to the peaks in the spectrum. The procedure for computing the vocaltract spectrum and finding the formant locations are given below.</p>
+	<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Formant locations can be estimated from vocaltract spectral characteristics. This can be computed from spectral representation of the low-time liftered cepstral coefficients. As the DFT of the low-time lifterd cepstral coeffcients gives the corresponding smooth log magnitude spectrum, the formants can be located using a simple peak picking algorithm. Figure 5 represents the cepstrally smooth log magnitude spectrum of vocaltract components and the formant locations corresponds to the peaks in the spectrum. The procedure for computing the vocaltract spectrum and finding the formant locations are given below.</p>
 <p></p>
 	<p><img src="images/img26.jpg" width="800px;" /></p>
 	<p></p>

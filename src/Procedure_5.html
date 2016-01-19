@@ -55,11 +55,11 @@
 <h1><span style="color: rgb(51, 102, 255);"><span style="background-color: rgb(255, 255, 255);">Short Term Energy Computation</span></span></h1>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p class="content" align="justify">The  speech signal and its sampling frequency along with the frame size and  frame shift are the inputs needed for computing the short term energy. Using the sampling frequency value, the number of samples for the given  frame size and frame shift are computed. For instance, if the sampling  frequency is 8 KHz and frame size and frame shift are 20 msec and 10  msec, respectively then the number of samples in a frame will be 160 and  number of samples for frame shift will be 80 samples.</p>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The  speech signal and its sampling frequency along with the frame size and  frame shift are the inputs needed for computing the short term energy. Using the sampling frequency value, the number of samples for the given  frame size and frame shift are computed. For instance, if the sampling  frequency is 8 KHz and frame size and frame shift are 20 msec and 10  msec, respectively then the number of samples in a frame will be 160 and  number of samples for frame shift will be 80 samples.</p>
 <p>&nbsp;</p>
-<p class="content" align="justify">To  compute short term energy, the input speech signal is considered in frames of 160 samples with a shift of 80 samples and the energy is  computed for each frame. The short term energy values are then plotted  as a function of time index.</p>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">To  compute short term energy, the input speech signal is considered in frames of 160 samples with a shift of 80 samples and the energy is  computed for each frame. The short term energy values are then plotted  as a function of time index.</p>
 <p>&nbsp;</p>
-<p align="justify">The  scilab code for computing the short term energy is given in Figure_1.  The short term energy computed using this code is given in Figure_2. The  STE contour follows the general shape of signal amplitude distribution  of speech signal. The STE associated with unvoiced regions is relatively  smaller compared to voiced regions. Thus STE can be therefore  used for  voiced/unvoiced class of speech.</p>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The  scilab code for computing the short term energy is given in Figure_1.  The short term energy computed using this code is given in Figure_2. The  STE contour follows the general shape of signal amplitude distribution  of speech signal. The STE associated with unvoiced regions is relatively  smaller compared to voiced regions. Thus STE can be therefore  used for  voiced/unvoiced class of speech.</p>
 <p>&nbsp;</p>
 <p style="text-align: center; ">&nbsp;<img alt="" src="images/Figure001.png"></p>
 <p>&nbsp;</p>
@@ -74,9 +74,9 @@
 <center>Figure_2:Short Term energy contour of speech signal<br>
 </center>
 <p>&nbsp;</p>
-<p class="content" align="justify">&nbsp;The next issue to be understood is the effect of frame size. The scilab code for computing STE for different window length, namely 30,50 and 100 msec samples are shown in Figure_3. The corresponding STE contours are given in Figure_4.</p>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">&nbsp;The next issue to be understood is the effect of frame size. The scilab code for computing STE for different window length, namely 30,50 and 100 msec samples are shown in Figure_3. The corresponding STE contours are given in Figure_4.</p>
 <p class="content">&nbsp;</p>
-<p class="content" align="justify">As the frame size increases, the smoothness of the energy contour&nbsp; also increases. As a result the distinction between voiced and unvoiced regions decreases. Hence in case of speech processing, frame size for STE is about 10-30 msec is preferred.</p>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">As the frame size increases, the smoothness of the energy contour&nbsp; also increases. As a result the distinction between voiced and unvoiced regions decreases. Hence in case of speech processing, frame size for STE is about 10-30 msec is preferred.</p>
 <p style="text-align: center; ">&nbsp;</p>
 <p>&nbsp;</p>
 <center><img alt="" src="images/Figure003.png"><br>
@@ -93,7 +93,7 @@
 <center>Figure_4: Short Term Energy contour for different window length namely 30,50 and 100 msec<br>
 </center>
 <p class="content">&nbsp;</p>
-<p class="content" align="justify">The last issue to be understood in  case of STE computation is the effect of window shape. In case of  rectangular window all samples will contribute equally to the STE  values. Alternatively, in hamming and hanning window cases, the center of the window samples contribute more. Accordingly, the changes in the  nature of STE contour. Figure_5 and Figure_6 show the scilab code and  the corresponding STE computed for different window functions. The  Hamming and Hanning window function provide relatively less energy on the STE contour.</p>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The last issue to be understood in  case of STE computation is the effect of window shape. In case of  rectangular window all samples will contribute equally to the STE  values. Alternatively, in hamming and hanning window cases, the center of the window samples contribute more. Accordingly, the changes in the  nature of STE contour. Figure_5 and Figure_6 show the scilab code and  the corresponding STE computed for different window functions. The  Hamming and Hanning window function provide relatively less energy on the STE contour.</p>
 <p>&nbsp;&nbsp;</p>
 <center><img alt="" src="images/Figure005.png"></center>
 <p>&nbsp;&nbsp;</p>
@@ -113,7 +113,7 @@
 <h2><span style="color: rgb(51, 102, 255);"><span style="background-color: rgb(255, 255, 255);">Short Term Zero Crossing Rate (ZCR)</span></span></h2>
 <p><span style="color: rgb(51, 102, 255);">&nbsp;</span></p>
 <p>&nbsp;</p>
-<p class="content" align="justify">The input speech signal can be viewed in blocks of 10-30 msec&nbsp; for computing ZCR. For each block of the speech signal, the ZCR is computed using the short term ZCR relation. A scilab code for computing short term is shown in Figure_7. The corresponding output of&nbsp; this program is given in Figure_8. The ZCR value is highest in unvoiced region and lowest in voiced region . In case of silence region the value lies in between of voiced and unvoiced cases.</p>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The input speech signal can be viewed in blocks of 10-30 msec&nbsp; for computing ZCR. For each block of the speech signal, the ZCR is computed using the short term ZCR relation. A scilab code for computing short term is shown in Figure_7. The corresponding output of&nbsp; this program is given in Figure_8. The ZCR value is highest in unvoiced region and lowest in voiced region . In case of silence region the value lies in between of voiced and unvoiced cases.</p>
 <p>&nbsp;</p>
 <p class="contentEquation" align="center">&nbsp;</p>
 <center><img alt="" src="images/Figure01.png"></center>
@@ -126,7 +126,7 @@
 <center>Figure_8: Short Term zero cross rate for the speech signal.<br>
 </center>
 <p>&nbsp;</p>
-<p class="content" align="justify">The effect of window size can also be studied in ZCR computation. Figure_9 gives the scilab code for computing ZCR for different frame sizes. Figure_10 shows its ZCR plots for different frame sizes. As the frame size increases, the smoothening and spreading of ZCR plot takes place. As a result we may miss small transient region having high ZCR values.</p>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The effect of window size can also be studied in ZCR computation. Figure_9 gives the scilab code for computing ZCR for different frame sizes. Figure_10 shows its ZCR plots for different frame sizes. As the frame size increases, the smoothening and spreading of ZCR plot takes place. As a result we may miss small transient region having high ZCR values.</p>
 <p>&nbsp;&nbsp;</p>
 <center><img alt="" src="images/Figure03.png"></center>
 <p>&nbsp;</p>
@@ -136,7 +136,7 @@
 <p class="contentEquation" style="text-align: left; ">&nbsp;</p>
 <p class="contentEquation" style="text-align: center; ">Figure_10:Short term Zero Cross Rate using different frame sizes namely 30,50,100 msecs</p>
 <p class="contentEquation" style="text-align: center; ">&nbsp;</p>
-<p class="contentEquation" style="text-align: left; " align="justify">The ZCR value is independent of the window shape. Figure_11 gives the scilab code for computing ZCR using different window function and computed output are given in Figure_12.&nbsp;</p>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The ZCR value is independent of the window shape. Figure_11 gives the scilab code for computing ZCR using different window function and computed output are given in Figure_12.&nbsp;</p>
 <p class="contentEquation" style="text-align: left; ">&nbsp;</p>
 <center><img alt="" src="images/Figure04.png"></center>
 <p>&nbsp;</p>
@@ -153,7 +153,7 @@
 <h2>&nbsp;<span style="color: rgb(51, 102, 255);"><span style="background-color: rgb(255, 255, 255);">Computation Of Short Term Autocorrelation</span></span></h2>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p class="content" align="justify">The scilab code for computing the short term autocorrelation is given in Figure_13. This program takes a given frame of speech and computes its short term autocorrelation. Figure_14 shows&nbsp; the term autocorrelation computed for a voiced segment of speech. Figure_15 shows the short term autocorrelation computed for an unvoiced segment of speech. Both the plots are computed using the scilab code given in Figure_13.</p>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The scilab code for computing the short term autocorrelation is given in Figure_13. This program takes a given frame of speech and computes its short term autocorrelation. Figure_14 shows&nbsp; the term autocorrelation computed for a voiced segment of speech. Figure_15 shows the short term autocorrelation computed for an unvoiced segment of speech. Both the plots are computed using the scilab code given in Figure_13.</p>
 <p>&nbsp;</p>
 <p class="contentEquation" align="center">&nbsp;</p>
 <center><img alt="" src="images/figure0001.png"></center>
@@ -174,7 +174,7 @@
 <p class="contentEquation" align="center">&nbsp;</p>
 <center>Figure_15: Short term autocorrelation computed for a unvoiced segment of speech</center>
 <p>&nbsp;</p>
-<p class="content" align="justify">The short term autocorrelation for the entire speech signal can be computed considering speech in &nbsp;frames. Figure_16 gives scilab code for computing the short term autocorrelation sequences for the entire speech signal. The corresponding autocorrelation sequence plot is given in figure_17. As it can be observed the short term autocorrelation for the entire speech signal is a 3-D plot.</p>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The short term autocorrelation for the entire speech signal can be computed considering speech in &nbsp;frames. Figure_16 gives scilab code for computing the short term autocorrelation sequences for the entire speech signal. The corresponding autocorrelation sequence plot is given in figure_17. As it can be observed the short term autocorrelation for the entire speech signal is a 3-D plot.</p>
 <p>&nbsp;&nbsp;</p>
 <center><img alt="" src="images/figure0004.png"></center>
 <p>&nbsp;&nbsp;</p>
@@ -187,7 +187,7 @@
 <center>Figure_17:Short term&nbsp; Autocorrelation sequence for the entire speech signal<br>
 </center>
 <p>&nbsp;</p>
-<p class="content" align="justify">In the 3-D plot , picking the largest peak and plotting the same will give information about pitch during voiced speech regions. The scilab code for estimating the pitch information is given in Figure_18. The corresponding output plot is given in Figure_19.</p>
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">In the 3-D plot , picking the largest peak and plotting the same will give information about pitch during voiced speech regions. The scilab code for estimating the pitch information is given in Figure_18. The corresponding output plot is given in Figure_19.</p>
 <p>&nbsp;</p>
 <p class="contentEquation" align="center">&nbsp;</p>
 <center><img alt="" src="images/figure0006.png"></center>

@@ -44,7 +44,6 @@
         <li><a href="Prequiz_stf.html">Pre Quiz</a></li>
 	<li><a href="Simulation_stf.html">Simulation</a></li>
         <li><a href="Postquiz_stf.html">Post Quiz</a></li>
-	<li><a href="Assignment_stf.html">Assignment</a></li>
 	<li><a href="Ref_stf.html">Reference</a></li>	
 	</ul>
 	  </br>
@@ -52,7 +51,7 @@
 	  </br>
 	  <br>
 	  <p style="margin-left:20px"><h1 style="color:#990000">Limitation of DTFT for the spectral analysis of speech</h1></p>
-	  <p style="font-size:14px; text-align:justify;"> The procedure to generate the linear and and log magnitude spectrum is given below. We can observe that both the small and large magnitude frequency components are visible in the log magnitude spectrum compared to the linear magnitude spectrum.Figure 1 shows the speech signal, linear magnitude and log magnitude spectra of speech signals</p>
+	  <p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;"> The procedure to generate the linear and and log magnitude spectrum is given below. We can observe that both the small and large magnitude frequency components are visible in the log magnitude spectrum compared to the linear magnitude spectrum.Figure 1 shows the speech signal, linear magnitude and log magnitude spectra of speech signals</p>
 	  <p></p>
 	<p style="font-size:12px; text-align:justify;">
 		[y,Fs,bits]=wavread('/media/A03036C33036A068/scilab/SA2.wav');</br>
@@ -76,7 +75,7 @@
 	  <p style="font-size:12px; margin-left:250px;">Fig.1: Speech signal and log magnitude DTFT spectra</p>
 	 <p></p>
 	 <p style="margin-left:20px"><h1 style="color:#990000">Need for Short Time  Fourier Transform:</h1></p>
-	  <p style="font-size:14px; text-align:justify;">Figure 2 shows the log magnitude spectrum of a segment of voiced speech, unvoiced speech and silence region. The procedure for generating the plots 	is given below. It has to be observed that the log magnitude spectrum for voiced, unvoiced and silence regions is different.</p>
+	  <p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Figure 2 shows the log magnitude spectrum of a segment of voiced speech, unvoiced speech and silence region. The procedure for generating the plots 	is given below. It has to be observed that the log magnitude spectrum for voiced, unvoiced and silence regions is different.</p>
 	<p></p>
 	<p></p>
 	<p style="font-size:12px; text-align:justify;">
@@ -160,7 +159,7 @@
 		<p></p>
 		<p></p>
 	<p style="margin-left:20px"><h1 style="color:#990000">STFT of speech:</h1></p>
-	 <p style="font-size:14px; text-align:justify;">For the short term spectral analysis, the given speech signal is divided into blocks of 10-30 ms with a shift of 5-10 ms. The log magnitude spectra is the  procedure for computing the STFT from the speech signal is shown below, computed for each of the blocks. Figure 3 shows a 3D plot showing the log magnitude spectra of each of the frames  of size 20 ms with a shift of 10 ms.</p>
+	 <p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">For the short term spectral analysis, the given speech signal is divided into blocks of 10-30 ms with a shift of 5-10 ms. The log magnitude spectra is the  procedure for computing the STFT from the speech signal is shown below, computed for each of the blocks. Figure 3 shows a 3D plot showing the log magnitude spectra of each of the frames  of size 20 ms with a shift of 10 ms.</p>
 	<p></p>
 	<p></p>
 	<p></p>
@@ -212,7 +211,7 @@ endfunction
 	   <p style="font-size:12px; margin-left:250px;">Fig.3 : Speech signal and its short term fourier transform plot </p>
 	<p></p>
 	<p style="margin-left:20px"><h1 style="color:#990000">Concept of true and convolved spectra</h1></p>
-	<p style="font-size:14px; text-align:justify;">Figure 4 illustrates the concepts of true and convolved spectrum of a sine wave.  In the figure the true spectrum of the given 200 Hz sine wave is computed by taking DTFT of the whole sinusoidal signal. The convolved spectrum is represented by taking STFT of the 20-30 ms of short term segment of the sine wave. In the figure we can observe that the true spectra is represented by an impulse function at 200 Hz and the convolved spectrum is represented by the sinc function centered around 200 Hz . The procedure for illustrating the true and convolved spectrum is given below,</p>
+	<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Figure 4 illustrates the concepts of true and convolved spectrum of a sine wave.  In the figure the true spectrum of the given 200 Hz sine wave is computed by taking DTFT of the whole sinusoidal signal. The convolved spectrum is represented by taking STFT of the 20-30 ms of short term segment of the sine wave. In the figure we can observe that the true spectra is represented by an impulse function at 200 Hz and the convolved spectrum is represented by the sinc function centered around 200 Hz . The procedure for illustrating the true and convolved spectrum is given below,</p>
 	<p></p>
 	<p style="font-size:12px; text-align:justify;">
 	clear;clc;clf;</br>
@@ -262,7 +261,7 @@ endfunction
 	<p></p>
 	<p></p>
 	<p style="margin-left:20px"><h1 style="color:#990000">Effect of windowing function on short term spectral analysis</h1></p>
-	<p style="font-size:14px; text-align:justify;">Figure 5 shows various window functions like rectangular, hamming and hanning in the time and frequency domains. The procedure for generating the time and frequency domain representation of these window functions is given below.</p>
+	<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Figure 5 shows various window functions like rectangular, hamming and hanning in the time and frequency domains. The procedure for generating the time and frequency domain representation of these window functions is given below.</p>
 	<p></p>
 	<p style="font-size:12px; text-align:justify;">
 	clear; clc; clf;</br>
@@ -309,7 +308,7 @@ endfunction
 	   <p style="font-size:12px; margin-left:120px;">Fig.5 : Rectangular, Hamming and hanning window functions and their linear & log magnitude spectra </p>
 	<p></p>
 	<p style="margin-left:20px"><h1 style="color:#990000">Spectral Analysis of speech using window functions</h1></p> 
-	<p style="font-size:14px; text-align:justify;">Figure 6 short term magnitude spectra of a 30 ms voiced speech segment  using a rectangular, hamming and hanning window functions. The procedure to computer the short term spectra of these voiced segment is given below. It has to be observed that,  the STFT using the rectangular spectra is found to be more noisy compared to STFT spectra due to other window functions.  This is due to the higher spectral leakage in rectangular window compared to other window functions.</p>
+	<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Figure 6 short term magnitude spectra of a 30 ms voiced speech segment  using a rectangular, hamming and hanning window functions. The procedure to computer the short term spectra of these voiced segment is given below. It has to be observed that,  the STFT using the rectangular spectra is found to be more noisy compared to STFT spectra due to other window functions.  This is due to the higher spectral leakage in rectangular window compared to other window functions.</p>
 <p></p>
 	<p></p>
 	<p style="font-size:12px; text-align:justify;">
@@ -368,7 +367,7 @@ xtitle('Log magnitude spectrum using hanning window','Frequency in KHz');
 	<p><img src="images/img6_stf.png" width="850px;" /></p>
 	   <p style="font-size:12px; margin-left:80px;"> Fig.6 : Segment of voiced speech & its log magnitude spectra using rectangular,hamming and hanning window functions. </p>
 	<p></p>
-	<p style="font-size:14px; text-align:justify;">Figure 7 shows the STFT log magnitude spectra of an unvoiced speech segment using rectangular, hamming and hanning window functions.
+	<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Figure 7 shows the STFT log magnitude spectra of an unvoiced speech segment using rectangular, hamming and hanning window functions.
 The procedure for computing same is given below</p>
 <p></p>
 		<p></p>
@@ -427,7 +426,7 @@ The procedure for computing same is given below</p>
 	<p></p>
 	<p></p>
 	<p style="margin-left:20px"><h1 style="color:#990000">Effect of window size on short term spectral analysis of speech</h1></p> 
-	<p style="font-size:14px; text-align:justify;"> Figure 8 shows a short term log magnitude spectra of voiced segment using a frame size of 3 ms, 30 ms and 300 ms. Here we can observe that the poor spectral resolution due to smaller window size in case of 3 ms window.Also poor time resolution can be observed in case of 300 ms window.The log magnitude spectrum of the 30 ms windowed speech segment shows vocal tract spectral envelope and excitation information in terms of pitch and its harmonics. The procedure to generate the log magnitude spectrum of different window sizes is given below,</p>
+	<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;"> Figure 8 shows a short term log magnitude spectra of voiced segment using a frame size of 3 ms, 30 ms and 300 ms. Here we can observe that the poor spectral resolution due to smaller window size in case of 3 ms window.Also poor time resolution can be observed in case of 300 ms window.The log magnitude spectrum of the 30 ms windowed speech segment shows vocal tract spectral envelope and excitation information in terms of pitch and its harmonics. The procedure to generate the log magnitude spectrum of different window sizes is given below,</p>
 	<p></p><p></p><p></p><p></p> 
 	<p style="font-size:12px; text-align:justify;">
 	clear; clc; clf;</br>

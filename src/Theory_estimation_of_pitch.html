@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Shakshat Virtual Lab</title>
+<title>Virtual Lab</title>
   <meta name="description" content="free website template" />
   <meta name="keywords" content="enter your keywords here" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -38,13 +38,13 @@
 	<br />
 	<div id="menubar1">
       <ul id="menu">
-        <li ><a href="aim_estimation_of_pitch.html">Aim</a></li>
+        <li><a href="aim_estimation_of_pitch.html">Aim</a></li>
           <li class="current"><a href="Theory_estimation_of_pitch.html">Theory</a></li>
           <li><a href="procedure_estimation_of_pitch.html">Procedure</a></li>
-	  <li><a href="simulation_estimation_of_pitch.html">Simulation</a></li>
+          <li><a href="simulation_estimation_of_pitch.html">Simulation</a></li>
           <li><a href="Quiz_estimation_of_pitch.html">Quiz</a></li>
-	  <li><a href="reference_estimation_of_pitch.html">Reference</a></li>
           <li><a href="assignment_estimation_of_pitch.html">Assignment</a></li>
+		  <li><a href="reference_estimation_of_pitch.html">Reference</a></li>
 
 		
 		      </ul>
@@ -54,10 +54,10 @@
 	  <br>
 	    
             
-            <h1>Theory</h1>
+            <h1 style="color:#0099FF">Theory</h1>
 	<br>
 	<br>
-		<p>Speech signal can be classified into voiced, unvoiced and silence regions. The near periodic vibration of vocal folds is excitation for the production of voiced speech. The random ...like excitation is present for unvoiced speech. There is noexcitation during silence region. Majority of speech regions are voiced in nature that includevowels,....., semivowels and other voiced components. The voiced regions looks like a near periodic signal in the time domain representation. In a short term .., we may treat the voiced speech segments to be periodic for all practical analysis and processing. The periodicity associated with such segmentsis defined is 'pitch period To' in the time domain and 'Pitch frequency or Fundamental Frequency Fo' in the frequency domain. Unless specified, the term 'pitch' refers to the fundamental frequency ' Fo'. Pitch is an important attribute of voiced speech. It contains speaker-specific information. It is also needed for speech coding task. Thus estimation of pitch is one of the important issue in speech processing.
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Speech signal can be classified into voiced, unvoiced and silence regions. The near periodic vibration of vocal folds is excitation for the production of voiced speech. The random ...like excitation is present for unvoiced speech. There is noexcitation during silence region. Majority of speech regions are voiced in nature that includevowels,....., semivowels and other voiced components. The voiced regions looks like a near periodic signal in the time domain representation. In a short term .., we may treat the voiced speech segments to be periodic for all practical analysis and processing. The periodicity associated with such segmentsis defined is 'pitch period To' in the time domain and 'Pitch frequency or Fundamental Frequency Fo' in the frequency domain. Unless specified, the term 'pitch' refers to the fundamental frequency ' Fo'. Pitch is an important attribute of voiced speech. It contains speaker-specific information. It is also needed for speech coding task. Thus estimation of pitch is one of the important issue in speech processing.
 
  
 
@@ -68,12 +68,12 @@ There are a large set of methods that have been developed in the speech processi
            <br>
 	   <br>
 
-	<h1>Pitch estimation by Autocorrelation method</h1>
+	<h1 style="color:#0099FF">Pitch estimation by Autocorrelation method</h1>
 			
 		<img src="images/Fig1_voiced_autocorr.png" style="width:755px;height:500px" align="center"/>
                  <p align="center">fig.1</p> <br><br>
 
-<p>The information about pitch period 'To' is more pronounced in the autocorrelation sequence of voiced speech compared to the speech segment itsely. Fig 1 shows a 30 msec segment of voiced speech and its autocorrelation sequence. Since autocorrelation sequence is symmetric with respect to zero lag, only postiove lag values are shown in the figure. The 'To' information is more pronounced in the autocorrelation sequence compared to speech. By that we mean, the second largest peak is the autocorrelation sequence, represents To and
+<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The information about pitch period 'To' is more pronounced in the autocorrelation sequence of voiced speech compared to the speech segment itsely. Fig 1 shows a 30 msec segment of voiced speech and its autocorrelation sequence. Since autocorrelation sequence is symmetric with respect to zero lag, only postiove lag values are shown in the figure. The 'To' information is more pronounced in the autocorrelation sequence compared to speech. By that we mean, the second largest peak is the autocorrelation sequence, represents To and
 can be picked up easily by a simple peak picking algorithm compared to finding 'To' from the speech segment itself. Hence autocorrelation method is preferred over other direct methods of pitch estimation from speech.</p> 
 		<img src="images/Fig2_unvoiced_autocorr.png" style="width:755px;height:500px" align="center"/>
                  <p align="center">fig.2</p> <br><br>
@@ -81,11 +81,11 @@ can be picked up easily by a simple peak picking algorithm compared to finding '
 		<img src="images/Fig3.png" style="width:755px;height:500px" align="center"/>
                  <p align="center">fig.3</p> <br><br>
 
-		<p>Fig 2 shows a 30 msec segment of unvoiced speech and its autocorrelation sequence. There is no prominent peak as in the case of voiced speech. This is the fundamental distinction between voiced and unvoiced speech. Further, human speech pitch is typically in the range 100-400 Hz and accordingly the pitch in the range 2.5-10 msec. Therefore for the estimation of pitch the largest peak in the partial autocorrelation sequence starting from 2.5 msec lag is ..... out and its distance with respect to zero lag is measured as pitch peak 'To '. This is illustrated in Fig 3. Once we know To , then pitch can be computed as ..... , where Fs isthe sampling frequency of the speech signal and 'To ' is pitch period in samples.</p> <br>
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Fig 2 shows a 30 msec segment of unvoiced speech and its autocorrelation sequence. There is no prominent peak as in the case of voiced speech. This is the fundamental distinction between voiced and unvoiced speech. Further, human speech pitch is typically in the range 100-400 Hz and accordingly the pitch in the range 2.5-10 msec. Therefore for the estimation of pitch the largest peak in the partial autocorrelation sequence starting from 2.5 msec lag is ..... out and its distance with respect to zero lag is measured as pitch peak 'To '. This is illustrated in Fig 3. Once we know To , then pitch can be computed as ..... , where Fs isthe sampling frequency of the speech signal and 'To ' is pitch period in samples.</p> <br>
 		<p>For instance, if To = 10 msec, Fs  = 8000 Hz , then T0 in samples= 10*8=80. F0 = 8000/80 = 100 Hz  </p><br><br>
 
-		<h1>Cepstrum Pitch Determination</h1>
-		<p>The main limitation of pitch estimation by the auto correlation of speech is that there may be peaks larger than the peak corresponding to the pitch period T0 due to the .... of the vocal tract, As a result there may be picking of .... peaks and hence wrong estimation of pitch. The approach to minimize such errors is to separate the vocal tract and excitation source related information in the speech signal and there use the source information for pitch estimation. The ceptral analysis of speech provides such an approach.
+		<h1 style="color:#0099FF">Cepstrum Pitch Determination</h1>
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The main limitation of pitch estimation by the auto correlation of speech is that there may be peaks larger than the peak corresponding to the pitch period T0 due to the .... of the vocal tract, As a result there may be picking of .... peaks and hence wrong estimation of pitch. The approach to minimize such errors is to separate the vocal tract and excitation source related information in the speech signal and there use the source information for pitch estimation. The ceptral analysis of speech provides such an approach.
 
  
 
@@ -98,16 +98,16 @@ The ceptrum of speech is defined as the inverse Fourier transform of the log mag
 
                          <img src="images/Fig5_unvoiced_cepstrum.png" style="width:755px;height:500px" align="center"/>
                          <p align="center">fig.5</p> <br><br>
-			<p>Fig. 5 shows a 30 msec segment of unvoiced speech, its log magnitude spectrum and cepstrum. The initial 13-15 values represent the vocal tract information and later ... about the excitation source. By comparing Fig 4 and Fig. 5 it may be observed that there is no prominent peak in case of ceptrum of unvoiced speech after the 13-15 initial cepstral values. This is the main distinction between cepstrum of voiced and unvoiced speech. This observation also ... a method for cepstrum pitch determination. For the estimation of pitch, the target peak in the cepstral sequence after initial 2 msec  .....16 cepstral values, gives the estimation of pitch period in case of voiced speech. This is illustrated in Fig. 6.</p><br><br>
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Fig. 5 shows a 30 msec segment of unvoiced speech, its log magnitude spectrum and cepstrum. The initial 13-15 values represent the vocal tract information and later ... about the excitation source. By comparing Fig 4 and Fig. 5 it may be observed that there is no prominent peak in case of ceptrum of unvoiced speech after the 13-15 initial cepstral values. This is the main distinction between cepstrum of voiced and unvoiced speech. This observation also ... a method for cepstrum pitch determination. For the estimation of pitch, the target peak in the cepstral sequence after initial 2 msec  .....16 cepstral values, gives the estimation of pitch period in case of voiced speech. This is illustrated in Fig. 6.</p><br><br>
 
 
 			<img src="images/Fig6.png" style="width:755px;height:500px" align="center"/>
                          <p align="center">fig.6</p> <br><br>
-			<p>The largest peak location in samples gives T0 and thus pitch is computed as F0= Fs / T0. By computing Figs. 6 and Fig. 8, it can be further observe that, the cepstral approach does not have large peaks as in the autocorrelation case that may interfere with the estimation of pitch</p><br><br>
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The largest peak location in samples gives T0 and thus pitch is computed as F0= Fs / T0. By computing Figs. 6 and Fig. 8, it can be further observe that, the cepstral approach does not have large peaks as in the autocorrelation case that may interfere with the estimation of pitch</p><br><br>
 
 
-			<h1>Pitch estimation by SIFT method:</h1>
-			<p>The SIFT method is yet another mostly used pitched estimation method. This is based on the linear prediction (LP) analysis of speech. The SIFT in turn employs the autocorrelation method for the estimation of pitch. However, the main discussion is, it performs autocorrelation of the LP residual than speech directly. For the optimal LP ..., more of the vocal tract information is modeled by the LP coefficients and hence the LP residual mostly contains the excitation source information. The autocorrelation of LP residual will therefore have unambiguous peaks representing the pitch period 'T0' information.</p><br><br>
+			<h1 style="color:#0099FF">Pitch estimation by SIFT method:</h1>
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The SIFT method is yet another mostly used pitched estimation method. This is based on the linear prediction (LP) analysis of speech. The SIFT in turn employs the autocorrelation method for the estimation of pitch. However, the main discussion is, it performs autocorrelation of the LP residual than speech directly. For the optimal LP ..., more of the vocal tract information is modeled by the LP coefficients and hence the LP residual mostly contains the excitation source information. The autocorrelation of LP residual will therefore have unambiguous peaks representing the pitch period 'T0' information.</p><br><br>
 
 			<img src="images/Fig7_voiced_lpresidual.png" style="width:755px;height:500px" align="center"/>
                          <p align="center">fig.7</p> <br><br>
@@ -118,31 +118,21 @@ The ceptrum of speech is defined as the inverse Fourier transform of the log mag
 			<img src="images/Fig9.png" style="width:755px;height:500px" align="center"/>
                          <p align="center">fig.9</p> <br><br>
 
-			<p>In case of LP analysis, the vocal tract information is modelled in terms of LP coefficient (LPC) as a process of the prediction of current sample of a combination of ... 'p' samples. The ... LPCs represents the coefficients of the LP filter . The LP filter is the representation of vocal tract. The corresponding inverse filter can be constructed using the inverse property. By passing the speech signal through the inverse filter results in the LP residual as the output. Fig. 7 shows a 30 msec segment of voiced speech, its LP residual and the autocorrelation of the LP residual. As can be observed, there is a prominent peak at the pitch period 'T0' and there are no other peaks that interfere with its peak. This is the merit of SIFT over autocorrelation of speech.
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">In case of LP analysis, the vocal tract information is modelled in terms of LP coefficient (LPC) as a process of the prediction of current sample of a combination of ... 'p' samples. The ... LPCs represents the coefficients of the LP filter . The LP filter is the representation of vocal tract. The corresponding inverse filter can be constructed using the inverse property. By passing the speech signal through the inverse filter results in the LP residual as the output. Fig. 7 shows a 30 msec segment of voiced speech, its LP residual and the autocorrelation of the LP residual. As can be observed, there is a prominent peak at the pitch period 'T0' and there are no other peaks that interfere with its peak. This is the merit of SIFT over autocorrelation of speech.
 
  Fig. 8 shows 30 msec segment of unvoiced speech, its LP residual and the autocorrelation of the LP residual. There is no prominent peak as in the case of voiced speech shown in Fig. 7 . Thus, a single peak picking can be employed for the estimation of pitch period 'T0' as illustrated in Fig. 8 . Once 'T0' is known, then F0 = Fs/ T0 , where both Fs and T0 in samples.</p><br><br>
 
-			<h1>Comparision of Pitch estimation methods:</h1><br>
+			<h1 style="color:#0099FF">Comparision of Pitch estimation methods:</h1><br>
 			<img src="images/Fig10_all.png" style="width:755px;height:500px" align="center"/>
                          <p align="center">fig.10</p> <br><br>
 
-			<p>Fig. 10 shows a 30 msec segment of voiced samples. Its autocorrelation sequence, cepstral sequence and autocorrelation sequence by the SIFT method. All the methods show a peak at the pitch period 'T0'. Cepstral and the SIFT method sequences have less ambiguity compared to autocorrelation of speech. Hence either cepstrum or SIFT method is equally preferable for the estimation of pitch. In case of speech coding, the mostly used are in LP analysis and hence SIFT method is prefered over Cepstrum pitch estimation. Alternatively, in tasks like speaker recognition, since cepstral analysis is used for the feature extraction tasks, ceptrum pitch estimation may be employed.</p><br><br>
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Fig. 10 shows a 30 msec segment of voiced samples. Its autocorrelation sequence, cepstral sequence and autocorrelation sequence by the SIFT method. All the methods show a peak at the pitch period 'T0'. Cepstral and the SIFT method sequences have less ambiguity compared to autocorrelation of speech. Hence either cepstrum or SIFT method is equally preferable for the estimation of pitch. In case of speech coding, the mostly used are in LP analysis and hence SIFT method is prefered over Cepstrum pitch estimation. Alternatively, in tasks like speaker recognition, since cepstral analysis is used for the feature extraction tasks, ceptrum pitch estimation may be employed.</p><br><br>
 
 			<img src="images/Fig11_pitch_all3.png" style="width:755px;height:500px" align="center"/>
                          <p align="center">fig.11</p> <br><br>
 
-			<p>Apart from the avarage pitch value, the other interse is in plotting time varying pitch values resulting in pitch contour information. Fig. 11 shows a speech signal, its pitch contour by autocorrelation of speech, cepstrum and SIFT methods. The random values in the pitch contours compared to the unvoiced and silence regions. The random values in the unvoiced and silence regions. The continuous segments correspond to the voiced regions. Most of the random values can be eliminated by the voiced/ unvoiced classification. In name of the voiced regions, the autocorrelation of speech has same random values due to the sp... peak picking.</p><br><br>
-
-
-
-            <br>
-	    <br>
-            <br>
-	    <br>
-            <br><br>
-            
-
-	  
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">Apart from the avarage pitch value, the other interse is in plotting time varying pitch values resulting in pitch contour information. Fig. 11 shows a speech signal, its pitch contour by autocorrelation of speech, cepstrum and SIFT methods. The random values in the pitch contours compared to the unvoiced and silence regions. The random values in the unvoiced and silence regions. The continuous segments correspond to the voiced regions. Most of the random values can be eliminated by the voiced/ unvoiced classification. In name of the voiced regions, the autocorrelation of speech has same random values due to the sp... peak picking.</p>
+  
 	  </div>
     </div><!--close menubar-->	
 	 <div id="footer">

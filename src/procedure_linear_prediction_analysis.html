@@ -34,16 +34,17 @@
     </div><!--close menubar-->	
 	<br />
 	<br />
-	<div id="menu_sub">Estimation Of Pitch From Speech Signals</div>
+	<div id="menu_sub">Linear Prediction Analysis</div>
 	<br />
 	<div id="menubar1">
       <ul id="menu">
-        <li ><a href="aim_linear_prediction_analysis.html">Aim</a></li>
+         <li><a href="aim_linear_prediction_analysis.html">Aim</a></li>
           <li><a href="Theory_linear_prediction_analysis.html">Theory</a></li>
-          <li class="current"><a href="procedure_linear_prediction_analysis.html">Procedure</a></li>
+          <li  class="current"><a href="procedure_linear_prediction_analysis.html">Procedure</a></li>
+		  <li><a href="simulation_linear_prediction_analysis.html">Simulation</a></li>
           <li><a href="Quiz_linear_prediction_analysis.html">Quiz</a></li>
-	  <li><a href="reference_linear_prediction_analysis.html">Reference</a></li>
-          <li><a href="assignment_linear_prediction_analysis.html">Assignment</a></li>
+	  <li><a href="assignment_linear_prediction_analysis.html">Assignment</a></li>
+		  <li><a href="reference_linear_prediction_analysis.html">Reference</a></li>
 
 		
 		      </ul>
@@ -53,11 +54,10 @@
 	  <br>
 	    
             
-            <h1>Estimating Linear Prediction (LP) coefficients from the speech</h1>
+            <h1 style="color:#0099FF">Estimating Linear Prediction (LP) coefficients from the speech</h1>
            
 	<br>
-	<br>
-		<p>The objective of this experiments to estimate the LP coefficients of order P by autocorrelation method. The first step is is to perform the autocorrelation analysis of speech frames having length of 15-20ms after multiplying it with a hamming window. The Figure 1 gives the 20 ms segment of a voiced speech sampled at 8 kHz and its autocorrelation sequence.</p>
+		<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The objective of this experiments to estimate the LP coefficients of order P by autocorrelation method. The first step is is to perform the autocorrelation analysis of speech frames having length of 15-20ms after multiplying it with a hamming window. The Figure 1 gives the 20 ms segment of a voiced speech sampled at 8 kHz and its autocorrelation sequence.</p>
 
 
 
@@ -67,49 +67,33 @@
 		<img src="images/linear_prediction-procedure-fig1a.JPG" style="width:705px;height:300px" align="center"/>
                  <p align="center">fig.1</p> <br><br>
 
-			<p>After computing the autocorrelation sequence of this voiced frame of speech, the toeplitz auto correlation matrix of size pXp is generated as explained in the equation (11) of theory part. Now the LP coefficients are computed by direct matrix multiplication method as given in equation (14). The following procedure gives the estimated LP coefficients for the given voiced frame of speech.</p><br><br>
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">After computing the autocorrelation sequence of this voiced frame of speech, the toeplitz auto correlation matrix of size pXp is generated as explained in the equation (11) of theory part. Now the LP coefficients are computed by direct matrix multiplication method as given in equation (14). The following procedure gives the estimated LP coefficients for the given voiced frame of speech.</p><br><br>
 
 		<img src="images/linear_prediction-procedure-fig1b.JPG" style="width:755px;height:400px" align="center"/>
                  <p align="center">fig.2</p> <br><br>
 
 		<img src="images/linear_prediction-procedure-fig1c.JPG" style="width:755px;height:400px" align="center"/>
-                 <p align="center">fig.3</p> <br><br>
+                 <p align="center">fig.3</p> <br>
 
 
-			<h1>Computing LP residual</h1><br><br>
-			<p>As explained in the theory part, the LP residual can be computed by inverse filtering. This can be done by convolving the correspnding speech frame with the LP coefficients computed. Figure 2 shows a voiced frame of speech and corresponding LP residual.</p><br><br>
+			<h1 style="color:#0099FF">Computing LP residual</h1><br>
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">As explained in the theory part, the LP residual can be computed by inverse filtering. This can be done by convolving the correspnding speech frame with the LP coefficients computed. Figure 2 shows a voiced frame of speech and corresponding LP residual.</p><br><br>
 			<img src="images/linear_prediction-procedure-fig2.JPG" style="width:755px;height:400px" align="center"/>
-                 <h1>Pitch estimation from LP residual</h1><br><br>
-			<p>From the Figure 2, it can be observed that the LP residual is characterized periodic nature of strong impulses (higher prediction error) at every pitch mark. The pitch can be computed from the auto correlation of the residual. Figure 3 indicate the LP residual of a voiced frame and its autocorrelation sequence. The pitch can be computed as the time lag of the second peak from the central peak of the auto correlation sequence. The procedure for computing pitch for a given frame LP residual is given below.</p><br><br>
+                 <h1 style="color:#0099FF">Pitch estimation from LP residual</h1>
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">From the Figure 2, it can be observed that the LP residual is characterized periodic nature of strong impulses (higher prediction error) at every pitch mark. The pitch can be computed from the auto correlation of the residual. Figure 3 indicate the LP residual of a voiced frame and its autocorrelation sequence. The pitch can be computed as the time lag of the second peak from the central peak of the auto correlation sequence. The procedure for computing pitch for a given frame LP residual is given below.</p><br>
 			
 			<img src="images/linear_prediction-procedure-fig3.JPG" style="width:755px;height:500px" align="center"/>
 
 
 
-			<h1>Formant estimation from LP spectrum</h1><br><br>
-			<p>The LP spectrum provides smooth vocaltract spectral characteristics. This can be computed from the fourier representation of the LP coefficients. Figure 3 shows the LP spectrum obtained from the log magnitude spectrum of the LP coefficients with a frequency resolution of 1 Hz. The formant locations in the LP spectrum can be found by picking the peaks in the LP spectrum. Figure 4 shows the formant valuse obtained from the LP spectrum using a simple peak picking algorithm.</p><br><br>
+			<h1 style="color:#0099FF">Formant estimation from LP spectrum</h1>
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The LP spectrum provides smooth vocaltract spectral characteristics. This can be computed from the fourier representation of the LP coefficients. Figure 3 shows the LP spectrum obtained from the log magnitude spectrum of the LP coefficients with a frequency resolution of 1 Hz. The formant locations in the LP spectrum can be found by picking the peaks in the LP spectrum. Figure 4 shows the formant valuse obtained from the LP spectrum using a simple peak picking algorithm.</p><br>
 			<img src="images/linear_prediction-procedure-fig4.JPG" style="width:755px;height:500px" align="center"/>
 
-			<h1>Normalized Error</h1><br><br>
-			<p>The objective of the following procedure is to plot the normalized error. The following codes computes the normalized error using the equation (23) in the theory part. After getting the normalized error for each of the prediction order, the normalized error curve is plotted against the corresponding the prediction orders. Figure 6 shows the normalized error curve. The prediction order after which the normalized error is not changing can be selected as the optimal prediction order for that segment of speech.</p><br><br>
+			<h1 style="color:#0099FF">Normalized Error</h1>
+			<p style="font-size:16px; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:justify;">The objective of the following procedure is to plot the normalized error. The following codes computes the normalized error using the equation (23) in the theory part. After getting the normalized error for each of the prediction order, the normalized error curve is plotted against the corresponding the prediction orders. Figure 6 shows the normalized error curve. The prediction order after which the normalized error is not changing can be selected as the optimal prediction order for that segment of speech.</p><br>
 			
 				<img src="images/linear_prediction-procedure-fig5.jpg" style="width:755px;height:500px" align="center"/>
-
-
-
-
-	
-
-
-
-
-
-            <br>
-	    <br>
-            <br>
-	    <br>
-            <br><br>
-            
 
 	  
 	  </div>
