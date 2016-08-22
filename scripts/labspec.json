@@ -39,7 +39,7 @@
                 " Electronics and Electrical Engineering"
             ], 
             "id": "eee03", 
-            "integration_level": 5, 
+            "integration_level": 6, 
             "name": "Speech Signal Processing Laboratory", 
             "server-side": true, 
             "status": "Released", 
